@@ -101,7 +101,7 @@ grows only linearly with :math:`E`, but it often grows much faster.  Consider an
         \Omega(E) \propto |\mathbf{p}|^{3N-1} \propto E^{(3N-1)/2}
 
 For macroscopic systems, :math:`N` will be on the order of 10\ :sup:`23`, and even a tiny increase in energy will
-produce a huge increase in the density of states.  For this reason, we usually work with :math:`log(\Omega)` instead,
+produce a huge increase in the density of states.  For this reason, we usually work with :math:`\mathrm{log}(\Omega)` instead,
 which is a much smoother, slower changing function.
 
 
@@ -259,7 +259,7 @@ not restrict the other.
     The log of the density of states of B can be approximated as linear in energy:
     
     .. math::
-        log(\Omega_B(E_B)) \approx \alpha + \beta E_B
+        \mathrm{log}(\Omega_B(E_B)) \approx \alpha + \beta E_B
         :label: assume-omega-linear-in-E
 
 Any function can be approximated as linear over sufficiently small intervals (aside from pathological cases like
@@ -296,7 +296,7 @@ Combining these results, we find the probability of A being in the desired micro
 It is conventional to write this in a slightly different form by defining
 
 .. math::
-    \frac{1}{kT} \equiv \beta \equiv \frac{\partial log(\Omega_B(E))}{\partial E}
+    \frac{1}{kT} \equiv \beta \equiv \frac{\partial \mathrm{log}(\Omega_B(E))}{\partial E}
     :label: define-temperature
 
 :math:`T` is known as the *temperature* and :math:`k` is *Boltzmann's constant*, which equals 1.3806488·10\ :sup:`-23`
@@ -337,6 +337,8 @@ generality.  As you have seen, it is not in any way specific to gas molecules or
 any system that satisfies a very general set of assumptions.
 
 
+.. _thermodynaic-forces:
+
 Thermodynamic Forces
 ====================
 
@@ -346,10 +348,10 @@ dealing with a balloon filled with helium, so it can stretch and contract, excha
 surrounding air.  The density of states is now a function of both variables, :math:`\Omega(E, V)`.
 
 We can repeat the exact same argument as in the last section, simply replacing :math:`E` with :math:`V`.  This time we
-assume :math:`log(\Omega_B)` is linear in both variables:
+assume :math:`\mathrm{log}(\Omega_B)` is linear in both variables:
 
     .. math::
-        log(\Omega_B(E_B, V_B)) \approx \alpha + \beta E_B + \gamma V_B
+        \mathrm{log}(\Omega_B(E_B, V_B)) \approx \alpha + \beta E_B + \gamma V_B
 
 from which we conclude that the probability of a microstate is given by
 
@@ -359,7 +361,7 @@ from which we conclude that the probability of a microstate is given by
 Once again it is conventional to write this in a slightly different form by defining a new quantity:
 
 .. math::
-    P \equiv kT \frac{\partial log(\Omega_B(E, V))}{\partial V}
+    P \equiv kT \frac{\partial \mathrm{log}(\Omega_B(E, V))}{\partial V}
 
 :math:`P` is called the *pressure*.  Using this definition, the probability for A to be in a particular microstate is
 
@@ -379,7 +381,7 @@ of space they occupy), we instead define it to be a particular volume of space (
 at any moment).  We then define
 
 .. math::
-    \mu \equiv -kT \frac{\partial log(\Omega_B(E, N))}{\partial N}
+    \mu \equiv -kT \frac{\partial \mathrm{log}(\Omega_B(E, N))}{\partial N}
 
 :math:`\mu` is called the *chemical potential*.  The negative sign in front of it is just a matter of convention.  The
 probability of a microstate is
@@ -426,7 +428,7 @@ We now define another new quantity:
 
 .. math::
 
-    S = k \cdot log(\Omega_A)
+    S = k \cdot \mathrm{log}(\Omega_A)
 
 :math:`S` is called the *entropy* of the macrostate.  It is just another way of measuring the number of microstates
 that make it up.  Given this definition, we can rewrite the probability as
@@ -536,7 +538,7 @@ the value will be between :math:`\langle x \rangle-\sigma` and :math:`\langle x 
 depends on the probability distribution, of course.  Will examine this further in the next chapter.
 
 I mentioned before that the partition function has some interesting and useful properties.  One of them is that
-derivatives of :math:`log(Z)` tend to give averages.  Remember that the partition function is defined as
+derivatives of :math:`\mathrm{log}(Z)` tend to give averages.  Remember that the partition function is defined as
 
 .. math::
     Z = \sum e^{-\beta E} = \sum e^{-E/kT}
@@ -544,7 +546,7 @@ derivatives of :math:`log(Z)` tend to give averages.  Remember that the partitio
 For example,
 
 .. math::
-    -\frac{\partial log(Z)}{\partial \beta} &= -\frac{1}{Z} \frac{\partial Z}{\partial \beta} \\
+    -\frac{\partial \mathrm{log}(Z)}{\partial \beta} &= -\frac{1}{Z} \frac{\partial Z}{\partial \beta} \\
     &= -\frac{1}{Z} \sum \frac{\partial e^{-\beta \Phi}}{\partial \beta} \\
     &= \frac{1}{Z} \sum \Phi e^{-\beta \Phi} \\
     &= \langle \Phi \rangle
@@ -553,7 +555,7 @@ Another useful case is to take the derivative with respect to a state variable (
 one).
 
 .. math::
-    -kT \frac{\partial log(Z)}{\partial x} &= -\frac{kT}{Z} \frac{\partial Z}{\partial x} \\
+    -kT \frac{\partial \mathrm{log}(Z)}{\partial x} &= -\frac{kT}{Z} \frac{\partial Z}{\partial x} \\
     &= -\frac{kT}{Z} \sum \frac{\partial e^{-\Phi/kT}}{\partial x} \\
     &= \frac{1}{Z} \sum \frac{\partial \Phi}{\partial x} e^{-\Phi/kT} \\
     &= \langle \frac{\partial \Phi}{\partial x} \rangle

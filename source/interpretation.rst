@@ -8,6 +8,8 @@ what they really mean.  Now it is time to return to them.  We will study them in
 intuitive understanding of what they represent.
 
 
+.. _interpretation-of-temperature:
+
 Temperature
 ===========
 
@@ -140,6 +142,80 @@ negative sign in front of this term.  That is just to cancel out the extra negat
 reasons, appears in the definition of :math:`\mu`.)
 
 
+Independent and Dependent Variables
+===================================
+
+There is a second way that thermodynamic potentials can be interpreted.  It assigns a completely different meaning to
+them, while still being similar enough to be confusing.  It has to do with which macroscopic variables we treat as
+independent and which ones we treat as dependent.
+
+So far, we have always used macroscopic variables such as energy, volume, and particle number.  These have the important
+property that they are also microscopic variables.  Every microstate has a well defined energy, a well defined volume,
+a well defined number of particles.  A macrostate simply consists of all the microstates with the specified values for
+its variables.
+
+Contrast that with variables such as temperature, pressure, and chemical potential.  These are *not* microscopic
+variables.  They are defined in terms of the density of states.  It makes no sense to speak of the temperature or
+pressure of a single microstate.  They relate to the distribution of microstates, not to the properties of any single
+state.
+
+On the other hand, from a physical perspective it makes perfect sense to think of these quantities as independent
+macroscopic variables.  Consider these examples:
+
+* You can keep a system isolated so that its energy remains constant, *or* you can put it in contact with a heat bath
+  of fixed temperature.  In the former case, energy is the independent variable.  It is the quantity you control, and it
+  has a well defined value.  In the latter case, it makes more sense to view temperature as the independent variable.
+  That is now the quantity you control.  The energy no longer has a single fixed value.  It fluctuates continuously as
+  the system exchanges energy with the heat bath.  You can, however, calculate an *average* energy
+  :math:`\langle E \rangle`.  Furthermore, as we saw in the last chapter, for macroscopic systems the fluctuations about
+  the average will be completely negligible.  In that case, it is reasonable to treat energy as if its value were fixed.
+  But it has now become a *dependent* variable :math:`E(T)`.
+
+* You can fix the volume of a system, *or* you can put it in contact with a heat bath of fixed pressure.  In the former
+  case, volume is the independent variable.  In the latter case, pressure is the independent variable.  The volume now
+  fluctuates as it interacts with the heat bath.  For a sufficiently large system, these fluctuations will be
+  negligible.  We can therefore treat the volume as a dependent variable with a well defined value :math:`V(P)`.
+
+* Finally, you can fix the number of particles in the system, or you can let it exchange particles with a heat bath of
+  fixed chemical potential.  In the former case, :math:`N` is an independent variable.  In the latter case, it is a
+  dependent variable :math:`N(\mu)`.
+
+Just to make matters more confusing, the *mathematical* choice of what variables to treat as independent need not match
+the *physical* choice of what quantities to control.  Consider a system in contact with a heat bath of specified
+temperature and pressure, so that Gibbs free energy is the relevant thermodynamic potential.  Physically speaking,
+:math:`T` and :math:`P` are the quantities you control, while :math:`E` and :math:`V` vary in response to them.
+
+Nonetheless, you can still take :math:`E` and :math:`V` as the macroscopic variables defining a macrostate.  In that
+case, every macrostate has a strictly fixed energy and volume.  It is defined to consist of all microstates with those
+values of :math:`E` and :math:`V`.  On the other hand, the system is no longer in a single, well defined macrostate.  It
+continuously fluctuates through a (usually tiny) range of macrostates as it exchanges energy and volume with the heat
+bath.
+
+Alternatively, you can choose to treat :math:`T` and :math:`P` as the macroscopic variables.  In that case, the system
+is in a single, fixed macrostate.  On the other hand, that macrostate no longer has fixed values for :math:`E` and
+:math:`V`.  Only their averages :math:`\langle E \rangle` and :math:`\langle V \rangle` are well defined.  Furthermore,
+there is no longer a direct mapping from microstates to macrostates!  Each macrostate represents a *probability
+distribution* over microstates, and each microstate has a probability of occurring while the system is in a range of
+different macrostates.
+
+These two choices of macroscopic variables lead directly to two different interpretations of the thermodynamic
+potential:
+
+1. If each macrostate has a well defined value for each macroscopic variable and consists of a fixed set of microstates,
+   then the thermodynamic potential also has a well defined value.  It describes the probability for the system to be
+   in that macrostate.
+
+2. If we instead treat each macrostate as a probability distribution over microstates, then the thermodynamic potential
+   no longer has a strictly fixed value.  Instead we must view it as an average quantity.  For example,
+   
+   .. math::
+       G = \langle E \rangle + P \langle V \rangle - T \langle S \rangle
+
+Both of these interpretations are widely used.  Furthermore, people often shift fluidly back and forth between them
+without giving any indication they have just changed their definitions.  When in doubt, look carefully to see which
+macroscopic quantities are being treated as independent variables.
+
+
 Thermodynamic Potentials and Thermodynamic Forces
 =================================================
 
@@ -148,16 +224,117 @@ system experiences a *generalized force*
 
 .. math::
     Q = -\frac{\partial U}{\partial x}
+    :label: define-generalized-force
 
 When the value of :math:`x` changes by an amount :math:`\Delta x`, the system performs *work* equal to
 
 .. math::
     W = Q \Delta x
+    :label: define-work
 
 Since we have defined quantities called "thermodynamic potentials" and "thermodynamic forces", you may be wondering how
-closely they are related to potentials and forces of the the conventional, non-thermodynamic kind.  Does the derivative
+closely they are related to potentials and forces of the conventional, non-thermodynamic kind.  Does the derivative
 of a thermodynamic potential give a thermodynamic force?  Does a thermodynamic force perform work?
 
-As soon as we try to answer these questions, we immediately run into the second issue that makes thermodynamic
-potentials very confusing: some potentials, as we defined them in section, :ref:`thermodynaic-potentials` *cannot be
-differentiated*\ !
+I need to be very careful how I answer these questions.  All our results so far assume the system is in equilibrium,
+and if large changes are happening in the macroscopic variables, it clearly is *not* in equilibrium.  Until we learn
+how to deal with situations of this sort, I need to restrict myself to only saying things about systems in equilibrium.
+
+Still, we can at least partly answer these questions now.  When a system is in equilibrium, its dependent macroscopic
+variables take on the values that minimize the thermodynamic potential (and hence maximize the probability).  So if we
+take a derivative of :math:`\Phi` and set it equal to zero, that will provide information about what happens in
+equilibrium.  For example, consider a system in contact with a heat bath of constant temperature and pressure, then
+take a derivative with respect to volume:
+
+.. math::
+    \frac{\partial G_A}{\partial V_A} &= 0 \\
+    &= \frac{\partial E_A}{\partial V_A} + P_B - T_B \frac{\partial S_A}{\partial V_A} \\
+    &= \frac{\partial E_A}{\partial V_A} + P_B - kT_B \frac{\partial \mathrm{log}(\Omega_A)}{\partial V_A} \\
+    &= \frac{\partial E_A}{\partial V_A} + P_B - P_A
+
+From which we conclude:
+
+.. math::
+    -\frac{\partial E_A}{\partial V_A} = P_B - P_A
+    :label: force-equals-pressure
+
+This is a remarkable equation.  The left side is an ordinary force of the conventional sort.  It is just a derivative
+of the energy, with nothing statistical about it.  Everything we know about forces from classical mechanics can be
+directly applied to it.  The right side, on the other hand, is a thermodynamic force (or rather, the difference between
+two thermodynamic forces).  And this equation says that, when the system is in equilibrium, the two sides must be
+equal to each other.
+
+If the internal pressure :math:`P_A` and external pressure :math:`P_B` are equal, then the equilibrium condition
+simplifies to just :math:`\frac{\partial E_A}{\partial V_A}=0`: there must be no net mechanical force.  If there were,
+it would cause the volume to change (that being what mechanical forces do).  Clearly the pressure is at least *acting*
+like a mechanical force.  For the system to be in equilibrium, the internal pressure, external pressure, and mechanical
+force must exactly cancel each other out.
+
+So thermodynamic forces *act* like ordinary forces, but does that mean they *are* ordinary forces?  Can they produce
+motion and do work?  To answer that, we must examine them more carefully and understand just what is going on when a
+"thermodynamic force" is applied to a system.
+
+
+The Mechanics of Thermodynamic Forces
+=====================================
+
+Consider a balloon filled with gas.  It is subject to three different forces: the outward pressure of the gas inside
+the balloon, the inward pressure of the surrounding air, and the elastic tension of the balloon itself that resists
+expansion.  As seen from equation :eq:`force-equals-pressure`, at equilibrium these three forces exactly balance each
+other out.  If they do not balance, the balloon will expand or contract until they do.  But what is actually happening
+at a microscopic level?
+
+Molecules of gas are constantly striking the surface of the balloon.  How do we know that?  Because the density of
+states of the gas increases with increasing volume.  If its volume were greater, there would be more microstates
+available to it.  The balloon is restricting it from visiting those microstates, and if the balloon were not there, it
+would not remain contained in such a restricted volume.
+
+That is what pressure really is: the mechanical force exerted by the gas molecules as they strike against the balloon
+(or any other object that restricts their motion).  So pressure is not merely "like" a force.  It *is* a force.  It can
+do all the same things other forces can do, including producing accelerations and performing work.
+
+Chemical potential can be understood in exactly the same way.  Imagine a box with a small hole in it, so that
+air molecules can diffuse in and out.  The chemical potential is essentially a measure of the density of air molecules.
+In equilibrium, we expect the density to be the same inside and outside.  If that is not the case, we expect to find a
+net flow of molecules one way or the other until equilibrium is achieved.  On the other hand, if there is another force
+involved (such as one that repels molecules away from the interior of the box), then we expect to find different
+densities inside and outside.  We can find the equilibrium distribution by looking for the values that minimize the
+thermodynamic potential.
+
+Here is one more critical observation about thermodynamic forces: as we saw in section :ref:`thermodynaic-forces`, they
+are always proportional to the temperature.  Given the microscopic description above, this is now easier to understand.
+For example, pressure is the force of particles randomly striking the walls of a container.  The faster they are moving,
+the harder they strike it.  And as we saw in section :ref:`interpretation-of-temperature`, the average velocity of each
+particle is proportional to the temperature.  If the temperature were exactly zero so the particles were not moving at
+all, there would be no pressure.  All thermodynamic forces would disappear, and all thermodynamic potentials would
+simply become equal to the energy.
+
+
+Intensive and Extensive Variables
+=================================
+
+Here is a useful bit of terminology.
+
+Macroscopic variables that are independent of the size of the system are called *intensive variables*.  Temperature,
+pressure, and chemical potential are all intensive variables.  For example, the temperature of a system has nothing to
+do with how large that system is.
+
+Macroscopic variables that are proportional to the size of the system are called *extensive variables*.  Energy,
+volume, number of particles, and entropy are all extensive variables.
+
+If you take two independent systems and then view them as a single combined system, all intensive variables will have
+values that are averages of those for the independent systems, whereas all extensive variables will have values that are
+the sums of the values for the independent systems.  If you combine two identical systems, the resulting system will
+have twice the volume, twice the energy, and twice the entropy of either of the component systems on its own.  But its
+temperature, pressure, and chemical potential will be identical to those for the component systems.
+
+If you multiply an intensive variable by an extensive one, the result is an extensive variable.  Thermodynamic
+potentials contain many such products.  :math:`PV`, :math:`TS`, and :math:`\mu V` each multiply an intensive variable
+by an extensive one to produce an extensive variable.  Thermodynamic forces are always intensive.  Thermodynamic
+potentials are always extensive.
+
+The ratio of two extensive variables is an intensive variable.  For example, dividing the number of particles by the
+volume produces the *particle density*: :math:`\rho=N/V`.
+
+Nearly all macroscopic variables fall into one of these two categories.  There is nothing especially profound about
+this.  It is just a piece of terminology you will need to know.

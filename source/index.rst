@@ -16,6 +16,7 @@ Contents:
    statisticaldescription.rst
    largenumbers.rst
    interpretation.rst
+   thermodynamics.rst
 
 
 Indices and tables

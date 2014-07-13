@@ -216,6 +216,8 @@ without giving any indication they have just changed their definitions.  When in
 macroscopic quantities are being treated as independent variables.
 
 
+.. _thermodynamic-potentials-and-thermodynamic-forces:
+
 Thermodynamic Potentials and Thermodynamic Forces
 =================================================
 
@@ -310,6 +312,38 @@ all, there would be no pressure.  All thermodynamic forces would disappear, and 
 simply become equal to the energy.
 
 
+.. _thermal-equilibrium:
+
+Thermal Equilibrium
+===================
+
+In section :ref:`thermodynamic-potentials-and-thermodynamic-forces` we took the derivative of :math:`G` with respect
+to volume, and derived a condition for the system to be in equilibrium.  Let's repeat the same calculation, only instead
+taking the derivative with respect to energy:
+
+.. math::
+    \frac{\partial G_A}{\partial E_A} &= 0 \\
+    &= 1 - T_B \frac{\partial S_A}{\partial E_A} \\
+    &= 1 - kT_B \frac{\partial \mathrm{log}(\Omega_A)}{\partial E_A} \\
+    &= 1 - \frac{T_B}{T_A}
+
+From which we conclude:
+
+.. math::
+    T_A = T_B
+    :label: equilibrium-temperatures-equal
+
+Unsurprisingly, the requirement is that both subsystems must have the same temperature.  Two systems whose temperatures
+are equal are said to be in *thermal equilibrium*.  If you bring them into contact with each other, no energy will flow
+between them.  On the other hand, if the systems have different temperatures, there will be a net flow of energy until
+their temperatures become equal.
+
+This energy transfer is different from the ones seen in the previous sections, in that it does not involve any
+mechanical work.  There is no change to any independent macroscopic variable *other* than energy.  It is simply the
+result of random collisions between molecules that transfer kinetic energy from one subsystem to the other.  This type
+of energy transfer is known as *heat*.
+
+
 Intensive and Extensive Variables
 =================================
 
@@ -338,3 +372,37 @@ volume produces the *particle density*: :math:`\rho=N/V`.
 
 Nearly all macroscopic variables fall into one of these two categories.  There is nothing especially profound about
 this.  It is just a piece of terminology you will need to know.
+
+
+A Brief Rant: Internal Energy
+=============================
+
+If you read most other books on statistical mechanics, you will find that everywhere I have written :math:`E` for
+energy, they instead write :math:`U` for "internal energy".  I have intentionally avoided doing that.  At best, internal
+energy is a useless distinction, and at worst it can be actively misleading.  I hesitate even to mention it now.  But
+since you are likely to encounter it sooner or later, I should at least introduce the concept.
+
+The idea is that the total energy of a system can be divided into three parts: the kinetic energy of the system as a
+whole, the potential energy of the system as a whole, and the "internal energy".  Only the last of these affects the
+internal dynamics of the system.  For example, if you put your experimental apparatus on an airplane flying at 1000
+km/hour, that greatly increases its kinetic energy, but has no effect on your results.  Likewise if you take the
+apparatus to the top of Mt. Everest, that greatly increases its potential energy but again does not affect your results.
+
+The problem with this idea is that it is simply wrong.  Every time the airplane encounters turbulence, the bouncing will
+add heat to the system, thus affecting your results.  The same thing happens to a lesser extent every time it speeds up,
+slows down, turns, or accelerates in any other way.  The only case where the internal energy is fully decoupled from the
+overall motion of the system is when it moves at a constant speed in a straight line with no acceleration at all.  But
+in that case, the only difference between internal energy and total energy is what reference frame you calculate it in.
+Relativity tells us that all your results must be independent of what reference frame you use, so the choice of whether
+to use internal energy or total energy is irrelevant.
+
+Similarly, the gravity at the top of Mt. Everest is slightly weaker than at sea level, and that does have the potential
+to change your results.  In many (but not all!) cases, the difference is negligible, and in that event the only
+difference between internal energy and total energy is that they are offset by a constant.  But the zero point of energy
+is always arbitrary; adding a constant never affects behavior.  So once again, it is irrelevant which one you use.
+
+In summary, the choice of whether to use internal energy or total energy *by definition* cannot affect any of your
+results.  If it does affect them, that proves you have defined the internal energy incorrectly. But it is very easy to
+define it incorrectly, such as by neglecting a contribution that actually does matter.  And the only way to make sure is
+to repeat your calculation using the total energy and verify that the results do not change!  So why make the
+distinction in the first place?

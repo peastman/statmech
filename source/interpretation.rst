@@ -85,8 +85,27 @@ Temperature is a measure of average kinetic energy.  To put it precisely:
 
 .. admonition:: Interpretation of Temperature
 
-    If a system is in equilibrium with a heat bath at temperature :math:`kT`, then its average kinetic energy is
+    If a system is in equilibrium with a heat bath at temperature :math:`T`, then its average kinetic energy is
     :math:`kT/2` per degree of freedom.
+
+Of course, the equipartition theorem applies equally well to any variable that satisfies the three requirements, not
+just to momentum variables.  In a collection of uncoupled harmonic oscillators, the average *potential* energy will also
+be :math:`kT/2` per degree of freedom.
+
+Even more generally, when a system is in equilibrium, its total energy (not just kinetic energy) tends to be evenly
+distributed among its degrees of freedom.  This is just a rule of thumb, not a rigorous result like the equipartition
+theorem.  Still, it is a useful guideline for how to think about systems in equilibrium.
+
+.. admonition:: Example
+
+    What is the average kinetic energy of a gas of :math:`N` rigid diatomic molecules at temperature :math:`T`?
+    
+    Each molecule is composed of two atoms, so it would normally have 6 degrees of freedom.  But because they are rigid
+    (the distance between the two atoms cannot change), that removes one degree of freedom.  The average kinetic energy
+    is therefore
+    
+    .. math::
+        \langle E_{kinetic} \rangle = 5 \cdot \frac{kT}{2}
 
 
 Thermodynamic Potentials as a Measure of Probability
@@ -94,7 +113,7 @@ Thermodynamic Potentials as a Measure of Probability
 
 Thermodynamic potentials are confusing.  Not only are they an unfamiliar concept, but as soon as you start trying to do
 calculations with them, it is very easy to get all tangled up in a net of subtle mistakes.  In the following sections,
-I will approach thermodynamic potentials from three different directions.  I will point out some of the particular
+I will approach thermodynamic potentials from several different directions.  I will point out some of the particular
 issues that make them confusing, and try to help you form a clear understanding of the essential concepts.
 
 The first thing that makes them confusing is that they mix together quantities related to two different systems.  Recall

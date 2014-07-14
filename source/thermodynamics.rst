@@ -67,7 +67,7 @@ misunderstood.
     If two bodies are each in thermal equilibrium with a third body, then they are also in thermal equilibrium with
     each other.
 
-This law is needed to justify that one can define temperature in terms of values measured on a thermometer.  Remember
+This law was needed to justify that one can define temperature in terms of values measured on a thermometer.  Remember
 that when thermodynamics was first being developed, no one was certain exactly what "temperature" really was.  It was
 strictly an empirical measurement.  This law asserts that if you let a thermometer come to equilibrium with two
 different bodies, and they each produce the same measurement, then bringing those bodies together will produce no net

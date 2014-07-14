@@ -247,7 +247,7 @@ energy between A and B.
     
     .. math::
         \Omega_T = \Omega_A \Omega_B
-        :label: assumeomegafactorizes
+        :label: assume-omega-factorizes
 
 This is another aspect of requiring the subsystems to be weakly coupled.  The first assumption restricted them from
 being coupled through the energy function.  This one restricts them from being coupled through the definitions of their
@@ -310,7 +310,8 @@ This last step is quite a strange one.  For no obvious reason, we have just intr
 arbitrary value, along with a completely new set of units.  (Just what are "Kelvins"?)  Of course, you probably have
 already figured out why.  The concept of "temperature" was established long before statistical mechanics was developed,
 and this definition is needed to make the statistical definition match the pre-existing one.  We will examine the
-correspondence in Chapter ???.  For the moment, though, just think of it as an arbitrary mathematical definition.
+correspondence in Chapter :ref:`interpretation-of-statistical-quantities`.  For the moment, though, just think of it as
+an arbitrary mathematical definition.
 
 We have almost answered our question.  The only thing still missing is the proportionality constant.  That is easily
 found: we just require that the probabilities of all microstates add to 1.  (The system is certain to be in *some*
@@ -350,8 +351,9 @@ surrounding air.  The density of states is now a function of both variables, :ma
 We can repeat the exact same argument as in the last section, simply replacing :math:`E` with :math:`V`.  This time we
 assume :math:`\mathrm{log}(\Omega_B)` is linear in both variables:
 
-    .. math::
-        \mathrm{log}(\Omega_B(E_B, V_B)) \approx \alpha + \beta E_B + \gamma V_B
+.. math::
+    \mathrm{log}(\Omega_B(E_B, V_B)) \approx \alpha + \beta E_B + \gamma V_B
+    :label: assume-omega-linear-in-V
 
 from which we conclude that the probability of a microstate is given by
 
@@ -362,16 +364,19 @@ Once again it is conventional to write this in a slightly different form by defi
 
 .. math::
     P \equiv kT \frac{\partial \mathrm{log}(\Omega_B(E, V))}{\partial V}
+    :label: define-pressure
 
 :math:`P` is called the *pressure*.  Using this definition, the probability for A to be in a particular microstate is
 
 .. math::
     p(E_A, V_A) = \frac{e^{-(E_A+PV_A)/kT}}{Z}
+    :label: maxwell-boltzmann-with-PV
 
 where the partition function now equals
 
 .. math::
     Z = \sum e^{-(E_A+PV_A)/kT}
+    :label: enthalpy-partition-function
 
 There is nothing special about volume.  The same calculation can be done for any macroscopic variable, producing an
 identical result.  One other example that is especially important in thermodynamics is :math:`N`, the number of
@@ -382,12 +387,14 @@ at any moment).  We then define
 
 .. math::
     \mu \equiv -kT \frac{\partial \mathrm{log}(\Omega_B(E, N))}{\partial N}
+    :label: define-chemical-potential
 
 :math:`\mu` is called the *chemical potential*.  The negative sign in front of it is just a matter of convention.  The
 probability of a microstate is
 
 .. math::
     p(E_A, N_A) = \frac{e^{-(E_A-\mu N_A)/kT}}{Z}
+    :label: maxwell-boltzmann-with-mu-N
 
 Quantities like :math:`P` and :math:`\mu` are called *thermodynamic forces*.  Each one is said to be *conjugate* to the
 macroscopic variable we differentiated with respect to.  Together, the macroscopic variable and the thermodynamic force
@@ -395,7 +402,8 @@ macroscopic variable we differentiated with respect to.  Together, the macroscop
 
 "Thermodynamic force" is another very suggestive name.  How do they relate to forces of the more conventional sort?  Do
 they act to produce accelerations?  Are they derivatives of potential functions?  We will examine these questions in
-Chapter ???.  As with everything else in this chapter, just treat them as arbitrary mathematical definitions for now.
+Chapter :ref:`interpretation-of-statistical-quantities`.  As with everything else in this chapter, just treat them as
+arbitrary mathematical definitions for now.
 
 Having said that, I now need to indulge in a brief rant.  :math:`\mu` is a "thermodynamic force", but it is also called
 the "chemical potential".  So is it a force, or is it a potential?  They are not the same thing!  Just to make matters
@@ -413,6 +421,7 @@ macroscopic variable of interest is energy.  The probability of a macrostate is
 
 .. math::
     p(E_A) = \frac{1}{Z} \sum e^{-E_A/kT}
+    :label: macrostate-probability
 
 The sum is taken over every microstate contained in the macrostate.  If there are other macroscopic variables, just use
 the appropriate exponential factor.  For example, if the macrostate is defined by both energy and volume, replace
@@ -423,18 +432,20 @@ microstates:
 
 .. math::
     p(E_A) = \Omega(E_A) \frac{e^{-E_A/kT}}{Z}
+    :label: macrostate-probability-2
 
 We now define another new quantity:
 
 .. math::
-
     S = k \cdot \mathrm{log}(\Omega_A)
+    :label: define-entropy
 
 :math:`S` is called the *entropy* of the macrostate.  It is just another way of measuring the number of microstates
 that make it up.  Given this definition, we can rewrite the probability as
 
 .. math::
     p(E_A) = \frac{e^{-(E_A-TS)/kT}}{Z}
+    :label: maxwell-boltzmann-with-TS
 
 
 .. _thermodynaic-potentials:
@@ -449,6 +460,7 @@ same form:
 
 .. math::
     p(E_A) = \frac{e^{-\Phi/kT}}{Z}
+    :label: maxwell-boltzmann-with-phi
 
 where the only difference is the quantity :math:`\Phi` appearing in the exponent.  This suggests the idea of
 *thermodynamic potentials*, energy-like functions that capture the differences between different probability
@@ -461,6 +473,7 @@ distributions.  Several of the most common thermodynamic potentials have special
     G &=& E+PV-TS & \text{(Gibbs free energy)} \\
     \Phi_G &=& E-\mu N-TS & \text{(Grand potential)}
     \end{array}
+    :label: thermodynamic-potentials
 
 You can think about the differences between thermodynamic potentials in two equivalent ways.  First, you can think of
 starting with :math:`E` and then adding in terms based on the ensemble you want to use.  You want volume to be
@@ -499,6 +512,7 @@ The average (or *mean*) of a quantity :math:`x` is defined as
 
 .. math::
     \langle x \rangle \equiv \sum_i x_i p_i
+    :label: define-average
 
 where :math:`x_i` is its value in the i'th state, and :math:`p_i` is the probability of that state.  The sum can be over
 either microstates or (if :math:`x` is a macroscopic variable) macrostates.  This is an ensemble average.  Its value
@@ -507,16 +521,19 @@ ensemble we are calculating the average for.  If :math:`\Phi` is the thermodynam
 
 .. math::
     \langle x \rangle = \frac{\sum_i x_i e^{-\Phi_i/kT}}{\sum_i e^{-\Phi_i/kT}}
+    :label: ensemble-average
 
 Two important identities follow directly from the above definition:
 
 .. math::
     \langle x+y \rangle = \sum_i (x_i+y_i) p_i = \sum_i x_i p_i + \sum_i y_i p_i = \langle x \rangle + \langle y \rangle
+    :label: average-of-sum
 
 and, if :math:`C` is a constant,
 
 .. math::
     \langle Cx \rangle = \sum_i Cx_i p_i = C \sum_i x_i p_i = C \langle x \rangle
+    :label: average-times-constant
 
 Just because :math:`x` has a particular average value, that does not mean it is always exactly equal to that.  Sometimes
 it is more and sometimes it is less.  It can be very useful to know how much a quantity tends to vary about its average.
@@ -524,6 +541,7 @@ Does it stay within a narrow range, or does it vary widely?  A useful measure of
 
 .. math::
     Var(x) \equiv \langle (x-\langle x \rangle)^2 \rangle
+    :label: define-variance
 
 Remembering that :math:`\langle x \rangle` is a constant, we can derive a useful identity for the variance:
 
@@ -531,6 +549,7 @@ Remembering that :math:`\langle x \rangle` is a constant, we can derive a useful
     Var(x) &= \langle x^2 - 2x \langle x \rangle + \langle x \rangle ^2 \rangle \\
     &= \langle x^2 \rangle - 2 \langle x \rangle \langle x \rangle + \langle x \rangle^2 \\
     &= \langle x^2 \rangle - \langle x \rangle^2
+    :label: variance-alternate-form
 
 Another common measure of how much a value tends to vary is its *standard deviation*, which is simply the square root
 of the variance.  It is represented by the symbol :math:`\sigma`.  A good rule of thumb is that about 2/3 of the time,
@@ -550,6 +569,7 @@ For example,
     &= -\frac{1}{Z} \sum \frac{\partial e^{-\beta \Phi}}{\partial \beta} \\
     &= \frac{1}{Z} \sum \Phi e^{-\beta \Phi} \\
     &= \langle \Phi \rangle
+    :label: derive-logZ-beta
 
 Another useful case is to take the derivative with respect to a state variable (either a microscopic or a macroscopic
 one).
@@ -559,4 +579,63 @@ one).
     &= -\frac{kT}{Z} \sum \frac{\partial e^{-\Phi/kT}}{\partial x} \\
     &= \frac{1}{Z} \sum \frac{\partial \Phi}{\partial x} e^{-\Phi/kT} \\
     &= \langle \frac{\partial \Phi}{\partial x} \rangle
+    :label: derive-logZ-state-variable
 
+
+Quantum Statistical Mechanics
+=============================
+
+For simplicity, I will mostly rely on classical mechanics in this book.  But nearly everything I say applies equally
+well to quantum mechanics.
+
+For a quantum system, a microstate simply means a value of the wave function (or, if we need to discretize a continuum
+of states, a tiny volume of Hilbert space).  Of course you can describe the wave function using any set of basis
+functions you want.  The "microscopic variables" of the system are just the amplitudes of the basis functions.  If they
+happen to be position eigenstates, then the microscopic variables are the values of the wave function at each point in
+pace.  But you can just as easily use momentum eigenstates, energy eigenstates, or any other basis you choose.
+
+A "macroscopic variable", on the other hand, is defined as the expectation value of an operator.  If :math:`Y` is the
+operator corresponding to some measurable quantity :math:`y` and the system is in microstate
+:math:`\left| \Psi \right\rangle`, then
+
+.. math::
+    y \equiv \left\langle \Psi \right| Y \left| \Psi \right\rangle
+    :label: quantum-macroscopic-variable
+
+This always has a well defined value, even if :math:`\left| \Psi \right\rangle` is not an eigenstate of the operator
+:math:`Y`.  A particularly important case is energy, which is the expectation value of the Hamiltonian:
+
+.. math::
+    E \equiv \left\langle \Psi \right| H \left| \Psi \right\rangle
+    :label: quantum-energy
+
+As long as the system remains isolated, its energy is constant.  Conservation of energy applies just as well to quantum
+mechanics as to classical mechanics.
+
+When dealing with quantum systems, we need to be careful to distinguish between different types of probability.  In
+statistical mechanics, probabilities always refer to either ensemble averages or time averages.  The "probability" of a
+variable having a particular value refers to either a fraction of the members of an ensemble, or to a fraction of time.
+But quantum mechanics also has its own probabilities that apply even when a system is in a single known state.  They
+describe the probability that a measurement will produce a certain result, *given* that the system is in a particular
+state.
+
+The probabilistic features of quantum mechanics *only* come up when you perform a measurement, which is to say, when you
+let the system interact with an external measuring device.  As long as the system stays isolated, quantum mechanics is
+fully deterministic.  The system is always in a well defined state, and every microscopic and macroscopic variable has a
+single well defined value at every moment in time.
+
+It is even possible that the probabilisitic features of quantum mechanics are *also* statistical in nature.  When you
+allow a system to interact with an external measuring device, that will necessarily introduce noise into the system.
+The state of the system is no longer definitely known, because it is subject to unknown forces.  Is it surprising, then,
+that we cannot predict the result with complete certainty?
+
+This is a large subject of its own, and a very controversial one.  It can be proven that *if* quantum mechanics is
+statistical in nature, it must necessarily possess one or more unintuitive properties such as nonlocality or
+retrocausality.  But quantum mechanics is already one of the most unintuitive physical theories ever developed, so that
+is hardly an argument one way or the other!  Some physicists would even argue that we already have good evidence for
+both nonlocality *and* retrocausality coming from completely unrelated directions.  If so, then statistical
+interpretations of quantum mechanics might well be among the very simplest and most intuitive ones.
+
+In any case, when applying statistical mechanics to quantum systems, be sure to distinguish the "probabilities" due to
+statistical ensembles from the "probabilities" due to quantum mechanics itself.  At any time other than when you are
+actually in the middle of making a measurement, the former ones are the only kind that apply.

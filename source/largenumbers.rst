@@ -97,7 +97,7 @@ The name comes from the fact that it has the same form as the terms in the *bino
 If we let :math:`a=b=1/2`, this simplifies to
 
 .. math::
-    (\frac{1}{2}+\frac{1}{2})^N = \sum_{m=0}^N \frac{N!}{m!(N-m)!} \frac{1}{2^N}
+    \left(\frac{1}{2}+\frac{1}{2}\right)^N = \sum_{m=0}^N \frac{N!}{m!(N-m)!} \frac{1}{2^N}
 
 so that
 
@@ -157,7 +157,7 @@ molecules.  A number that would be huge in a broom closet would be negligible in
     \frac{\sigma}{\langle m \rangle} = \frac{1}{\sqrt{N}}
     :label: binomialfractionaldeviation
 
-For an average sized room with :math:`N` = 10\ :sup:`26` oxygen molecules, that equals 10\ :sup:`-13`.  This is the
+For an average sized room with 10\ :sup:`26` oxygen molecules, that equals 10\ :sup:`-13`.  This is the
 magnitude of the typical fluctuations, measured as a fraction of the total number of molecules.  There are very few
 physical quantities that can actually be measured to a precision of 13 significant digits, and this is not one of them.
 The random fluctuations in the number of molecules on each side of the room are simply too small to measure.
@@ -211,7 +211,7 @@ deviation.  There is a remarkable result called the *Central Limit Theorem*:
 
 This theorem dates back to 1718, when Abraham de Moivre presented a proof of a special case of it in his book
 *The Doctrine of Chances*.  This book was not, as you might guess, an academic treatise for mathematicians.  It was a
-book for gamblers, discussing how to win at various games of chance.  Do not ever let anyone tell you that mathematics
+book for gamblers, discussing how to win at various games of chance.  Don't ever let anyone tell you that mathematics
 is not useful!
 
 This is the reason that normal distributions are so important.  No matter what distribution you start out with, once

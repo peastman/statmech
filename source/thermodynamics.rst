@@ -18,8 +18,8 @@ Thermodynamic Processes
 In everything that has come so far, we have considered only systems that were in equilibrium.  We will now take a first
 step toward removing this restriction.
 
-Consider some physical system, and assume it is initially in equilibrium.  We will now change the system in some way.
-There are many types of changes we might make.  Here are some examples.
+Consider some physical system, and assume it is initially in equilibrium.  We now change the system in some way. There
+are many types of changes we might make.  Here are some examples.
 
 * We could directly add energy to the system, for example by shaking it or by placing it over a fire.
 
@@ -44,7 +44,7 @@ dealt with two types of systems:
 
 1. An isolated system whose macroscopic properties, like energy and volume, are fixed and unchanging.
 
-2. A system in contact with a heat bath.  The properties of the system are now determined by the properties of the heat
+2. A system in contact with a heat bath.  The properties of the system are determined by the properties of the heat
    bath.  They are free to change, but they do so at random and mostly only within a narrow range.  Also, if we view
    the system of interest plus the heat bath as a single composite system, that composite system is still isolated.
 
@@ -124,11 +124,11 @@ The Second Law of Thermodynamics
 ================================
 
 The second law is not a trivial consequence of statistics or mechanics, but at first glance it is easy to *think* it
-is.  The entropy of a system is simply the logarithm of its density of states, which is essentially a measure of how
-probable each macrostate is.  The second law could therefore be summarized as, "Systems tend to move from less probable
-states to more probable ones."  That sounds obvious.  If a system is initially in a less probable state, we should
-hardly be surprised to later find it has moved to a more probable one.  If it went the other way and moved to a less
-probable state, *that* would be surprising.
+is.  The entropy of a system is simply the logarithm of its density of states.  For an isolated system, that is a
+measure of how probable each macrostate is.  The second law could therefore be summarized as, "Systems tend to move from
+less probable states to more probable ones."  That sounds obvious.  If a system is initially in a less probable state,
+we should hardly be surprised to later find it has moved to a more probable one.  If it went the other way and moved to
+a less probable state, *that* would be surprising.
 
 Suppose you have a box filled with gas molecules.  Now you remove the cover, so the molecules are free to leave the
 box.  Clearly it is far more likely for the molecules to spread out through the room than to all remain inside the box.

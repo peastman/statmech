@@ -72,12 +72,13 @@ states.
 
     Compute :math:`\Omega(E)` for a single free particle in three dimensions.
     
-    The energy is given by :math:`|\mathbf{p}|^2/2m`.  The microstates are defined by a six dimensional phase space, but
-    since the energy does not depend on the positions, we can ignore them and just consider the three dimensional space
-    of momentum coordinates.
+    The energy is given by :math:`E=|\mathbf{p}|^2/2m`.  The microstates are defined by a six dimensional phase space,
+    but since the energy does not depend on the positions, we can ignore them and just consider the three dimensional
+    space of momentum coordinates.
     
     Each value of :math:`E` corresponds to a two dimensional surface in this three dimensional space, so :math:`\Omega`
-    is proportional to the area of that surface.  In this case, it is just a sphere:
+    is proportional to the area of that surface.  In this case, it is just a sphere of radius :math:`|\mathbf{p}|`.
+    Since the surface area of a sphere is equal to :math:`4 \pi r^2`,
     
     .. math::
         \Omega(E) \propto |\mathbf{p}|^2 \propto E
@@ -129,7 +130,8 @@ treat it as a definition:
 
     An isolated system that satisfies the postulate of equal *a priori* probabilities is said to be in *equilibrium*.
 
-(Note that this definition is usually written in a slightly different way.  We will discuss this in the next section.)
+(But note that this definition is usually written in a slightly different way.  We will come back to it in the next
+section.)
 
 For the initial part of this book, we will only consider systems in equilibrium.  We will therefore treat this postulate
 as a given.  Of course, there are many interesting situations involving systems that are *not* in equilibrium.  We will
@@ -273,9 +275,9 @@ of A being in *one particular microstate* whose energy is :math:`E_A`?
 
 We can reason this out in a series of steps, using each of our assumptions in turn.
 
-1. The system can be in :math:`\Omega_T(E_T)` possible microstates.  By the PoEapP, every one of them is equally
-   probable.  Some of those microstates involve A being in the desired microstate and others do not.  We therefore
-   conclude:
+1. The complete system can be in :math:`\Omega_T(E_T)` possible microstates.  By the PoEapP, every one of them is
+   equally probable.  Some of those microstates involve A being in the desired microstate and others do not.  We
+   therefore conclude:
    
    *The probability of A being in the desired microstate equals the fraction of microstates of the whole system for
    which A is in that microstate.*
@@ -431,7 +433,7 @@ Every term of the sum has exactly the same value, so instead of summing we can j
 microstates:
 
 .. math::
-    p(E_A) = \Omega(E_A) \frac{e^{-E_A/kT}}{Z}
+    p(E_A) = \Omega_A(E_A) \frac{e^{-E_A/kT}}{Z}
     :label: macrostate-probability-2
 
 We now define another new quantity:
@@ -459,7 +461,7 @@ same form:
 
 
 .. math::
-    p(E_A) = \frac{e^{-\Phi/kT}}{Z}
+    p = \frac{e^{-\Phi/kT}}{Z}
     :label: maxwell-boltzmann-with-phi
 
 where the only difference is the quantity :math:`\Phi` appearing in the exponent.  This suggests the idea of
@@ -485,7 +487,7 @@ terms.  If the volume is held fixed, then :math:`PV` is a constant and can be ig
 proportionality constant, which gets normalized away when we require the probabilities to add to 1.  If the number of
 particles is fixed, then :math:`\mu N` is similarly a constant and can be ignored.  If you are working with microstates
 then :math:`TS` is zero.  (Think of a microstate as being a tiny macrostate with exactly one microstate, so
-:math:`\Omega`\ =1 and :math:`S`\ =0).
+:math:`\Omega` is 1 and :math:`S` is 0).
 
 Just as there are special names for common thermodynamic potentials, some of the corresponding ensembles also have
 special names.  These names are purely historical.  They do not have any particular meaning, but they are still widely
@@ -540,7 +542,7 @@ it is more and sometimes it is less.  It can be very useful to know how much a q
 Does it stay within a narrow range, or does it vary widely?  A useful measure of this is its *variance*, defined as
 
 .. math::
-    Var(x) \equiv \langle (x-\langle x \rangle)^2 \rangle
+    Var(x) \equiv \langle \left(x-\langle x \rangle \right)^2 \rangle
     :label: define-variance
 
 Remembering that :math:`\langle x \rangle` is a constant, we can derive a useful identity for the variance:
@@ -554,13 +556,13 @@ Remembering that :math:`\langle x \rangle` is a constant, we can derive a useful
 Another common measure of how much a value tends to vary is its *standard deviation*, which is simply the square root
 of the variance.  It is represented by the symbol :math:`\sigma`.  A good rule of thumb is that about 2/3 of the time,
 the value will be between :math:`\langle x \rangle-\sigma` and :math:`\langle x \rangle+\sigma`.  The exact fraction
-depends on the probability distribution, of course.  Will examine this further in the next chapter.
+depends on the probability distribution, of course.  We will examine this further in the next chapter.
 
 I mentioned before that the partition function has some interesting and useful properties.  One of them is that
 derivatives of :math:`\mathrm{log}(Z)` tend to give averages.  Remember that the partition function is defined as
 
 .. math::
-    Z = \sum e^{-\beta E} = \sum e^{-E/kT}
+    Z = \sum e^{-\beta \Phi} = \sum e^{-\Phi/kT}
 
 For example,
 
@@ -578,7 +580,7 @@ one).
     -kT \frac{\partial \mathrm{log}(Z)}{\partial x} &= -\frac{kT}{Z} \frac{\partial Z}{\partial x} \\
     &= -\frac{kT}{Z} \sum \frac{\partial e^{-\Phi/kT}}{\partial x} \\
     &= \frac{1}{Z} \sum \frac{\partial \Phi}{\partial x} e^{-\Phi/kT} \\
-    &= \langle \frac{\partial \Phi}{\partial x} \rangle
+    &= \left\langle \frac{\partial \Phi}{\partial x} \right\rangle
     :label: derive-logZ-state-variable
 
 

@@ -105,7 +105,7 @@ theorem.  Still, it is a useful guideline for how to think about systems in equi
     is therefore
     
     .. math::
-        \langle E_{kinetic} \rangle = 5 \cdot \frac{kT}{2}
+        \langle E_{kinetic} \rangle = 5N \cdot \frac{kT}{2}
 
 
 Thermodynamic Potentials as a Measure of Probability
@@ -133,7 +133,7 @@ A thermodynamic potential is, first and foremost, a measure of how probable it i
 state.  It appears in the exponent of the Maxwell-Boltzmann distribution.  Lower values of the potential indicate more
 likely states, while higher values indicate less likely states.
 
-Let us go through each term in the Gibbs free energy, and consider why each one should influence the probability.
+Let's go through each term in the Gibbs free energy, and consider why each one should influence the probability.
 
 The first term is simply the energy of the system of interest.  All else being equal, states with lower energy are more
 likely to occur.  Why?  Because the energy of the complete system A+B is conserved.  Less energy in A means more
@@ -382,7 +382,7 @@ have twice the volume, twice the energy, and twice the entropy of either of the 
 temperature, pressure, and chemical potential will be identical to those for the component systems.
 
 If you multiply an intensive variable by an extensive one, the result is an extensive variable.  Thermodynamic
-potentials contain many such products.  :math:`PV`, :math:`TS`, and :math:`\mu V` each multiply an intensive variable
+potentials contain many such products.  :math:`PV`, :math:`TS`, and :math:`\mu N` each multiply an intensive variable
 by an extensive one to produce an extensive variable.  Thermodynamic forces are always intensive.  Thermodynamic
 potentials are always extensive.
 
@@ -420,8 +420,8 @@ to change your results.  In many (but not all!) cases, the difference is negligi
 difference between internal energy and total energy is that they are offset by a constant.  But the zero point of energy
 is always arbitrary; adding a constant never affects behavior.  So once again, it is irrelevant which one you use.
 
-In summary, the choice of whether to use internal energy or total energy *by definition* cannot affect any of your
-results.  If it does affect them, that proves you have defined the internal energy incorrectly. But it is very easy to
-define it incorrectly, such as by neglecting a contribution that actually does matter.  And the only way to make sure is
-to repeat your calculation using the total energy and verify that the results do not change!  So why make the
-distinction in the first place?
+In summary, the choice to use internal energy instead of total energy *by definition* is only correct if it does not
+affect any of your results.  If it does affect them, that proves you have defined the internal energy incorrectly. But
+it is very easy to define it incorrectly, such as by neglecting a contribution that actually does matter.  And the only
+way to make sure is to repeat your calculation using the total energy and verify that the results do not change!  So why
+make the distinction in the first place?

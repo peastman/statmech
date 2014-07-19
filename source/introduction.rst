@@ -22,7 +22,7 @@ It grew out of thermodynamics, an earlier theory that described the behavior of 
 experiment, and made no claims about why those laws happened to hold.  Caloric was supposed to be a substance much like
 other forms of matter.  But this view turned out to be incorrect.  Heat is actually an emergent phenomenon: a
 mathematical quantity defined in terms of a more detailed theory (the movement of individual atoms).  The "laws" of
-thermodyamics can be derived from that deeper theory by applying statistical techniques.  If you ignore the details of
+thermodynamics can be derived from that deeper theory by applying statistical techniques.  If you ignore the details of
 how each atom is moving, you find they collectively behave in a way that resembles a continuous fluid.  That is what
 statistical mechanics is all about: deriving high level descriptions by starting from lower level ones and then
 averaging out lots of details.

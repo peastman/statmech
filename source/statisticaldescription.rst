@@ -477,6 +477,10 @@ distributions.  Several of the most common thermodynamic potentials have special
     \end{array}
     :label: thermodynamic-potentials
 
+The term *free energy* can also be used more generally to refer to any thermodynamic potential that describes the
+probabilities of macrostates (that is, any thermodynamic potential that includes a :math:`TS` term).  The Helmholtz
+free energy, the Gibbs free energy, and the grand potential are all examples of free energies.
+
 You can think about the differences between thermodynamic potentials in two equivalent ways.  First, you can think of
 starting with :math:`E` and then adding in terms based on the ensemble you want to use.  You want volume to be
 variable?  Then add :math:`PV`.  You want to work with macrostates instead of microstates?  Subtract :math:`TS`.  And

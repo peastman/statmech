@@ -18,4 +18,4 @@ Contents
    largenumbers.rst
    interpretation.rst
    thermodynamics.rst
-
+   phasetransitions.rst

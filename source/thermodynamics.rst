@@ -1,11 +1,12 @@
 Thermodynamics
 ##############
 
-Statistical mechanics grew out of an earlier field called thermodynamics.  It grew up around it, and then subsumed it.
-What we now call "classical thermodynamics" was developed over a period of several hundred years, but much of the most
-important work was done in just a few decades from the 1820s through the 1850s.  It was concerned with the thermal
-properties of liquids and gasses.  It was largely developed by people who wanted to learn how to make better steam
-engines.
+Statistical mechanics grew out of an earlier field called thermodynamics, which was concerned with the thermal
+properties of liquids and gasses.  It grew up around it, and then subsumed it.  What we now call "classical
+thermodynamics" was developed over a period of several hundred years, but much of the most important work was done in
+just a few decades from the 1820s through the 1850s.  It is not at all a coincidence, of course, that this burst of
+activity coincided with the industrial revolution and the development of the locomotive.  Classical thermodynamics was
+largely developed by people who wanted to learn how to make better steam engines.
 
 Statistical mechanics has come a long way from these humble beginnings, but thermodynamics is still an important field
 in its own right.  In this chapter, I will discuss some of the most important results of classical thermodynamics as
@@ -226,7 +227,7 @@ thermodynamics then simplifies to :math:`dE=dQ`.  We can use the chain rule to r
     &= T dS
     :label: dQ=TdS
 
-There is a direct connection between heat and entropy.  If you add heat to a system, you raise its entropy.  If you
+This shows a direct connection between heat and entropy.  If you add heat to a system, you raise its entropy.  If you
 remove heat, you lower its entropy.  This is just our assumption that :math:`\Omega` increases with energy, coming back
 in yet another form.
 
@@ -251,6 +252,68 @@ So the only possibility is that :math:`T_A > T_B`.  Heat is flowing from a warme
 entropy of the system increases.  This leads us to the following very important conclusion: *whenever heat flows between
 two bodies, the total entropy of the system increases*.  As we will see shortly, this has important consequences for
 anyone trying to build a steam engine.
+
+
+Heat Capacity
+=============
+
+If you add heat to a system, you increase its energy and therefore its temperature as well.  The proportionality
+constant is called the *heat capacity*:
+
+.. math::
+    C \equiv \frac{dQ}{dT}
+    :label: heat-capacity
+
+If the heat capacity is large, that means you can add a lot of heat to the system while having only a small effect on
+the temperature.  Heat capacity is an extensive property; if you double the size of the system, you also double its heat
+capacity.
+
+As in the previous section, assume the volume is held fixed so the system does no mechanical work.  In that case, we
+can use equation :eq:`dQ=TdS` to write the heat capacity at constant volume:
+
+.. math::
+    C_V &= \frac{(T dS)}{dT} \\
+    &= T \left(\frac{\partial S}{\partial T}\right)_V
+    :label: heat-capacity-constant-V
+
+The subscript V refers to the fact that we are keeping the volume fixed.  The expression
+:math:`\left(\frac{\partial S}{\partial T}\right)_V` is an example of a notation that is common in thermodynamics, and
+usually used without any explanation of what it really means.  In this case, :math:`S=k \mathrm{log}(\Omega(E,V))`.
+That cannot in any way be considered a function of :math:`T`!  In fact, the temperature is defined by a *derivative* of
+:math:`S`.  It describes the distribution of microstates with energy.  It makes no sense to speak of the "temperature"
+of a single microstate, or the density of states with a given temperature!  So what do we mean by writing a derivative
+of :math:`S` with respect to :math:`T`?
+
+As the system interacts with the heat bath, its energy (and hence entropy) continuously fluctuate.  So :math:`S` is not
+even well defined in this situation.  On the other hand, we can still compute the *average* entropy
+:math:`\langle S \rangle`.  That *is* a well defined function of temperature, so we can reasonably compute its derivative
+with respect to :math:`T`.  That is what the partial derivative in equation :eq:`heat-capacity-constant-V` really means:
+the derivative of :math:`\langle S \rangle`, not of :math:`S` itself.  Of course, the average will vary depending on
+what ensemble we use to calculate it.  We therefore add a subscript to specify the ensemble: in this case, that
+:math:`V` is held fixed.
+
+Of course, entropy was first known as an experimental quantity before it was later explained as a statistical quantity.
+If you think about it in those terms, there is nothing confusing about any of this.  Just measure the entropy of a
+system, and see how it varies with temperature.  You find that the result differs depending on whether you fix the
+volume or the pressure during your experiment, so of course you add a subscript to indicate which one you measured.
+Simple, right?  Just remember that your experiment is actually measuring the *average* entropy over a range of
+macrostates, not the entropy of any one specific macrostate.
+
+If you choose to fix pressure instead of volume, equation :eq:`dQ=TdS` changes to
+
+.. math::
+    dE = T dS = dQ-P dV
+
+and the heat capacity becomes
+
+.. math::
+    C_P &= \frac{(T dS+P dV)}{dT} \\
+    &= T \left(\frac{\partial S}{\partial T}\right)_P + P \left(\frac{\partial V}{\partial T}\right)_P
+    :label: heat-capacity-constant-P
+
+It can be shown that for nearly all realistic systems, :math:`C_P > C_V`.  This is easy to understand.  If you let the
+system expand as you add heat, it performs work on its environment.  That reduces the energy of the system.  Energy used
+to perform work is energy that doesn't go into raising the temperature, so :math:`T` increases more slowly.
 
 
 The Ideal Gas Law
@@ -358,6 +421,7 @@ it to the energy absorbed from the hot bath:
     &= \frac{Q_H-Q_C}{Q_H} \\
     &= 1-\frac{Q_C}{Q_H} \\
     &= 1-\frac{T_C \Delta S_C}{T_H \Delta S_H}
+    :label: define-efficiency
 
 The second law of thermodynamics requires that the total entropy of the whole system must increase or stay constant over
 the cycle.  The working body ends up in exactly the same state it began in, so its entropy does not change.  The engine

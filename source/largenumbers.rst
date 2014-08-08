@@ -21,6 +21,8 @@ The main goal of this chapter is to demonstrate this fact.  We will do that firs
 through a very general theorem.
 
 
+.. _the-binomial-distribution:
+
 The Binomial Distribution
 =========================
 

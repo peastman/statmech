@@ -349,3 +349,132 @@ freedom would increase monotonically with energy.
 
 Negative temperature *is* still a well defined concept, but it is also an esoteric one.  It is rare for a real
 physical system to have negative temperature, and it is quite possible you will never encounter one.
+
+
+Non-Interacting Spins
+=====================
+
+Let's start with the :math:`J=0` case, since it is the simplest one to deal with.  Consider just a single isolated spin.
+It has only two microstates, :math:`\sigma=1` and :math:`\sigma=-1`, so we can immediately write down the partition
+function:
+
+.. math::
+    Z = e^{H/kT} + e^{-H/kT}
+    :label: single-spin-partition-function
+
+The average value of the spin is
+
+.. math::
+    \langle \sigma \rangle &= (1)p(\sigma=1) + (-1)p(\sigma=-1) \\
+    &= \frac{e^{H/kT} - e^{-H/kT}}{e^{H/kT} + e^{-H/kT}} \\
+    &= \mathrm{tanh}(H/kT)
+    :label: single-spin-average
+
+Notice that the magnetization only depends on :math:`H` and :math:`T` through their ratio :math:`H/T`.  If you change
+the external magnetic field, that rescales the temperature dependence but otherwise does not affect the behavior.
+
+In the limit of low temperature (or equivalently, of high magnetic field), one of the two exponentials goes to zero.
+If :math:`H>0`, :math:`e^{-H/kT} \to 0` and :math:`\langle \sigma \rangle \to 1`.  Alternatively if :math:`H<0`, then
+:math:`e^{H/kT} \to 0` and :math:`\langle \sigma \rangle \to -1`.  The spin simply aligns with the magnetic field.
+
+In the limit of high temperature (or low magnetic field), both exponentials go to 1 and
+:math:`\langle \sigma \rangle \to 0`.  In this case, the spin is equally likely to be found in either state, so the
+average magnetization is zero.
+
+Now consider the full Ising model.  Because the spins do not interact with each other, each one simply behaves as
+described above.  The average over spins is identical to the ensemble average for a single spin, and the magnetization
+is given by
+
+.. math::
+    M = \mathrm{tanh}(H/kT)
+    :label: noninteracting-ising-magnetization
+
+
+Mean Field Theory
+=================
+
+Now consider the case where :math:`J \ne 0`.  In principle we just need to write down the free energy and find the state
+that minimizes it for every value of :math:`H` and :math:`T`.  That's easier said than done!  In one dimension, the
+calculation is reasonably straightforward.  In two dimensions it is extreme difficult.  In three dimensions, it has
+never been successfully solved.  Sadly, this is typical of most real world physics problems: they are too complicated to
+solve exactly.  We need to use a different approach: either make simplifying assumptions that let us solve them
+approximately, or use a computer to solve them numerically.
+
+A very common technique for studying phase transitions is called *Mean Field Theory*.  This isn't so much a specific
+approximation as a general idea that can be applied in many ways to many kinds of problems.  It always involves
+averaging over fluctuations, replacing details with a simpler calculation that (hopefully) matches them in an average
+sense.
+
+To motivate the particular approximation we will use, notice that the energy of the Ising model can be rewritten as
+
+.. math::
+    E &= -\sum_{i=0}^N \sigma_i \left(H+J \sum_{<j>} \sigma_j \right) \\
+    &= -\sum_{i=0}^N \sigma_i \left(H+2dJ \langle \sigma_j \rangle^\prime \right)
+    :label: ising-hamiltonian-version-2
+
+where the notation :math:`\langle \dots \rangle^\prime` indicates that we are averaging only over the :math:`2d` nearest neighbors
+of spin :math:`i`.  You can think of this as measuring the average magnetic field spin :math:`i` experiences from the
+other spins it interacts with.  We now make the following approximation: replace :math:`\langle \sigma_j \rangle^\prime`
+with :math:`\langle \sigma_i \rangle`.  That is, we assume the average over each spin's nearest neighbors simply equals
+the average over the entire system.  This allows us to write
+
+.. math::
+    E \approx -(H+2dJM)\sum_{i=0}^N \sigma_i
+    :label: mean-field-ising-hamiltonian
+
+But this has precisely the same form as the non-interacting Ising model we studied in the previous section!  The
+external magnetic field has just been replaced with an effective "mean field" :math:`H+2dJM` that combines the external
+field with the average field produced by the nearest neighbors of each spin.  We can therefore use equation
+:eq:`noninteracting-ising-magnetization` to write
+
+.. math::
+    M = \mathrm{tanh}\left(\frac{H+2dJM}{kT}\right)
+    :label: mean-field-ising-magnetization
+
+Notice that the magnetization :math:`M` appears on both sides of this equation.  We need to solve it to find which
+values of :math:`M` produce self-consistent solutions in the mean field approximation.  If there is more than one
+solution, we can evaluate the free energy of each one to determine which is most stable.
+
+We can easily do this numerically for any values of :math:`H`, :math:`J`, and :math:`T`.  Figure ??? shows the left and
+right sides of equation :eq:`mean-field-ising-magnetization` plotted against each other for various values.  For
+simplicity, I will only consider the case :math:`J>0`.  There are a few main possibilities:
+
+* If :math:`2dJ/kT \le 1`, there is exactly one solution.  It corresponds to :math:`M=0` if :math:`H=0` (Figure ???(a)).
+  Otherwise, :math:`M` has the same sign as :math:`H` (Figure ???(b)).  The system is magnetized by the applied field.
+
+* If :math:`2dJ/kT>1`, there may be up to three solutions (Figure ???(c)).  Whichever one has the lowest free energy
+  will be the stable one.  As long as the temperature is low enough for energy to dominate over entropy, that will
+  always be the one in which the system is most strongly magnetized in the direction of :math:`H`.  If :math:`H=0`, both
+  the magnetized solutions have equal energy and are equally stable.  (The solution near :math:`M=0` is still unstable,
+  being a state of high energy.)
+
+* If :math:`H` is sufficiently large there is only one solution (Figure ???(d)).  The only possibility is that the
+  system is magnetized by the applied field.
+
+Combining these observations yields the phase diagram shown in Figure ???.  (I know, it doesn't look like much!)  At low
+temperature the phase diagram is divided into two phases corresponding to :math:`M>0` and :math:`M<0`.  The stable phase is the one
+for which :math:`M` has the same sign as :math:`H`, but the magnetization remains nonzero even in the limit
+:math:`H \to 0`.  The system therefore undergoes a phase transition in which :math:`M` changes discontinuously as it
+crosses over the coexistence curve at :math:`H=0`.  These phases are said to be *ferromagnetic*, in reference to the way
+iron (*ferrum* in Latin) can be magnetized by an external field, and then remains magnetized even when the external
+field is removed.
+
+The size of the discontinuity decreases with increasing temperature, and it reaches zero at the critical temperature
+:math:`T_C=2dJ/k`.  That is, the coexistence curve ends in a critical point.  Beyond :math:`T_C`, there is only a single
+phase in which :math:`M` changes continuously and is always parallel to :math:`H`.  Unlike the ferromagnetic phases,
+:math:`M=0` whenever :math:`H=0`.  This phase is said to be *paramagnetic*.
+
+All of this sounds reasonable, but is it correct?  Mean field theory is an approximation.  How good an approximation is
+it?  How accurate are its results?
+
+Our simplification was to replace an average over the nearest neighbors of one spin by an average over all spins in the
+entire system.  Intuitively, we might expect that the more neighbors each spin has, the better an approximation this
+will be.  Indeed, this expectation turns out to be correct.
+
+In one dimension where each spin has only two neighbors, mean field theory fails rather badly.  The accurate calculation
+show that the ferromagnetic phase is only stable at :math:`T=0`.  For any nonzero temperature, the system is
+paramagnetic.  This is qualitatively very different from the predictions of mean field theory.
+
+In two dimensions where each spin has four neighbors, it does much better.  Mean field theory gives a qualitatively
+correct description of the phase diagram.  Its quantitative predictions are not exactly right, but they are still in
+the correct general range.  In three dimensions they are even closer.

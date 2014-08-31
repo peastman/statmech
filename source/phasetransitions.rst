@@ -67,9 +67,14 @@ true for every other macroscopic variable.  The stable phase is the one whose fr
 that affects the free energy can also affect the phase.
 
 A diagram showing the stable phase of a system for every combination of macroscopic variables is called its *phase
-diagram*.  Figure ??? shows a schematic phase diagram for water as a function of temperature and pressure.  The real
-phase diagram is much more complicated, of course; as I said before, water actually has a huge number of different
-phases.  But this simplified diagram gives the essential features for the current discussion.
+diagram*.  :numref:`Figure,water phase diagram` shows a schematic phase diagram for water as a function of temperature
+and pressure.  The real phase diagram is much more complicated, of course; as I said before, water actually has a huge
+number of different phases.  But this simplified diagram gives the essential features for the current discussion.
+
+.. figure:: images/water_phase_diagram.*
+    :align: center
+
+    :autonumber:`Figure,water phase diagram`. Schematic phase diagram for water
 
 Notice that the line dividing the solid and liquid phases is close to a straight vertical line; changing the pressure
 has very little effect on the transition temperature.  The solid and liquid phases are both dense and mostly
@@ -143,11 +148,11 @@ This tells us the slope of the curve is proportional to the latent heat :math:`E
 Critical Points
 ===============
 
-Take another look at Figure ???.  There is an arrow at the top of the solid-liquid coexistence curve to indicate it goes
-on forever.  No matter how high you make the pressure, there will always be two distinct phases and a transition
-between them.  But the liquid-gas transition is another matter.  The coexistence curve only goes so far, then comes to
-an end.  The point at which it ends is called a *critical point*.  Beyond that point, there are no longer separate
-liquid and gas phases, just a single phase called a *supercritical fluid*.
+Take another look at :numref:`Figure,water phase diagram`.  There is an arrow at the top of the solid-liquid coexistence
+curve to indicate it goes on forever.  No matter how high you make the pressure, there will always be two distinct
+phases and a transition between them.  But the liquid-gas transition is another matter.  The coexistence curve only goes
+so far, then comes to an end.  The point at which it ends is called a *critical point*.  Beyond that point, there are no
+longer separate liquid and gas phases, just a single phase called a *supercritical fluid*.
 
 To understand why this happens, consider how the liquid and gas phases change as you increase the pressure.  The liquid
 phase is difficult to compress, so pressure changes have little effect on it.  The gas phase, on the other hand, is very
@@ -226,9 +231,14 @@ The Ising Model
 
 Now that you have a qualitative understanding of how phase transitions happen, I want to take one example and work
 through it in some detail.  The example, called the *Ising model*, is a popular model for magnetic solids.  Imagine a
-collection of atoms arranged in a rectangular grid, as shown in Figure ???.  Each atom has an intrinsic magnetic moment
-called its *spin*.  The spin of an atom can take on two possible values, called "up" and "down", as indicated by arrows
-in the figure.
+collection of atoms arranged in a rectangular grid, as shown in :numref:`Figure,ising model`.  Each atom has an
+intrinsic magnetic moment called its *spin*.  The spin of an atom can take on two possible values, called "up" and
+"down", as indicated by arrows in the figure.
+
+.. figure:: images/ising_model.*
+    :align: center
+    
+    :autonumber:`Figure,ising model`. An Ising model
 
 The energy of the system is given by
 
@@ -242,10 +252,11 @@ to the external magnetic field.  The second sum is taken only over pairs (i,j) t
 and it describes the interaction of the spins with each other.  The interaction energy of a pair of adjacent spins is
 minimum when they point in the same direction if :math:`J>0`, or when they point in opposite directions if :math:`J<0`.
 
-Figure ??? shows a two dimensional grid of atoms, but you can just as easily define one dimensional or three dimensional
-Ising models.  In fact, you can even define Ising models in more than three dimensions, though of course that no longer
-corresponds to any physical arrangement of atoms.  The dimensionality determines how many terms appear in the second sum
-of equation :eq:`ising-hamiltonian`.  In :math:`d` dimensions, every spin has :math:`2d` nearest neighbors.
+:numref:`Figure,ising model` shows a two dimensional grid of atoms, but you can just as easily define one dimensional or
+three dimensional Ising models.  In fact, you can even define Ising models in more than three dimensions, though of
+course that no longer corresponds to any physical arrangement of atoms.  The dimensionality determines how many terms
+appear in the second sum of equation :eq:`ising-hamiltonian`.  In :math:`d` dimensions, every spin has :math:`2d`
+nearest neighbors.
 
 An important macroscopic property of the Ising model is the *magnetization* defined by
 
@@ -451,13 +462,18 @@ simplicity, I will only consider the case :math:`J>0`.  There are a few main pos
 * If :math:`H` is sufficiently large there is only one solution (Figure ???(d)).  The only possibility is that the
   system is magnetized by the applied field.
 
-Combining these observations yields the phase diagram shown in Figure ???.  (I know, it doesn't look like much!)  At low
-temperature the phase diagram is divided into two phases corresponding to :math:`M>0` and :math:`M<0`.  The stable phase is the one
-for which :math:`M` has the same sign as :math:`H`, but the magnetization remains nonzero even in the limit
-:math:`H \to 0`.  The system therefore undergoes a phase transition in which :math:`M` changes discontinuously as it
-crosses over the coexistence curve at :math:`H=0`.  These phases are said to be *ferromagnetic*, in reference to the way
-iron (*ferrum* in Latin) can be magnetized by an external field, and then remains magnetized even when the external
-field is removed.
+.. figure:: images/ising_phase_diagram.*
+    :align: center
+    
+    :autonumber:`Figure,ising phase diagram`. Ising model phase diagram
+
+Combining these observations yields the phase diagram shown in :numref:`Figure,ising phase diagram`.  (I know, it
+doesn't look like much!)  At low temperature the phase diagram is divided into two phases corresponding to :math:`M>0`
+and :math:`M<0`.  The stable phase is the one for which :math:`M` has the same sign as :math:`H`, but the magnetization
+remains nonzero even in the limit :math:`H \to 0`.  The system therefore undergoes a phase transition in which :math:`M`
+changes discontinuously as it crosses over the coexistence curve at :math:`H=0`.  These phases are said to be
+*ferromagnetic*, in reference to the way iron (*ferrum* in Latin) can be magnetized by an external field, and then
+remains magnetized even when the external field is removed.
 
 The size of the discontinuity decreases with increasing temperature, and it reaches zero at the critical temperature
 :math:`T_C=2dJ/k`.  That is, the coexistence curve ends in a critical point.  Beyond :math:`T_C`, there is only a single
@@ -472,7 +488,7 @@ entire system.  Intuitively, we might expect that the more neighbors each spin h
 will be.  Indeed, this expectation turns out to be correct.
 
 In one dimension where each spin has only two neighbors, mean field theory fails rather badly.  The accurate calculation
-show that the ferromagnetic phase is only stable at :math:`T=0`.  For any nonzero temperature, the system is
+shows that the ferromagnetic phase is only stable at :math:`T=0`.  For any nonzero temperature, the system is
 paramagnetic.  This is qualitatively very different from the predictions of mean field theory.
 
 In two dimensions where each spin has four neighbors, it does much better.  Mean field theory gives a qualitatively

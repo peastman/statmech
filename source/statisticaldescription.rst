@@ -37,11 +37,17 @@ dividing it into very small bins.  For the classical particle, we treat all posi
 choose :math:`\delta x` and :math:`\delta p` sufficiently small, the exact values turn out to have no effect on most
 of our results.
 
-This is illustrated in Figure ???, which shows the space of possible microstates for a single particle in one dimension.
+This is illustrated in :numref:`Figure,phase space`, which shows the space of possible microstates for a single particle in one dimension.
 Each microstate is defined by its values of :math:`x` and :math:`p`.  This space is known as *phase space*, and we will
 use it often.  More generally, a system of :math:`N` particles in :math:`d` dimensions has a :math:`2dN` dimensional
-phase space.  Every point (or rather, each tiny volume as shown in Figure ???) in this phase space represents a
+phase space.  Every point (or rather, each tiny volume as shown in :numref:`Figure,phase space`) in this phase space represents a
 microstate.
+
+.. figure:: images/phase_space.*
+    :align: center
+    
+    :autonumber:`Figure,phase space`. The phase space of a single particle in one dimension.  Each axis is divided into
+    tiny intervals.  The volume defined by the intersection of one interval from each axis is a microstate.
 
 For typical systems, the number of microstates is huge and they describe the system in far more detail than we usually
 care about.  Consider a box filled with gas.  You have no way to measure the exact position and momentum of every last

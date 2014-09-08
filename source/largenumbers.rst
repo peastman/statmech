@@ -87,8 +87,14 @@ The probability is then
 
 This is a special case of the *binomial distribution*.  (In the general case, the probability for a particle to be on
 the left side of the room could be different from its probability to be on the right side, but for this example we can
-ignore that.)  It is shown in Figure ??? for several values of :math:`N`.  Notice how, as :math:`N` increases, the
-probability becomes steadily more concentrated around its midpoint.
+ignore that.)  It is shown in :numref:`Figure,binomial` for several values of :math:`N`.  Notice how, as :math:`N`
+increases, the probability becomes steadily more concentrated around its midpoint.
+
+.. figure:: images/binomial.*
+    :align: center
+    
+    :autonumber:`Figure,binomial`. The binomial distribution for several values of :math:`N`.  To make them easier to
+    compare, all the curves have been normalized to go from 0 to 1 along each axis.
 
 The name comes from the fact that it has the same form as the terms in the *binomial series*:
 

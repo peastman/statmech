@@ -446,34 +446,44 @@ Notice that the magnetization :math:`M` appears on both sides of this equation. 
 values of :math:`M` produce self-consistent solutions in the mean field approximation.  If there is more than one
 solution, we can evaluate the free energy of each one to determine which is most stable.
 
-We can easily do this numerically for any values of :math:`H`, :math:`J`, and :math:`T`.  Figure ??? shows the left and
-right sides of equation :eq:`mean-field-ising-magnetization` plotted against each other for various values.  For
-simplicity, I will only consider the case :math:`J>0`.  There are a few main possibilities:
+.. figure:: images/mean_field.*
+    :align: center
+    
+    :autonumber:`Figure,mean field`. :math:`y=M` and :math:`y=\mathrm{tanh}\left(\frac{H+2dJM}{kT}\right)` plotted
+    against each other for various values of :math:`H` and :math:`J`.  The points where they intersect are solutions
+    to equation :eq:`mean-field-ising-magnetization`.  (a) :math:`H=0`, :math:`\frac{2dJ}{kT}=\frac{1}{2}`.
+    (b) :math:`H=\frac{kT}{2}`, :math:`\frac{2dJ}{kT}=\frac{1}{2}`.  (c) :math:`H=0`, :math:`\frac{2dJ}{kT}=2`.
+    (d) :math:`H=kT`, :math:`\frac{2dJ}{kT}=2`.
+    
+We can easily do this numerically for any values of :math:`H`, :math:`J`, and :math:`T`.  :numref:`Figure,mean field`
+shows the left and right sides of equation :eq:`mean-field-ising-magnetization` plotted against each other for various
+values.  For simplicity, I will only consider the case :math:`J>0`.  There are a few main possibilities:
 
-* If :math:`2dJ/kT \le 1`, there is exactly one solution.  It corresponds to :math:`M=0` if :math:`H=0` (Figure ???(a)).
-  Otherwise, :math:`M` has the same sign as :math:`H` (Figure ???(b)).  The system is magnetized by the applied field.
+* If :math:`2dJ/kT \le 1`, there is exactly one solution.  It corresponds to :math:`M=0` if :math:`H=0`
+  (:numref:`Figure,mean field`\ (a)).  Otherwise, :math:`M` has the same sign as :math:`H`
+  (:numref:`Figure,mean field`\ (b)).  The system is magnetized by the applied field.
 
-* If :math:`2dJ/kT>1`, there may be up to three solutions (Figure ???(c)).  Whichever one has the lowest free energy
-  will be the stable one.  As long as the temperature is low enough for energy to dominate over entropy, that will
-  always be the one in which the system is most strongly magnetized in the direction of :math:`H`.  If :math:`H=0`, both
-  the magnetized solutions have equal energy and are equally stable.  (The solution near :math:`M=0` is still unstable,
-  being a state of high energy.)
+* If :math:`2dJ/kT>1`, there may be up to three solutions (:numref:`Figure,mean field`\ (c)).  Whichever one has the
+  lowest free energy will be the stable one.  As long as the temperature is low enough for energy to dominate over
+  entropy, that will always be the one in which the system is most strongly magnetized in the direction of :math:`H`.
+  If :math:`H=0`, both the magnetized solutions have equal energy and are equally stable.  (The solution near
+  :math:`M=0` is still unstable, being a state of high energy.)
 
-* If :math:`H` is sufficiently large there is only one solution (Figure ???(d)).  The only possibility is that the
-  system is magnetized by the applied field.
+* If :math:`H` is sufficiently large there is only one solution (:numref:`Figure,mean field`\ (d)).  The only
+  possibility is that the system is magnetized by the applied field.
 
 .. figure:: images/ising_phase_diagram.*
     :align: center
     
     :autonumber:`Figure,ising phase diagram`. Ising model phase diagram
 
-Combining these observations yields the phase diagram shown in :numref:`Figure,ising phase diagram`.  (I know, it
-doesn't look like much!)  At low temperature the phase diagram is divided into two phases corresponding to :math:`M>0`
-and :math:`M<0`.  The stable phase is the one for which :math:`M` has the same sign as :math:`H`, but the magnetization
-remains nonzero even in the limit :math:`H \to 0`.  The system therefore undergoes a phase transition in which :math:`M`
-changes discontinuously as it crosses over the coexistence curve at :math:`H=0`.  These phases are said to be
-*ferromagnetic*, in reference to the way iron (*ferrum* in Latin) can be magnetized by an external field, and then
-remains magnetized even when the external field is removed.
+Combining these observations yields the phase diagram shown in :numref:`Figure,ising phase diagram`.  At low temperature
+the phase diagram is divided into two phases corresponding to :math:`M>0` and :math:`M<0`.  The stable phase is the one
+for which :math:`M` has the same sign as :math:`H`, but the magnetization remains nonzero even in the limit
+:math:`H \to 0`.  The system therefore undergoes a phase transition in which :math:`M` changes discontinuously as it
+crosses over the coexistence curve at :math:`H=0`.  These phases are said to be *ferromagnetic*, in reference to the way
+iron (*ferrum* in Latin) can be magnetized by an external field, and then remains magnetized even when the external
+field is removed.
 
 The size of the discontinuity decreases with increasing temperature, and it reaches zero at the critical temperature
 :math:`T_C=2dJ/k`.  That is, the coexistence curve ends in a critical point.  Beyond :math:`T_C`, there is only a single

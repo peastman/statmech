@@ -19,3 +19,4 @@ Contents
    interpretation.rst
    thermodynamics.rst
    phasetransitions.rst
+   friction.rst

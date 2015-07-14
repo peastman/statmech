@@ -117,3 +117,74 @@ These two effects, fluctuations and dissipation, are inseparable from each other
 same mechanism: the interaction of the macroscopic variable with a heat bath.  That is the central message of this
 chapter.  And because they have the same cause, they are guaranteed to obey certain relationships.  All that remains is
 to derive what those relationships are.
+
+
+Brownian Motion
+===============
+
+Let's write Newton's Second Law for a particle undergoing Brownian motion in water: :math:`F = m \ddot{x}`.  (For
+simplicity we will work in one dimension, but the generalization to three dimensions is trivial.  Just turn :math:`x`
+and :math:`F` into vectors.)  In this
+equation, :math:`F` is the force exerted on the particle by the surrounding water molecules.  The details of those
+interactions are enormously complicated and constantly changing, so we need to look for an approximate description of
+it.  What would be a reasonable approximation?
+
+The first thing we might try is using the assumption of linear response, so the force at any moment is proportional to
+the velocity: :math:`m \ddot{x} = -\gamma \dot{x}`.  The parameter :math:`\gamma` is called the *friction coefficient*.
+The solution to this differential equation is trivial:
+
+.. math::
+    \dot{x}(t) = \dot{x}(0) \cdot e^{-\gamma t/m}
+    :label: decaying-velocity
+
+For a truly macroscopic system, this description would be sufficient.  Whatever velocity the object starts with, it
+exponentially decays toward zero.  But Brownian motion is not precisely a macroscopic phenomenon.  It applies to
+particles that are much larger than a water molecule, but still small enough that you need a microscope to see them.
+And the whole point is that their velocity does *not* decay to zero.  They remain in motion due to the constant
+collisions with water molecules.  By ignoring the forces applied by those random collisions, we have simplified things
+too far.
+
+We can still assume linear response, but now we will only take it as a statement about the *average* force on the
+particle.  At any given instant, the force could be different.  This leads to the following equation:
+
+.. math::
+    m \ddot{x} = -\gamma \dot{x} + R
+    :label: brownian-equation
+
+:math:`R` is a "random" force describing the rapidly fluctuating interactions between the particle and water
+molecules.  We cannot hope to write an exact function for it, but we can still describe it statistically.  First, of
+course, it must have a mean value of 0: :math:`\langle R \rangle = 0`.  That is because we already separated out
+the average force into its own term.  We also assume it is independent of :math:`x`.  The interaction between the
+particle and the water is the same no matter where in the water bath the particle is located.
+
+Because it varies so rapidly and chaotically, we assume it is uncorrelated with itself except over very short time
+spans.  More precisely, we assume there is some maximum time :math:`\tau` over which it has any correlations, so that
+
+.. math::
+    \langle R(t) R(t+\delta t) \rangle = 0 \text{ if } \delta t > \tau
+    :label: langevin-noise-uncorrelated
+
+This property has an important consequence.  In most situations, we do not care about the instantaneous value of
+:math:`R`, only its integral over some time period that is long compared to :math:`\tau`.  We can break up that
+integral into many pieces, each covering a span of length :math:`\tau`:
+
+.. math::
+    \int_0^t R(t') dt' = \int_0^\tau R(t') dt' + \int_\tau^{2 \tau} R(t') dt' + \int_{2 \tau}^{3 \tau} R(t') dt' + \dots
+    :label: integrated-noise-as-sum
+
+So the integral is a sum of independent terms, each drawn from the same distribution.  That is exactly the sort of
+case we studied in Chapter :ref:`very-large-numbers`, so we can immediately apply the Central Limit Theorem and conclude
+that the integral obeys a normal distribution with mean 0 (because :math:`\langle R \rangle = 0`), and whose standard
+deviation scales with :math:`\sqrt{t}`.  All that, without evaluating a single integral or knowing anything about the
+details of :math:`R(t)`!
+
+Before we dive into the math, let's take a moment to look at equation :eq:`brownian-equation` and try to understand it
+intuitively.  The are two terms on the right side.  The first one always points opposite to the velocity, so it tends to
+slow the particle down.  If it were the only term, it would lead to exponentially decaying velocity as in equation
+:eq:`decaying-velocity`.  The second term prevents that from happening by constantly applying random kicks to the
+particle.  Essentially, there is one term that removes energy and one term that adds energy.  When the system is in
+equilibrium, the two terms will exactly balance out so the average energy remains constant.  The magnitude of the random
+force will of course depend on temperature: the hotter the system, the faster the water molecules will be moving, and
+the harder they will hit the particle.  We therefore expect there should be some relationship between the temperature,
+the friction coefficient, and the magnitude of the random force.  As we will see soon, that is indeed the case.
+

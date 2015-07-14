@@ -1,3 +1,5 @@
+.. _very-large-numbers:
+
 Mathematical Interlude: Very Large Numbers
 ##########################################
 

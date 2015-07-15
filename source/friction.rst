@@ -152,21 +152,29 @@ particle.  At any given instant, the force could be different.  This leads to th
     :label: brownian-equation
 
 :math:`R` is a "random" force describing the rapidly fluctuating interactions between the particle and water
-molecules.  We cannot hope to write an exact function for it, but we can still describe it statistically.  First, of
-course, it must have a mean value of 0: :math:`\langle R \rangle = 0`.  That is because we already separated out
-the average force into its own term.  We also assume it is independent of :math:`x`.  The interaction between the
-particle and the water is the same no matter where in the water bath the particle is located.
+molecules.  We cannot hope to write an exact function for it, but we can still describe it statistically.  We will make
+the following assumptions about it:
 
-Because it varies so rapidly and chaotically, we assume it is uncorrelated with itself except over very short time
-spans.  More precisely, we assume there is some maximum time :math:`\tau` over which it has any correlations, so that
+1. :math:`\langle R \rangle = 0`.  We already separated out the average force into its own term, so :math:`R` must have
+   a mean of 0.
+   
+2. It is independent of :math:`x`.  The interaction between the particle and the water is the same no matter where in
+   the water bath the particle is located.
 
-.. math::
-    \langle R(t) R(t+\delta t) \rangle = 0 \text{ if } \delta t > \tau
-    :label: langevin-noise-uncorrelated
+3. Because it varies so rapidly and chaotically, we assume it is uncorrelated with itself except over very short time
+   spans.  More precisely, we assume there is some maximum time :math:`\tau` over which it has any correlations, so that
 
-This property has an important consequence.  In most situations, we do not care about the instantaneous value of
-:math:`R`, only its integral over some time period that is long compared to :math:`\tau`.  We can break up that
-integral into many pieces, each covering a span of length :math:`\tau`:
+   .. math::
+       \langle R(t) R(t+\delta t) \rangle = 0 \text{ if } \delta t > \tau
+       :label: langevin-noise-uncorrelated
+
+4. We also assume the *rate* at which correlations decay is independent of time, so that
+   :math:`\langle R(t) R(t+\delta t) \rangle` is independent of :math:`t`.  It depends only on :math:`\delta t`.  The
+   overall statistical properties of the random force are the same at all times.
+
+These assumptions have an important consequence.  In most situations, we do not care about the instantaneous value of
+:math:`R`, only its integral over some time period that is long compared to :math:`\tau`.  We can break up that integral
+into many pieces, each covering a span of length :math:`\tau`:
 
 .. math::
     \int_0^t R(t') dt' = \int_0^\tau R(t') dt' + \int_\tau^{2 \tau} R(t') dt' + \int_{2 \tau}^{3 \tau} R(t') dt' + \dots
@@ -188,3 +196,74 @@ force will of course depend on temperature: the hotter the system, the faster th
 the harder they will hit the particle.  We therefore expect there should be some relationship between the temperature,
 the friction coefficient, and the magnitude of the random force.  As we will see soon, that is indeed the case.
 
+
+Diffusion of a Brownian Particle
+================================
+
+Now that we have the pieces in place, it is time to see what we can calculate.  To start with, multiply both sides of
+equation :eq:`brownian-equation` by :math:`x`, then take the ensemble average:
+
+.. math::
+    m \langle x \ddot{x} \rangle = -\gamma \langle x \dot{x} \rangle + \langle x R \rangle
+    :label: brownian-diffusion-step-1
+
+Because :math:`R` is independent of :math:`x`, the last term vanishes:
+:math:`\langle x R \rangle = \langle x \rangle \langle R \rangle = 0`.  To unify the other two terms, we can use the
+identity
+
+.. math::
+    \frac{d}{dt} \langle x \dot{x} \rangle = \langle x \ddot{x} \rangle + \langle \dot{x}^2 \rangle
+    :label: brownian-diffusion-step-2
+
+(This identity makes use of the fact that the operations of taking a derivative and taking an ensemble average commute
+with each other.  After all, an ensemble average is just a weighted sum of terms that can each be differentiated
+independently.)  Substituting this into equation :eq:`brownian-diffusion-step-1` gives
+
+.. math::
+    m \left( \frac{d}{dt} \langle x \dot{x} \rangle - \langle \dot{x}^2 \rangle \right) = -\gamma \langle x \dot{x} \rangle
+    :label: brownian-diffusion-step-3
+
+Next we can use the equipartition theorem.  A single particle in one dimension has one degree of freedom so, in
+equilibrium, its average kinetic energy is :math:`m \langle \dot{x}^2 \rangle/2 = kT/2`.  Therefore
+
+.. math::
+    m \frac{d}{dt} \langle x \dot{x} \rangle = kT -\gamma \langle x \dot{x} \rangle
+    :label: brownian-diffusion-step-4
+
+Now make a change of variables.  Define
+
+.. math::
+    z = \frac{d}{dt} \langle x^2 \rangle = 2 \langle x \dot{x} \rangle
+    :label: brownian-diffusion-step-5
+
+so the equation becomes
+
+.. math::
+    \frac{dz}{dt} = \frac{2kT}{m} -\frac{\gamma}{m} z
+    :label: brownian-diffusion-step-6
+
+This is a standard differential equation whose solution is given by
+
+.. math::
+    z = Ce^{-\frac{\gamma}{m}t} + \frac{2kT}{\gamma}
+    :label: brownian-diffusion-step-7
+
+You can easily verify that by substituting it back into equation :eq:`brownian-diffusion-step-6`.  :math:`C` is an
+arbitrary constant.
+
+We are almost done!  The first term in equation :eq:`brownian-diffusion-step-7` decays rapidly with time.  Taking the
+limit of large :math:`t`, we get
+
+.. math::
+    z = \frac{d}{dt} \langle x^2 \rangle = \frac{2kT}{\gamma}
+    :label: brownian-diffusion-step-8
+
+or integrating with respect to time and defining :math:`x(0)=0`,
+
+.. math::
+    \langle x^2 \rangle = \frac{2kT}{\gamma}t
+    :label: brownian-diffusion-step-9
+
+So as time passes, the mean squared distance traveled by the particle increases at a constant rate.  This was one of the
+main conclusions of Einstein's 1905 paper on Brownian motion, although he derived it by a somewhat different method.
+The approach used here was published a few years later, in 1908, by Paul Langevin.

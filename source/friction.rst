@@ -27,7 +27,7 @@ as when you rub your hands to warm them up or when you strike a match.  The same
 For example, electrical resistance is really just another type of friction.  If you run a current through a conductor,
 a force resists the motion of the electrons, and the conductor becomes warmer.
 
-Friction is such a universal part of our experience, it seems like it must be a fundamental part of the laws of nature.
+Friction is such a universal part of our experience, it seems like it must reflect something fundamental in the laws of nature.
 Yet if you look at the basic equations of classical or quantum mechanics, there is no sign of friction.  A single
 isolated particle will continue forever moving in a straight line without slowing down.  If two particles collide, they
 bounce away from each other with just as much energy as they started with.  Friction, it appears, only happens to
@@ -115,7 +115,7 @@ changing.  The changes will appear random, but they will obey statistical rules 
 bath.
 
 These two effects, fluctuations and dissipation, are inseparable from each other.  They are both caused by exactly the
-same mechanism: the interaction of the macroscopic variable with a heat bath.  That is the central message of this
+same mechanism: the interaction of the variable with a heat bath.  That is the central message of this
 chapter.  And because they have the same cause, they are guaranteed to obey certain relationships.  All that remains is
 to derive what those relationships are.
 
@@ -125,7 +125,7 @@ The Langevin Equation
 =====================
 
 Let's write Newton's Second Law for a particle undergoing Brownian motion in water: :math:`F = m \ddot{x}`.  (For
-simplicity we will work in one dimension, but the generalization to three dimensions is trivial.  Just turn :math:`x`
+simplicity we will work in one dimension, but the generalization to more dimensions is trivial.  Just turn :math:`x`
 and :math:`F` into vectors.)  In this
 equation, :math:`F` is the force exerted on the particle by the surrounding water molecules.  The details of those
 interactions are enormously complicated and constantly changing, so we need to look for an approximate description of
@@ -133,13 +133,13 @@ it.  What would be a reasonable approximation?
 
 The first thing we might try is using the assumption of linear response, so the force at any moment is proportional to
 the velocity: :math:`m \ddot{x} = -\gamma \dot{x}`.  The parameter :math:`\gamma` is called the *friction coefficient*.
-The solution to this differential equation is trivial:
+The solution to this differential equation is given by:
 
 .. math::
     \dot{x}(t) = \dot{x}(0) \cdot e^{-\frac{\gamma}{m}t}
     :label: decaying-velocity
 
-For a truly macroscopic system, this description would be sufficient.  Whatever velocity the object starts with, it
+For a truly macroscopic system, this description might be sufficient.  Whatever velocity the object starts with, it
 exponentially decays toward zero.  But Brownian motion is not precisely a macroscopic phenomenon.  It applies to
 particles that are much larger than a water molecule, but still small enough that you need a microscope to see them.
 And the whole point is that their velocity does *not* decay to zero.  They remain in motion due to the constant
@@ -189,8 +189,8 @@ that the integral obeys a normal distribution with mean 0 (because :math:`\langl
 deviation scales with :math:`\sqrt{t}`.  All that, without evaluating a single integral or knowing anything about the
 details of :math:`R(t)`!
 
-Before we dive into the math, let's take a moment to look at the Langevin equation and try to understand it
-intuitively.  The are two terms on the right side.  The first one always points opposite to the velocity, so it tends to
+Before we dive into the math, let's take a moment to look at the Langevin equation and try to understand it intuitively.
+There are two terms on the right side.  The first one always points opposite to the velocity, so it tends to
 slow the particle down.  If it were the only term, it would lead to exponentially decaying velocity as in equation
 :eq:`decaying-velocity`.  The second term prevents that from happening by constantly applying random kicks to the
 particle.  Essentially, there is one term that removes energy and one term that adds energy.  When the system is in
@@ -271,7 +271,7 @@ So as time passes, the mean squared distance traveled by the particle increases 
 main conclusions of Einstein's 1905 paper on Brownian motion, although he derived it by a somewhat different method.
 The approach used here was published a few years later, in 1908, by Paul Langevin.
 
-This result is not really very surprising.  In fact, it is exactly what we probably would bave predicted if we had
+This result is not really very surprising.  In fact, it is exactly what we probably would have predicted if we had
 thought about it in advance.  The particle moves irregularly as its velocity is continuously damped away by friction and
 replaced by the random force.  The motion can be thought of as a series of independent displacements taken at random,
 one after another.  By the central limit theorem, they should therefore add up to a normal distribution whose standard
@@ -367,6 +367,6 @@ fluctuations, and the magnitudes of the two effects are directly linked to each 
 other.
 
 The right side of equation :eq:`fluctuation-dissipation-theorem` is the integral of the autocorrelation function of the
-random noise force.  It depends both on the magnitude of :math:`R` and on the time :math:`\tau` over which it remains
+random force.  It depends both on the magnitude of :math:`R` and on the time :math:`\tau` over which it remains
 correlated.  The stronger the force is, the larger its effect on the particle.  And the longer the time interval over
 which the particle accelerates in a single direction before the force changes, the faster it will get moving.

@@ -187,12 +187,17 @@ the *Gaussian* or *normal* distribution:
     p(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{\frac{-(x-\mu)^2}{2 \sigma^2}}
     :label: gaussianprobability
 
-It is shown in Figure ???.  It is not really as complicated as it looks.  The basic form is just :math:`e^{-x^2}`.
+It is shown in :numref:`Figure,gaussian`.  It is not really as complicated as it looks.  The basic form is just :math:`e^{-x^2}`.
 Replacing :math:`x` by :math:`x-\mu` shifts the mean of the distribution to :math:`\mu`, and then the exponent is scaled
 to make the standard deviation equal :math:`\sigma`.  The factor in front is just a normalization, to ensure that
 
 .. math::
     \int_{-\infty}^{\infty} p(x) dx = 1
+
+.. figure:: images/gaussian.*
+    :align: center
+    
+    :autonumber:`Figure,gaussian`. A normal distribution with mean of 0 and standard deviation of 1.
 
 The name "normal distribution" gives a sense of just how important this distribution is in statistics.  It comes up
 constantly.  We will see the reason for this in just a moment.

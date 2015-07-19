@@ -51,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Introduction to Statistical Mechanics'
-copyright = u'2014, Peter Eastman'
+copyright = u'2014-2015, Peter Eastman'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -117,7 +117,7 @@ html_theme = 'pyramid'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = project
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None

@@ -10,8 +10,14 @@ A Qualitative Description of Phase Transitions
 ==============================================
 
 As a familiar example, consider the behavior of water as you change the temperature.  It can exist in liquid, solid
-(ice), and gas (steam) phases.  Figure ??? shows what each of these phases looks like at the molecular level.  Let's
+(ice), and gas (steam) phases.  :numref:`Figure,water` shows what each of these phases looks like at the molecular level.  Let's
 consider each of them in turn.
+
+
+.. figure:: images/water.*
+    :align: center
+
+    :autonumber:`Figure,water`. Water molecules arranged into solid, liquid, and gas phases
 
 In the solid phase, the molecules form a crystal.  They are arranged in a regular pattern that repeats over and over again.
 Each molecule is tightly held in place by hydrogen bonds to its neighboring molecules.  This makes it a very low energy
@@ -25,7 +31,7 @@ bonds and forming new ones as they move around.  Consequently, the liquid phase 
 but also higher entropy.
 
 In the gas phase, the molecules are no longer packed together.  They spread apart to fill whatever space is available
-to them.  This means there are very few hydrogens bonds, so the energy is much higher.  But because each molecules has
+to them.  This means there are very few hydrogens bonds, so the energy is much higher.  But because each molecule has
 so much more freedom of movement, the entropy is also much higher.
 
 (This description is a bit of a simplification.  For example, water actually has at least 15(!) different solid phases,
@@ -406,7 +412,7 @@ Mean Field Theory
 
 Now consider the case where :math:`J \ne 0`.  In principle we just need to write down the free energy and find the state
 that minimizes it for every value of :math:`H` and :math:`T`.  That's easier said than done!  In one dimension, the
-calculation is reasonably straightforward.  In two dimensions it is extreme difficult.  In three dimensions, it has
+calculation is reasonably straightforward.  In two dimensions it is extremely difficult.  In three dimensions, it has
 never been successfully solved.  Sadly, this is typical of most real world physics problems: they are too complicated to
 solve exactly.  We need to use a different approach: either make simplifying assumptions that let us solve them
 approximately, or use a computer to solve them numerically.
@@ -503,4 +509,4 @@ paramagnetic.  This is qualitatively very different from the predictions of mean
 
 In two dimensions where each spin has four neighbors, it does much better.  Mean field theory gives a qualitatively
 correct description of the phase diagram.  Its quantitative predictions are not exactly right, but they are still in
-the correct general range.  In three dimensions they are even closer.
+the correct general range.  In three dimensions where each spin has six neighbors, they are even closer.

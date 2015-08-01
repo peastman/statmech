@@ -89,7 +89,7 @@ The probability is then
 
 This is a special case of the *binomial distribution*.  (In the general case, the probability for a particle to be on
 the left side of the room could be different from its probability to be on the right side, but for this example we can
-ignore that.)  It is shown in :numref:`Figure,binomial` for several values of :math:`N`.  Notice how, as :math:`N`
+ignore that.)  It is shown in :autonumref:`Figure,binomial` for several values of :math:`N`.  Notice how, as :math:`N`
 increases, the probability becomes steadily more concentrated around its midpoint.
 
 .. figure:: images/binomial.*
@@ -187,7 +187,7 @@ the *Gaussian* or *normal* distribution:
     p(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{\frac{-(x-\mu)^2}{2 \sigma^2}}
     :label: gaussianprobability
 
-It is shown in :numref:`Figure,gaussian`.  It is not really as complicated as it looks.  The basic form is just :math:`e^{-x^2}`.
+It is shown in :autonumref:`Figure,gaussian`.  It is not really as complicated as it looks.  The basic form is just :math:`e^{-x^2}`.
 Replacing :math:`x` by :math:`x-\mu` shifts the mean of the distribution to :math:`\mu`, and then the exponent is scaled
 to make the standard deviation equal :math:`\sigma`.  The factor in front is just a normalization, to ensure that
 

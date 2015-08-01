@@ -13,6 +13,8 @@ ideas aside.  In Chapter :ref:`interpretation-of-statistical-quantities` we will
 an intuitive understanding of these quantities.  But for now, just treat them as mathematical definitions.
 
 
+.. _microstates-and-macrostates:
+
 Microstates and Macrostates
 ===========================
 
@@ -37,10 +39,10 @@ dividing it into very small bins.  For the classical particle, we treat all posi
 choose :math:`\delta x` and :math:`\delta p` sufficiently small, the exact values turn out to have no effect on most
 of our results.
 
-This is illustrated in :numref:`Figure,phase space`, which shows the space of possible microstates for a single particle in one dimension.
+This is illustrated in :autonumref:`Figure,phase space`, which shows the space of possible microstates for a single particle in one dimension.
 Each microstate is defined by its values of :math:`x` and :math:`p`.  This space is known as *phase space*, and we will
 use it often.  More generally, a system of :math:`N` particles in :math:`d` dimensions has a :math:`2dN` dimensional
-phase space.  Every point (or rather, each tiny volume as shown in :numref:`Figure,phase space`) in this phase space represents a
+phase space.  Every point (or rather, each tiny volume as shown in :autonumref:`Figure,phase space`) in this phase space represents a
 microstate.
 
 .. figure:: images/phase_space.*

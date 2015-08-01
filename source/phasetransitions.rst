@@ -10,7 +10,7 @@ A Qualitative Description of Phase Transitions
 ==============================================
 
 As a familiar example, consider the behavior of water as you change the temperature.  It can exist in liquid, solid
-(ice), and gas (steam) phases.  :numref:`Figure,water` shows what each of these phases looks like at the molecular level.  Let's
+(ice), and gas (steam) phases.  :autonumref:`Figure,water` shows what each of these phases looks like at the molecular level.  Let's
 consider each of them in turn.
 
 
@@ -73,7 +73,7 @@ true for every other macroscopic variable.  The stable phase is the one whose fr
 that affects the free energy can also affect the phase.
 
 A diagram showing the stable phase of a system for every combination of macroscopic variables is called its *phase
-diagram*.  :numref:`Figure,water phase diagram` shows a schematic phase diagram for water as a function of temperature
+diagram*.  :autonumref:`Figure,water phase diagram` shows a schematic phase diagram for water as a function of temperature
 and pressure.  The real phase diagram is much more complicated, of course; as I said before, water actually has a huge
 number of different phases.  But this simplified diagram gives the essential features for the current discussion.
 
@@ -154,7 +154,7 @@ This tells us the slope of the curve is proportional to the latent heat :math:`E
 Critical Points
 ===============
 
-Take another look at :numref:`Figure,water phase diagram`.  There is an arrow at the top of the solid-liquid coexistence
+Take another look at :autonumref:`Figure,water phase diagram`.  There is an arrow at the top of the solid-liquid coexistence
 curve to indicate it goes on forever.  No matter how high you make the pressure, there will always be two distinct
 phases and a transition between them.  But the liquid-gas transition is another matter.  The coexistence curve only goes
 so far, then comes to an end.  The point at which it ends is called a *critical point*.  Beyond that point, there are no
@@ -237,7 +237,7 @@ The Ising Model
 
 Now that you have a qualitative understanding of how phase transitions happen, I want to take one example and work
 through it in some detail.  The example, called the *Ising model*, is a popular model for magnetic solids.  Imagine a
-collection of atoms arranged in a rectangular grid, as shown in :numref:`Figure,ising model`.  Each atom has an
+collection of atoms arranged in a rectangular grid, as shown in :autonumref:`Figure,ising model`.  Each atom has an
 intrinsic magnetic moment called its *spin*.  The spin of an atom can take on two possible values, called "up" and
 "down", as indicated by arrows in the figure.
 
@@ -258,7 +258,7 @@ to the external magnetic field.  The second sum is taken only over pairs (i,j) t
 and it describes the interaction of the spins with each other.  The interaction energy of a pair of adjacent spins is
 minimum when they point in the same direction if :math:`J>0`, or when they point in opposite directions if :math:`J<0`.
 
-:numref:`Figure,ising model` shows a two dimensional grid of atoms, but you can just as easily define one dimensional or
+:autonumref:`Figure,ising model` shows a two dimensional grid of atoms, but you can just as easily define one dimensional or
 three dimensional Ising models.  In fact, you can even define Ising models in more than three dimensions, though of
 course that no longer corresponds to any physical arrangement of atoms.  The dimensionality determines how many terms
 appear in the second sum of equation :eq:`ising-hamiltonian`.  In :math:`d` dimensions, every spin has :math:`2d`
@@ -461,21 +461,21 @@ solution, we can evaluate the free energy of each one to determine which is most
     (b) :math:`H=\frac{kT}{2}`, :math:`\frac{2dJ}{kT}=\frac{1}{2}`.  (c) :math:`H=0`, :math:`\frac{2dJ}{kT}=2`.
     (d) :math:`H=kT`, :math:`\frac{2dJ}{kT}=2`.
     
-We can easily do this numerically for any values of :math:`H`, :math:`J`, and :math:`T`.  :numref:`Figure,mean field`
+We can easily do this numerically for any values of :math:`H`, :math:`J`, and :math:`T`.  :autonumref:`Figure,mean field`
 shows the left and right sides of equation :eq:`mean-field-ising-magnetization` plotted against each other for various
 values.  For simplicity, I will only consider the case :math:`J>0`.  There are a few main possibilities:
 
 * If :math:`2dJ/kT \le 1`, there is exactly one solution.  It corresponds to :math:`M=0` if :math:`H=0`
-  (:numref:`Figure,mean field`\ (a)).  Otherwise, :math:`M` has the same sign as :math:`H`
-  (:numref:`Figure,mean field`\ (b)).  The system is magnetized by the applied field.
+  (:autonumref:`Figure,mean field`\ (a)).  Otherwise, :math:`M` has the same sign as :math:`H`
+  (:autonumref:`Figure,mean field`\ (b)).  The system is magnetized by the applied field.
 
-* If :math:`2dJ/kT>1`, there may be up to three solutions (:numref:`Figure,mean field`\ (c)).  Whichever one has the
+* If :math:`2dJ/kT>1`, there may be up to three solutions (:autonumref:`Figure,mean field`\ (c)).  Whichever one has the
   lowest free energy will be the stable one.  As long as the temperature is low enough for energy to dominate over
   entropy, that will always be the one in which the system is most strongly magnetized in the direction of :math:`H`.
   If :math:`H=0`, both the magnetized solutions have equal energy and are equally stable.  (The solution near
   :math:`M=0` is still unstable, being a state of high energy.)
 
-* If :math:`H` is sufficiently large there is only one solution (:numref:`Figure,mean field`\ (d)).  The only
+* If :math:`H` is sufficiently large there is only one solution (:autonumref:`Figure,mean field`\ (d)).  The only
   possibility is that the system is magnetized by the applied field.
 
 .. figure:: images/ising_phase_diagram.*
@@ -483,7 +483,7 @@ values.  For simplicity, I will only consider the case :math:`J>0`.  There are a
     
     :autonumber:`Figure,ising phase diagram`. Ising model phase diagram
 
-Combining these observations yields the phase diagram shown in :numref:`Figure,ising phase diagram`.  At low temperature
+Combining these observations yields the phase diagram shown in :autonumref:`Figure,ising phase diagram`.  At low temperature
 the phase diagram is divided into two phases corresponding to :math:`M>0` and :math:`M<0`.  The stable phase is the one
 for which :math:`M` has the same sign as :math:`H`, but the magnetization remains nonzero even in the limit
 :math:`H \to 0`.  The system therefore undergoes a phase transition in which :math:`M` changes discontinuously as it

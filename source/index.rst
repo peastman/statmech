@@ -20,3 +20,4 @@ Contents
    thermodynamics.rst
    phasetransitions.rst
    friction.rst
+   phasespace.rst

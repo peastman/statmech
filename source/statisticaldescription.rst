@@ -63,6 +63,8 @@ a box of gas.  There are an enormous number of arrangements of the individual ga
 energy and volume.  You know the gas is in *one* of those states, but you have no idea *which* one.
 
 
+.. _the-density-of-states:
+
 The Density of States
 =====================
 

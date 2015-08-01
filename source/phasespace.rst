@@ -61,3 +61,97 @@ define a probability density in phase space.  Each one traces out an ellipse as 
 oscillator is independent of its amplitude, so all of them take exactly the same amount of time to trace out one full
 rotation.  Therefore the entire probability distribution simply rotates in phase space, returning to its starting point
 after one full period of oscillation.
+
+
+Liouville's Theorem
+===================
+
+Now consider all of the probability density contained inside a tiny region of phase space.  That probability density
+consists of a subset of the systems in the ensemble.  What happens to it as those systems change with time?  For
+simplicity I will stick to a single particle in one dimension, so the phase space has only two dimensions, but the
+generalization to more dimensions is trivial.  The region consists of all the systems with positions between :math:`x`
+and :math:`x+\delta x` and momentum between :math:`p` and :math:`p+\delta p`, so its volume is
+:math:`V=\delta x \delta p`.  We can then write
+
+.. math::
+   \begin{array}{rcl}
+   \frac{dV}{dt} &=& \frac{d}{dt}(\delta x \delta p) \\
+   &=& \delta x \frac{d(\delta p)}{dt} + \delta p \frac{d(\delta x)}{dt} \\
+   &=& \delta x \left( \frac{d(p+\delta p)}{dt}-\frac{dp}{dt} \right) + \delta p \left( \frac{d(x+\delta x)}{dt}-\frac{dx}{dt} \right)
+   \end{array}
+   :label: liouville-step-1
+
+Assume that :math:`\frac{dx}{dt}` and :math:`\frac{dp}{dt}` are linear in :math:`x` and :math:`p` respectively.  This is
+an approximation for any finite sized region, but it becomes exact in the limit that :math:`\delta x` and
+:math:`\delta p` go to zero.  That is,
+
+.. math::
+   \frac{d(x+\delta x)}{dt} = \frac{dx}{dt}+\delta x \frac{d}{dx} \left(\frac{dx}{dt}\right)
+   :label: liouville-step-2
+
+.. math::
+   \frac{d(p+\delta p)}{dt} = \frac{dp}{dt}+\delta p \frac{d}{dp} \left(\frac{dp}{dt}\right)
+   :label: liouville-step-3
+
+Substituting these into equation :eq:`liouville-step-1` gives
+
+.. math::
+   \frac{dV}{dt} = \delta x \delta p \left[ \frac{d}{dp} \left(\frac{dp}{dt}\right) + \frac{d}{dx} \left(\frac{dx}{dt}\right) \right]
+   :label: liouville-step-4
+
+Now we will make use of the fact that :math:`x` and :math:`p` do not change in arbitrary ways.  Rather, they evolve in
+one very specific way: by following the laws of classical mechanics!  Let :math:`H` be the Hamiltonian of the system.
+Hamilton's equations of motion are then
+
+.. math::
+   \frac{dx}{dt} = \frac{\partial H}{\partial p}
+   :label: liouville-step-5
+
+.. math::
+   \frac{dp}{dt} = -\frac{\partial H}{\partial x}
+   :label: liouville-step-6
+
+Substituting these into equation :eq:`liouville-step-4` gives
+
+.. math::
+   \begin{array}{rcl}
+   \frac{dV}{dt} &=& \delta x \delta p \left[ -\frac{d}{dp} \left(\frac{dH}{dx}\right) + \frac{d}{dx} \left(\frac{H}{dp}\right) \right] \\
+   &=& \delta x \delta p \left[ -\frac{d^2 H}{dx dp} + \frac{d^2 H}{dx dp} \right] \\
+   &=& 0
+   \end{array}
+   :label: liouvilles-theorem
+
+This result is known as *Liouville's theorem*.  It says that as the systems contained in a tiny region of phase space
+evolve according to classical mechanics, the volume they occupy remains constant.  And because the volume is constant,
+the probability density remains constant as well.
+
+It is hard to overstate the importance of Liouville's theorem.  It is, quite simply, the reason that statistical
+mechanics works when applied to classical systems.  It is the reason we can divide up the continuous phase space into
+tiny cells, call each cell a microstate, and then treat them as if they were discrete.
+
+To understand why, imagine what would happen if it were *not* true.  Suppose the volume of each cell changed with time.
+In section :ref:`the-density-of-states`, we identified the density of states :math:`\Omega` with volume in phase space.
+Consider a region of volume :math:`V`.  That volume corresponds to a particular number of microstates.  Now suppose that
+as the region evolved, its volume increased.  That would mean it then corresponded to a larger number of states than it
+originally did.  New microstates would have been spontaneously created!  What does that even mean?
+
+Now consider the total probability :math:`P` for the system to be inside that region.  That means the probability
+density in the region is initially :math:`P/V`.  As it grows, the probability density decreases.  Meanwhile, other
+regions of phase space are shrinking with time, so their probability density is growing.
+
+What is so bad about that?  Well, remember that one of our fundamental assumptions back in Chapter
+:ref:`statistical-description-of-physical-systems` was the postulate of equal *a priori* probabilities.  It says that
+every microstate consistent with the current macrostate has an equal probability; that is, all regions of phase space
+consistent with the current macrostate have equal probability density.  If that is initially true, then Liouville's
+theorem tells us it will remain true.  If that were not the case, if probability density increased in some regions and
+decreased in others, then it would be impossible to make this assumption.  Even if it were true at one time, it would
+not be true a moment later.
+
+In deriving Liouville's theorem, we made use of two central elements: the particular way the "volume" of a microstate
+is defined, and the equations of classical mechanics.  If either of those elements were different, the theorem need not
+apply.  For example, if we defined microstates as uniform intervals of energy, rather than uniform intervals of position
+and momentum, then it would not apply.  That is why, as Boltzmann discovered, statistical mechanics produces the wrong
+results if you try to define microstates that way.
+
+By the way, there is also a quantum mechanical version of Liouville's theorem.  That is why statistical mechanics can
+also be applied to quantum systems, this time identifying volume in Hilbert space with the density of states.

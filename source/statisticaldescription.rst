@@ -640,7 +640,7 @@ let the system interact with an external measuring device.  As long as the syste
 fully deterministic.  The system is always in a well defined state, and every microscopic and macroscopic variable has a
 single well defined value at every moment in time.
 
-It is even possible that the probabilisitic features of quantum mechanics are *also* statistical in nature.  When you
+It is even possible that the probabilistic features of quantum mechanics are *also* statistical in nature.  When you
 allow a system to interact with an external measuring device, that will necessarily introduce noise into the system.
 The state of the system is no longer definitely known, because it is subject to unknown forces.  Is it surprising, then,
 that we cannot predict the result with complete certainty?

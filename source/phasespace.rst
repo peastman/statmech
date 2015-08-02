@@ -141,17 +141,17 @@ Consider a region of volume :math:`V`.  That volume corresponds to a particular 
 as the region evolved, its volume increased.  That would mean it then corresponded to a larger number of states than it
 originally did.  New microstates would have been spontaneously created!  What does that even mean?
 
-Now consider the total probability :math:`P` for the system to be inside that region.  That means the probability
-density in the region is initially :math:`P/V`.  As it grows, the probability density decreases.  Meanwhile, other
-regions of phase space are shrinking with time, so their probability density is growing.
+Now consider the total probability :math:`P` for the system to be inside that region.  The probability density in the
+region is initially :math:`P/V`.  As it grows, the probability density decreases.  Meanwhile, other regions of phase
+space are shrinking with time, so their probability density is growing.
 
 What is so bad about that?  Well, remember that one of our fundamental assumptions back in Chapter
 :ref:`statistical-description-of-physical-systems` was the postulate of equal *a priori* probabilities.  It says that
-every microstate consistent with the current macrostate has an equal probability; that is, all regions of phase space
-consistent with the current macrostate have equal probability density.  If that is initially true, then Liouville's
-theorem tells us it will remain true.  If that were not the case, if probability density increased in some regions and
-decreased in others, then it would be impossible to make this assumption.  Even if it were true at one time, it would
-not be true a moment later.
+for a system in equilibrium, every microstate consistent with the current macrostate has an equal probability.  That is,
+all regions of phase space consistent with the current macrostate have equal probability density.  If that is initially
+true, then Liouville's theorem tells us it will remain true.  If that were not the case, if probability density
+increased in some regions and decreased in others, then it would be impossible to make this assumption.  Even if it were
+true at one time, it would not be true a moment later.
 
 In deriving Liouville's theorem, we made use of two central elements: the particular way the "volume" of a microstate
 is defined, and the equations of classical mechanics.  If either of those elements were different, the theorem need not
@@ -168,7 +168,7 @@ The Approach to Equilibrium
 
 I will now prove that it is impossible for any isolated system ever to come to equilibrium.
 
-Consider a system that initially is not in equilibrium, so it has different probabliities of being in different
+Consider a system that initially is not in equilibrium, so it has different probabilities of being in different
 microstates.  At some later time, every initial microstate will have evolved into a unique later microstate.  (We know
 they must be unique because mechanics is time reversible, as discussed in section
 :ref:`the-second-law-of-thermodynamics`.  If you reverse all velocities, the system will retrace its path and return to
@@ -197,7 +197,7 @@ component, and it diffuses with time.
 The second reason is more subtle, but often more important.  Equations :eq:`liouville-step-2` and :eq:`liouville-step-3`
 are only exact in the limit that :math:`\delta x` and :math:`\delta p` go to zero.  That means Liouville's theorem is
 only strictly true for an infinitesimal region of phase space.  For a very small but finite region, it may still give a
-good approximation to the instanteous change in volume, but over extended time periods the small errors can build up
+good approximation to the instantaneous change in volume, but over extended time periods the small errors can build up
 into large deviations.
 
 For a harmonic oscillator, we saw that the probability distribution just rotates in phase space, coming back to its
@@ -216,7 +216,7 @@ diverge.
 Consider the states contained in a tiny but still finite region of phase space.  Initially those states will move in
 almost (but not exactly) the same direction, and the volume they occupy will remain almost (but not exactly) the same.
 But gradually they will spread out, and mix with other states that started in different parts of phase space.
-Eventually they will become widely distributed.  If you then look at a tiny but finite region of phase space, you will
+Eventually they will become widely distributed.  If you then look at any finite region of phase space, you will
 find it contains states that started in many different places.  Infinitesimal regions of phase space remain intact and
 maintain the same probability density.  But for any finite values of :math:`\delta x` and :math:`\delta p`, the
 "microstates" eventually become mixed up and their probability density converges to a uniform average value.  That is

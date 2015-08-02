@@ -35,7 +35,7 @@ to them.  This means there are very few hydrogens bonds, so the energy is much h
 so much more freedom of movement, the entropy is also much higher.
 
 (This description is a bit of a simplification.  For example, water actually has at least 15(!) different solid phases,
-each characterized by a different arrangment of the atoms into a crystal.  But for our purposes, we can ignore those
+each characterized by a different arrangement of the atoms into a crystal.  But for our purposes, we can ignore those
 complications and just think of "ice" as a single phase.)
 
 So which of these phases would you expect to find it in?  Whichever one has the lowest free energy, of course!  And that

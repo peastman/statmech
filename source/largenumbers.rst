@@ -132,7 +132,7 @@ allows us to then cancel out the factors of :math:`m(m-1)` that appear in both n
     \langle m(m-1) \rangle &= \frac{1}{2^N} \sum_{m=2}^N \frac{N!}{(m-2)!(N-m)!} \\
     &= \frac{N(N-1)}{2^N} \sum_{m=2}^N \frac{(N-2)!}{(m-2)!(N-m)!}
 
-Now make two substitions: define :math:`X=N-2` and :math:`y=m-2`.  This simplifies it to:
+Now make two substitutions: define :math:`X=N-2` and :math:`y=m-2`.  This simplifies it to:
 
 .. math::
     \langle m(m-1) \rangle = \frac{N(N-1)}{2^N} \sum_{y=0}^X \frac{X!}{y!(X-y)!}

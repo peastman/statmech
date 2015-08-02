@@ -40,7 +40,7 @@ The answer, of course, is statistical mechanics.  We saw in section :ref:`interp
 system is in equilibrium, its kinetic energy is uniformly distributed among all its degrees of freedom.  A macroscopic
 object in motion clearly is *not* in equilibrium.  It has one degree of freedom (the center of mass motion) with far
 more energy than any other.  If that degree of freedom interacts with others, the system will tend to move toward
-equilibrium.  Energy will be transfered out of that one degree of freedom (so the object will slow down) and into all
+equilibrium.  Energy will be transferred out of that one degree of freedom (so the object will slow down) and into all
 the others (so the object will become warmer).
 
 That is all friction really is: the tendency of systems to move toward equilibrium when different degrees of freedom
@@ -80,7 +80,7 @@ This assumption is the basis of *Linear Response Theory*.  The macroscopic varia
 grain immersed in water, the volume of an inflated balloon, or the electric current traveling through a circuit.  All
 that matters is that it interacts with many microscopic degrees of freedom that can act as a heat bath.
 
-How do we justify this assumption?  If the system is not in equlibrium, the net force will almost certainly tend to push
+How do we justify this assumption?  If the system is not in equilibrium, the net force will almost certainly tend to push
 it back toward equilibrium.  For example, the pollen grain will collide with water molecules that slow it down.  Or the
 balloon will be bombarded by air molecules that apply pressure to it.  But there is no fundamental reason the force must
 be linear in the displacement.

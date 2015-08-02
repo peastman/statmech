@@ -140,7 +140,7 @@ likely to occur.  Why?  Because the energy of the complete system A+B is conserv
 energy in the heat bath, and that means its density of states is larger.  (This was one of our assumptions in deriving
 the Maxwell-Boltzmann distribution.  Remember?  We assumed :math:`\mathrm{log}(\Omega_B)` was linear in energy.)
 
-The second term is :math:`P_B V_A`.  This term can be interpeted in exactly the same way, only in terms of volume
+The second term is :math:`P_B V_A`.  This term can be interpreted in exactly the same way, only in terms of volume
 instead of energy.  The total volume of A+B is fixed.  Less volume for A means more volume for B, and we assumed the
 density of states of B increased with volume.  Microstates of A with lower volume are therefore consistent with more
 microstates of B, so they are more likely to occur.

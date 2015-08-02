@@ -123,6 +123,8 @@ viewpoint, it is a statement of the fact that for nearly all physical systems, t
 energy.
 
 
+.. _the-second-law-of-thermodynamics:
+
 The Second Law of Thermodynamics
 ================================
 

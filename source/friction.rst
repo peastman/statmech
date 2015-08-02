@@ -1,3 +1,5 @@
+.. _friction-and-fluctuations:
+
 Friction and Fluctuations
 #########################
 

@@ -86,17 +86,17 @@ an approximation for any finite sized region, but it becomes exact in the limit 
 :math:`\delta p` go to zero.  That is,
 
 .. math::
-   \frac{d(x+\delta x)}{dt} = \frac{dx}{dt}+\delta x \frac{d}{dx} \left(\frac{dx}{dt}\right)
+   \frac{d(x+\delta x)}{dt} = \frac{dx}{dt}+\delta x \frac{\partial}{\partial x} \left(\frac{dx}{dt}\right)
    :label: liouville-step-2
 
 .. math::
-   \frac{d(p+\delta p)}{dt} = \frac{dp}{dt}+\delta p \frac{d}{dp} \left(\frac{dp}{dt}\right)
+   \frac{d(p+\delta p)}{dt} = \frac{dp}{dt}+\delta p \frac{\partial}{\partial p} \left(\frac{dp}{dt}\right)
    :label: liouville-step-3
 
 Substituting these into equation :eq:`liouville-step-1` gives
 
 .. math::
-   \frac{dV}{dt} = \delta x \delta p \left[ \frac{d}{dp} \left(\frac{dp}{dt}\right) + \frac{d}{dx} \left(\frac{dx}{dt}\right) \right]
+   \frac{dV}{dt} = \delta x \delta p \left[ \frac{\partial}{\partial p} \left(\frac{dp}{dt}\right) + \frac{\partial}{\partial x} \left(\frac{dx}{dt}\right) \right]
    :label: liouville-step-4
 
 Now we will make use of the fact that :math:`x` and :math:`p` do not change in arbitrary ways.  Rather, they evolve in
@@ -115,8 +115,8 @@ Substituting these into equation :eq:`liouville-step-4` gives
 
 .. math::
    \begin{array}{rcl}
-   \frac{dV}{dt} &=& \delta x \delta p \left[ -\frac{d}{dp} \left(\frac{dH}{dx}\right) + \frac{d}{dx} \left(\frac{H}{dp}\right) \right] \\
-   &=& \delta x \delta p \left[ -\frac{d^2 H}{dx dp} + \frac{d^2 H}{dx dp} \right] \\
+   \frac{dV}{dt} &=& \delta x \delta p \left[ -\frac{\partial}{\partial p} \left(\frac{\partial H}{\partial x}\right) + \frac{\partial}{\partial x} \left(\frac{\partial H}{\partial p}\right) \right] \\
+   &=& \delta x \delta p \left[ -\frac{\partial^2 H}{\partial x \partial p} + \frac{\partial^2 H}{\partial x \partial p} \right] \\
    &=& 0
    \end{array}
    :label: liouvilles-theorem
@@ -155,3 +155,63 @@ results if you try to define microstates that way.
 
 By the way, there is also a quantum mechanical version of Liouville's theorem.  That is why statistical mechanics can
 also be applied to quantum systems, this time identifying volume in Hilbert space with the density of states.
+
+
+The Approach to Equilibrium
+===========================
+
+I will now prove that it is impossible for any isolated system ever to come to equilibrium.
+
+Consider a system that initially is not in equilibrium, so it has different probabliities of being in different
+microstates.  At some later time, every initial microstate will have evolved into a unique later microstate.  (We know
+they must be unique because mechanics is time reversible, as discussed in section
+:ref:`the-second-law-of-thermodynamics`.  If you reverse all velocities, the system will retrace its path and return to
+the original state.  One final state cannot return to two different original states, so every final state must have come
+from a different original state.)  States that initially have a low probability will evolve into final states with the
+same low probability.  States that initially have a high probability will evolve into final states with high
+probabilities.  The states change, but the distribution of probabilities does not.  Nothing in this process can lead to
+a situation where all states have the same probability.
+
+You can also see this from Liouville's theorem.  As a region of phase space evolves, its probability density remains
+constant.  Regions with low probability will move to new locations, but continue to have low probability density, and
+likewise for regions with high probability density.
+
+This argument sounds rigorous, but it directly conflicts with our experience that systems do, in fact, come to
+equilibrium.  What is going on?  How do we resolve this paradox?  Why do systems come to equilibrium if we have just
+proven that it is impossible?
+
+There are two reasons.  The first is the simple fact that no system is ever completely isolated.  You may surround it
+with insulation to shield it from light, heat, vibrations, magnetic fields, but no insulation is ever perfect.  You
+could launch it out into interstellar space, but even there it would be constantly bombarded by starlight.  On short
+time scales, it may be a reasonable approximation to view a system as isolated, but on sufficiently long time scales,
+every system must be treated as interacting with an external heat bath.  And as we saw in Chapter
+:ref:`friction-and-fluctuations`, a system in contact with a heat bath is not deterministic.  Its motion has a random
+component, and it diffuses with time.
+
+The second reason is more subtle, but often more important.  Equations :eq:`liouville-step-2` amd :eq:`liouville-step-3`
+are only exact in the limit that :math:`\delta x` and :math:`\delta p` go to zero.  That means Liouville's theorem is
+only strictly true for an infinitesimal region of phase space.  For a very small but finite region, it may still give a
+good approximation to the instanteous change in volume, but over extended time periods the small errors can build up
+into large deviations.
+
+For a harmonic oscillator, we saw that the probability distribution just rotates in phase space, coming back to its
+starting point after one full oscillation.  If two points start out close together in phase space, they will remain
+close together forever.  In this respect, the harmonic oscillator is very unusual.  Most systems with more than a
+handful of degrees of freedom are *chaotic*.  That means they are arbitrarily sensitive to initial conditions.  Consider
+two points that are very close together in phase space.  At first they will move in almost the same direction, and
+therefore remain close together, but with time they will gradually move apart.  The further apart they become, the less
+correlated their motions will be, until eventually they are following completely independent trajectories.
+
+Chaotic systems are not merely sensitive to initial conditions, but *arbitrarily* sensitive.  Any finite difference
+between the starting states, no matter how small, will eventually lead to the trajectories diverging.  If you make the
+initial distance smaller, they will take slightly longer to diverge but that is all.  They will still eventually
+diverge.
+
+Consider the states contained in a tiny but still finite region of phase space.  Initially those states will move in
+almost (but not exactly) the same direction, and the volume they occupy will remain almost (but not exactly) the same.
+But gradually they will spread out, and mix with other states that started in different parts of phase space.
+Eventually they will become widely distributed.  If you then look at a tiny but finite region of phase space, you will
+find it contains states that started in many different places.  Infinitesimal regions of phase space remain intact and
+maintain the same probability density.  But for any finite values of :math:`\delta x` and :math:`\delta p`, the
+"microstates" eventually become mixed up and their probability density converges to a uniform average value.  That is
+what happens when a system comes to equilibrium.

@@ -47,11 +47,17 @@ probability distribution is, though.  In particular, it need not correspond to e
 with time, following the laws of classical mechanics, the probability density will also evolve.
 
 As a simple example, consider a one dimensional harmonic oscillator.  As it moves back and forth, it traces out an
-ellipse in phase space as shown in Figure ???.  When it is in the top half of the figure, its momentum is positive and
-so its position is increasing (moving to the right).  When it is in the bottom half of the figure, its momentum is
-negative so it moves to the left.  Likewise, in the right half of the figure the force on the particle is negative so
-momentum is decreasing, and in the left half the force on the particle is positive so momentum is increasing.  The
-system moves clockwise along the trajectory, tracing out the same ellipse again and again forever.
+ellipse in phase space as shown in :autonumref:`Figure,oscillator trajectory`.  When it is in the top half of the
+figure, its momentum is positive and so its position is increasing (moving to the right).  When it is in the bottom half
+of the figure, its momentum is negative so it moves to the left.  Likewise, in the right half of the figure the force on
+the particle is negative so momentum is decreasing, and in the left half the force on the particle is positive so
+momentum is increasing.  The system moves clockwise along the trajectory, tracing out the same ellipse again and again
+forever.
+
+.. figure:: images/oscillator_trajectory.*
+    :align: center
+    
+    :autonumber:`Figure,oscillator trajectory`. The trajectory in phase space of a harmonic oscillator.
 
 Every point in phase space traces out an ellipse.  Larger ellipses correspond to oscillators moving with larger
 amplitude.  Two points on the same ellipse correspond to oscillators moving with the same amplitude but different phase.
@@ -188,7 +194,7 @@ every system must be treated as interacting with an external heat bath.  And as 
 :ref:`friction-and-fluctuations`, a system in contact with a heat bath is not deterministic.  Its motion has a random
 component, and it diffuses with time.
 
-The second reason is more subtle, but often more important.  Equations :eq:`liouville-step-2` amd :eq:`liouville-step-3`
+The second reason is more subtle, but often more important.  Equations :eq:`liouville-step-2` and :eq:`liouville-step-3`
 are only exact in the limit that :math:`\delta x` and :math:`\delta p` go to zero.  That means Liouville's theorem is
 only strictly true for an infinitesimal region of phase space.  For a very small but finite region, it may still give a
 good approximation to the instanteous change in volume, but over extended time periods the small errors can build up

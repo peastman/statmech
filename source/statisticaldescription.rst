@@ -608,7 +608,7 @@ For a quantum system, a microstate simply means a value of the wave function (or
 of states, a tiny volume of Hilbert space).  Of course you can describe the wave function using any set of basis
 functions you want.  The "microscopic variables" of the system are just the amplitudes of the basis functions.  If they
 happen to be position eigenstates, then the microscopic variables are the values of the wave function at each point in
-pace.  But you can just as easily use momentum eigenstates, energy eigenstates, or any other basis you choose.
+space.  But you can just as easily use momentum eigenstates, energy eigenstates, or any other basis you choose.
 
 A "macroscopic variable", on the other hand, is defined as the expectation value of an operator.  If :math:`Y` is the
 operator corresponding to some measurable quantity :math:`y` and the system is in microstate

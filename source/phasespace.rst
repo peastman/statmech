@@ -56,6 +56,7 @@ forever.
 
 .. figure:: images/oscillator_trajectory.*
     :align: center
+    :scale: 80
     
     :autonumber:`Figure,oscillator trajectory`. The trajectory in phase space of a harmonic oscillator.
 

@@ -94,6 +94,7 @@ increases, the probability becomes steadily more concentrated around its midpoin
 
 .. figure:: images/binomial.*
     :align: center
+    :scale: 80
     
     :autonumber:`Figure,binomial`. The binomial distribution for several values of :math:`N`.  To make them easier to
     compare, all the curves have been normalized to go from 0 to 1 along each axis.
@@ -196,6 +197,7 @@ to make the standard deviation equal :math:`\sigma`.  The factor in front is jus
 
 .. figure:: images/gaussian.*
     :align: center
+    :scale: 80
     
     :autonumber:`Figure,gaussian`. A normal distribution with mean of 0 and standard deviation of 1.
 

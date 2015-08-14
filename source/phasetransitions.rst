@@ -79,6 +79,7 @@ number of different phases.  But this simplified diagram gives the essential fea
 
 .. figure:: images/water_phase_diagram.*
     :align: center
+    :scale: 80
 
     :autonumber:`Figure,water phase diagram`. Schematic phase diagram for water
 
@@ -243,6 +244,7 @@ intrinsic magnetic moment called its *spin*.  The spin of an atom can take on tw
 
 .. figure:: images/ising_model.*
     :align: center
+    :scale: 80
     
     :autonumber:`Figure,ising model`. An Ising model
 
@@ -480,6 +482,7 @@ values.  For simplicity, I will only consider the case :math:`J>0`.  There are a
 
 .. figure:: images/ising_phase_diagram.*
     :align: center
+    :scale: 80
     
     :autonumber:`Figure,ising phase diagram`. Ising model phase diagram
 

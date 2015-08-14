@@ -47,6 +47,7 @@ microstate.
 
 .. figure:: images/phase_space.*
     :align: center
+    :scale: 80
     
     :autonumber:`Figure,phase space`. The phase space of a single particle in one dimension.  Each axis is divided into
     tiny intervals.  The volume defined by the intersection of one interval from each axis is a microstate.

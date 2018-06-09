@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4. The Interpretation of Statistical Quantities &mdash; Introduction to Statistical Mechanics</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Introduction to Statistical Mechanics" href="index.html" />
+    <link rel="next" title="5. Thermodynamics" href="thermodynamics.html" />
+    <link rel="prev" title="3. Mathematical Interlude: Very Large Numbers" href="largenumbers.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="thermodynamics.html" title="5. Thermodynamics"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="largenumbers.html" title="3. Mathematical Interlude: Very Large Numbers"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Introduction to Statistical Mechanics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-interpretation-of-statistical-quantities">
+<span id="interpretation-of-statistical-quantities"></span><h1>4. The Interpretation of Statistical Quantities<a class="headerlink" href="#the-interpretation-of-statistical-quantities" title="Permalink to this headline">¶</a></h1>
+<p>In Chapter <a class="reference internal" href="statisticaldescription.html#statistical-description-of-physical-systems">2</a> I defined lots of quantities, but said very little about
+what they really mean.  Now it is time to return to them.  We will study them in more detail and try to build up an
+intuitive understanding of what they represent.</p>
+<div class="section" id="temperature">
+<span id="interpretation-of-temperature"></span><h2>4.1. Temperature<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h2>
+<p>Temperature is a quantity we are all familiar with.  You have probably been told that it measures the microscopic
+jiggling of atoms: the faster they are moving, the hotter an object feels.  So when I defined it in terms of a
+derivative of the density of states, a seemingly unrelated concept, you were probably a little surprised.  To resolve
+this seeming paradox, I am going to prove a very important theorem called the <em>equipartition theorem</em>.  Once you reach
+the end, the significance of temperature will become clear.</p>
+<p>In general, the energy of a system can depend in an arbitrary way on all of its microscopic variables, which we will
+call <span class="math">\(x_1\)</span>, <span class="math">\(x_2\)</span>, etc.  That is, the energy is a function <span class="math">\(E(x_1, x_2, \dots)\)</span>.  But there are some
+very important special cases where it takes particular forms.  Let us make three assumptions:</p>
+<ol class="arabic">
+<li><p class="first">The energy of the system can be written</p>
+<div class="math">
+\[E(x_1, x_2, x_3, \dots) = E_1(x_1) + E_2(x_2, x_3, \dots)\]</div>
+<p>That is, the energy separates into two terms.  The first term depends <em>only</em> on <span class="math">\(x_1\)</span>, while the second term
+does not depend on <span class="math">\(x_1\)</span> at all.</p>
+</li>
+<li><p class="first"><span class="math">\(x_1\)</span> can be treated as a continuous variable, and can take on any value from <span class="math">\(-\infty\)</span> to
+<span class="math">\(\infty\)</span>.</p>
+</li>
+<li><p class="first">The energy is quadratic in <span class="math">\(x_1\)</span>:</p>
+<div class="math">
+\[E_1(x_1) = Cx_1^2\]</div>
+<p>where <span class="math">\(C\)</span> is a constant.</p>
+</li>
+</ol>
+<p>A particularly important example of this situation is the momentum of a classical particle.  Each momentum variable
+<span class="math">\(p_i\)</span> contributes <span class="math">\(p_i^2/2m\)</span> to the kinetic energy.</p>
+<p>Now we want to answer the question, &#8220;What is the average value of <span class="math">\(E_1\)</span>?&#8221;  As we learned in section
+<a class="reference internal" href="statisticaldescription.html#averages">2.9</a>, that is given by</p>
+<div class="math">
+\[\langle E_1 \rangle = \frac{\sum E_1 e^{-\beta E}}{\sum e^{-\beta E}}\]</div>
+<p>(For simplicity I am assuming that <span class="math">\(E\)</span> is the relevant thermodynamic potential; we are working in the canonical
+ensemble.  This theorem applies just as well to other ensembles, though.  Just replace <span class="math">\(E\)</span> by <span class="math">\(\Phi\)</span> in
+all the equations above.)</p>
+<p>Now take advantage of assumption 1.  This allows us to factor the above expression:</p>
+<div class="math">
+\[\langle E_1 \rangle = \frac{\sum e^{-\beta E_2} \sum E_1 e^{-\beta E_1}}{\sum e^{-\beta E_2} \sum e^{-\beta E_1}}\]</div>
+<p>The first sum is identical in both the numerator and denominator, so we can cancel them out:</p>
+<div class="math">
+\[\begin{split}\langle E_1 \rangle &amp;= \frac{\sum E_1 e^{-\beta E_1}}{\sum e^{-\beta E_1}} \\
+&amp;= -\frac{\partial \mathrm{log} \left(\sum e^{-\beta E_1} \right)}{\partial \beta}\end{split}\]</div>
+<p>Assumption 2 allows us to replace the sum by an integral:</p>
+<div class="math">
+\[\langle E_1 \rangle = -\frac{\partial \mathrm{log} \left(\int_{-\infty}^{\infty} e^{-\beta E_1} dx_1 \right)}{\partial \beta}\]</div>
+<p>Finally, we make use of assumption 3 and introduce the change of variables <span class="math">\(y \equiv \sqrt{\beta} x_1\)</span>:</p>
+<div class="math" id="equation-equipartition">
+<span class="eqno">(1)</span>\[\begin{split}\langle E_1 \rangle &amp;= -\frac{\partial \mathrm{log} \left(\int_{-\infty}^{\infty} e^{-\beta Cx_1^2} dx_1 \right)}{\partial \beta} \\
+&amp;= -\frac{\partial \mathrm{log} \left(\beta^{-1/2} \int_{-\infty}^{\infty} e^{-Cy^2} dy \right)}{\partial \beta} \\
+&amp;= -\frac{\partial \left(\mathrm{log} \left(\beta^{-1/2} \right) + \mathrm{log} \left(\int_{-\infty}^{\infty} e^{-Cy^2} dy \right) \right)}{\partial \beta} \\
+&amp;= \frac{1}{2 \beta} \\
+&amp;= \frac{kT}{2}\end{split}\]</div>
+<p>We now see how the statistical definition of temperature matches up with the informal one you are familiar with.
+Temperature is a measure of average kinetic energy.  To put it precisely:</p>
+<div class="admonition-interpretation-of-temperature admonition">
+<p class="first admonition-title">Interpretation of Temperature</p>
+<p class="last">If a system is in equilibrium with a heat bath at temperature <span class="math">\(T\)</span>, then its average kinetic energy is
+<span class="math">\(kT/2\)</span> per degree of freedom.</p>
+</div>
+<p>Of course, the equipartition theorem applies equally well to any variable that satisfies the three requirements, not
+just to momentum variables.  In a collection of uncoupled harmonic oscillators, the average <em>potential</em> energy will also
+be <span class="math">\(kT/2\)</span> per degree of freedom.</p>
+<p>Even more generally, when a system is in equilibrium, its total energy (not just kinetic energy) tends to be evenly
+distributed among its degrees of freedom.  This is just a rule of thumb, not a rigorous result like the equipartition
+theorem.  Still, it is a useful guideline for how to think about systems in equilibrium.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>What is the average kinetic energy of a gas of <span class="math">\(N\)</span> rigid diatomic molecules at temperature <span class="math">\(T\)</span>?</p>
+<p>Each molecule is composed of two atoms, so it would normally have 6 degrees of freedom.  But because they are rigid
+(the distance between the two atoms cannot change), that removes one degree of freedom.  The average kinetic energy
+is therefore</p>
+<div class="last math">
+\[\langle E_{kinetic} \rangle = 5N \cdot \frac{kT}{2}\]</div>
+</div>
+</div>
+<div class="section" id="thermodynamic-potentials-as-a-measure-of-probability">
+<h2>4.2. Thermodynamic Potentials as a Measure of Probability<a class="headerlink" href="#thermodynamic-potentials-as-a-measure-of-probability" title="Permalink to this headline">¶</a></h2>
+<p>Thermodynamic potentials are confusing.  Not only are they an unfamiliar concept, but as soon as you start trying to do
+calculations with them, it is very easy to get all tangled up in a net of subtle mistakes.  In the following sections,
+I will approach thermodynamic potentials from several different directions.  I will point out some of the particular
+issues that make them confusing, and try to help you form a clear understanding of the essential concepts.</p>
+<p>The first thing that makes them confusing is that they mix together quantities related to two different systems.  Recall
+that we started with a single isolated system, then split it into two pieces called A and B.  A is the system of
+interest, the thing we really care about.  B is the heat bath.  Consider the Gibbs free energy as an example.  Let me
+restate the definition, including a subscript on every variable to indicate which one it refers to:</p>
+<div class="math">
+\[G_A = E_A + P_B V_A - T_B S_A\]</div>
+<p>It is very easy to get confused about which system each variable relates to.  For example, it is easy to see the term
+<span class="math">\(TS\)</span> and remember that <span class="math">\(T\)</span> and <span class="math">\(S\)</span> are each defined in terms of <span class="math">\(\mathrm{log}(\Omega)\)</span>, but
+forget that their definitions refer to completely different <span class="math">\(\Omega\)</span>s.  <span class="math">\(T\)</span> is related to the density of
+states of the heat bath, while <span class="math">\(S\)</span> measures the density of states of the system of interest.</p>
+<p>A thermodynamic potential is, first and foremost, a measure of how probable it is for a system to be in a particular
+state.  It appears in the exponent of the Maxwell-Boltzmann distribution.  Lower values of the potential indicate more
+likely states, while higher values indicate less likely states.</p>
+<p>Let&#8217;s go through each term in the Gibbs free energy, and consider why each one should influence the probability.</p>
+<p>The first term is simply the energy of the system of interest.  All else being equal, states with lower energy are more
+likely to occur.  Why?  Because the energy of the complete system A+B is conserved.  Less energy in A means more
+energy in the heat bath, and that means its density of states is larger.  (This was one of our assumptions in deriving
+the Maxwell-Boltzmann distribution.  Remember?  We assumed <span class="math">\(\mathrm{log}(\Omega_B)\)</span> was linear in energy.)</p>
+<p>The second term is <span class="math">\(P_B V_A\)</span>.  This term can be interpreted in exactly the same way, only in terms of volume
+instead of energy.  The total volume of A+B is fixed.  Less volume for A means more volume for B, and we assumed the
+density of states of B increased with volume.  Microstates of A with lower volume are therefore consistent with more
+microstates of B, so they are more likely to occur.</p>
+<p>That is all fine as far as microstates are concerned, but the Gibbs free energy describes the probability of
+macrostates. Lower energy and volume for A correspond to more probable microstates, but there also are likely to be
+fewer of them. <span class="math">\(\Omega_A\)</span> also increases with energy and volume just like <span class="math">\(\Omega_B\)</span>. That is what the final
+term <span class="math">\(T_B S_A\)</span> represents. It decreases the potential for macrostates whose entropy (and therefore density of
+states) is larger, thus making those macrostates more probable. The actual probability of a given macrostate is
+determined by a balance between all three terms. Increasing the energy and volume of system A increases the first two
+terms while decreasing the third term. It decreases the probability of each microstate while increasing the total number
+of microstates.</p>
+<p>If we were working with the grand potential instead of the Gibbs free energy, we would have a different term:
+<span class="math">\(-\mu_B N_A\)</span>.  The interpretation of this term is exactly like the other ones.  The total number of particles in
+A+B is fixed.  Fewer particles in A means more in B, which increases its density of states.  (Do not be confused by the
+negative sign in front of this term.  That is just to cancel out the extra negative sign that, for purely historical
+reasons, appears in the definition of <span class="math">\(\mu\)</span>.)</p>
+</div>
+<div class="section" id="independent-and-dependent-variables">
+<h2>4.3. Independent and Dependent Variables<a class="headerlink" href="#independent-and-dependent-variables" title="Permalink to this headline">¶</a></h2>
+<p>There is a second way that thermodynamic potentials can be interpreted.  It assigns a completely different meaning to
+them, while still being similar enough to be confusing.  It has to do with which macroscopic variables we treat as
+independent and which ones we treat as dependent.</p>
+<p>So far, we have always used macroscopic variables such as energy, volume, and particle number.  These have the important
+property that they are also microscopic variables.  Every microstate has a well defined energy, a well defined volume,
+a well defined number of particles.  A macrostate simply consists of all the microstates with the specified values for
+its variables.</p>
+<p>Contrast that with variables such as temperature, pressure, and chemical potential.  These are <em>not</em> microscopic
+variables.  They are defined in terms of the density of states.  It makes no sense to speak of the temperature or
+pressure of a single microstate.  They relate to the distribution of microstates, not to the properties of any single
+state.</p>
+<p>On the other hand, from a physical perspective it makes perfect sense to think of these quantities as independent
+macroscopic variables.  Consider these examples:</p>
+<ul class="simple">
+<li>You can keep a system isolated so that its energy remains constant, <em>or</em> you can put it in contact with a heat bath
+of fixed temperature.  In the former case, energy is the independent variable.  It is the quantity you control, and it
+has a well defined value.  In the latter case, it makes more sense to view temperature as the independent variable.
+That is now the quantity you control.  The energy no longer has a single fixed value.  It fluctuates continuously as
+the system exchanges energy with the heat bath.  You can, however, calculate an <em>average</em> energy
+<span class="math">\(\langle E \rangle\)</span>.  Furthermore, as we saw in the last chapter, for macroscopic systems the fluctuations about
+the average will be completely negligible.  In that case, it is reasonable to treat energy as if its value were fixed.
+But it has now become a <em>dependent</em> variable <span class="math">\(E(T)\)</span>.</li>
+<li>You can fix the volume of a system, <em>or</em> you can put it in contact with a heat bath of fixed pressure.  In the former
+case, volume is the independent variable.  In the latter case, pressure is the independent variable.  The volume now
+fluctuates as it interacts with the heat bath.  For a sufficiently large system, these fluctuations will be
+negligible.  We can therefore treat the volume as a dependent variable with a well defined value <span class="math">\(V(P)\)</span>.</li>
+<li>Finally, you can fix the number of particles in the system, or you can let it exchange particles with a heat bath of
+fixed chemical potential.  In the former case, <span class="math">\(N\)</span> is an independent variable.  In the latter case, it is a
+dependent variable <span class="math">\(N(\mu)\)</span>.</li>
+</ul>
+<p>Just to make matters more confusing, the <em>mathematical</em> choice of what variables to treat as independent need not match
+the <em>physical</em> choice of what quantities to control.  Consider a system in contact with a heat bath of specified
+temperature and pressure, so that Gibbs free energy is the relevant thermodynamic potential.  Physically speaking,
+<span class="math">\(T\)</span> and <span class="math">\(P\)</span> are the quantities you control, while <span class="math">\(E\)</span> and <span class="math">\(V\)</span> vary in response to them.</p>
+<p>Nonetheless, you can still take <span class="math">\(E\)</span> and <span class="math">\(V\)</span> as the macroscopic variables defining a macrostate.  In that
+case, every macrostate has a strictly fixed energy and volume.  It is defined to consist of all microstates with those
+values of <span class="math">\(E\)</span> and <span class="math">\(V\)</span>.  On the other hand, the system is no longer in a single, well defined macrostate.  It
+continuously fluctuates through a (usually tiny) range of macrostates as it exchanges energy and volume with the heat
+bath.</p>
+<p>Alternatively, you can choose to treat <span class="math">\(T\)</span> and <span class="math">\(P\)</span> as the macroscopic variables.  In that case, the system
+is in a single, fixed macrostate.  On the other hand, that macrostate no longer has fixed values for <span class="math">\(E\)</span> and
+<span class="math">\(V\)</span>.  Only their averages <span class="math">\(\langle E \rangle\)</span> and <span class="math">\(\langle V \rangle\)</span> are well defined.  Furthermore,
+there is no longer a direct mapping from microstates to macrostates!  Each macrostate represents a <em>probability
+distribution</em> over microstates, and each microstate has a probability of occurring while the system is in a range of
+different macrostates.</p>
+<p>These two choices of macroscopic variables lead directly to two different interpretations of the thermodynamic
+potential:</p>
+<ol class="arabic">
+<li><p class="first">If each macrostate has a well defined value for each macroscopic variable and consists of a fixed set of microstates,
+then the thermodynamic potential also has a well defined value.  It describes the probability for the system to be
+in that macrostate.</p>
+</li>
+<li><p class="first">If we instead treat each macrostate as a probability distribution over microstates, then the thermodynamic potential
+no longer has a strictly fixed value.  Instead we must view it as an average quantity.  For example,</p>
+<div class="math">
+\[G = \langle E \rangle + P \langle V \rangle - T \langle S \rangle\]</div>
+</li>
+</ol>
+<p>Both of these interpretations are widely used.  Furthermore, people often shift fluidly back and forth between them
+without giving any indication they have just changed their definitions.  When in doubt, look carefully to see which
+macroscopic quantities are being treated as independent variables.</p>
+</div>
+<div class="section" id="thermodynamic-potentials-and-thermodynamic-forces">
+<span id="id1"></span><h2>4.4. Thermodynamic Potentials and Thermodynamic Forces<a class="headerlink" href="#thermodynamic-potentials-and-thermodynamic-forces" title="Permalink to this headline">¶</a></h2>
+<p>According to classical mechanics, if the potential energy <span class="math">\(U\)</span> of a system depends on a variable <span class="math">\(x\)</span>, the
+system experiences a <em>generalized force</em></p>
+<div class="math" id="equation-define-generalized-force">
+<span class="eqno">(2)</span>\[Q = -\frac{\partial U}{\partial x}\]</div>
+<p>When the value of <span class="math">\(x\)</span> changes by an amount <span class="math">\(\Delta x\)</span>, the system performs <em>work</em> equal to</p>
+<div class="math" id="equation-define-work">
+<span class="eqno">(3)</span>\[W = Q \Delta x\]</div>
+<p>Since we have defined quantities called &#8220;thermodynamic potentials&#8221; and &#8220;thermodynamic forces&#8221;, you may be wondering how
+closely they are related to potentials and forces of the conventional, non-thermodynamic kind.  Does the derivative
+of a thermodynamic potential give a thermodynamic force?  Does a thermodynamic force perform work?</p>
+<p>I need to be very careful how I answer these questions.  All our results so far assume the system is in equilibrium,
+and if large changes are happening in the macroscopic variables, it clearly is <em>not</em> in equilibrium.  Until we learn
+how to deal with situations of this sort, I need to restrict myself to only saying things about systems in equilibrium.</p>
+<p>Still, we can at least partly answer these questions now.  When a system is in equilibrium, its dependent macroscopic
+variables take on the values that minimize the thermodynamic potential (and hence maximize the probability).  So if we
+take a derivative of <span class="math">\(\Phi\)</span> and set it equal to zero, that will provide information about what happens in
+equilibrium.  For example, consider a system in contact with a heat bath of constant temperature and pressure, then
+take a derivative with respect to volume:</p>
+<div class="math">
+\[\begin{split}\frac{\partial G_A}{\partial V_A} &amp;= 0 \\
+&amp;= \frac{\partial E_A}{\partial V_A} + P_B - T_B \frac{\partial S_A}{\partial V_A} \\
+&amp;= \frac{\partial E_A}{\partial V_A} + P_B - kT_B \frac{\partial \mathrm{log}(\Omega_A)}{\partial V_A} \\
+&amp;= \frac{\partial E_A}{\partial V_A} + P_B - P_A\end{split}\]</div>
+<p>From which we conclude:</p>
+<div class="math" id="equation-force-equals-pressure">
+<span class="eqno">(4)</span>\[-\frac{\partial E_A}{\partial V_A} = P_B - P_A\]</div>
+<p>This is a remarkable equation.  The left side is an ordinary force of the conventional sort.  It is just a derivative
+of the energy, with nothing statistical about it.  Everything we know about forces from classical mechanics can be
+directly applied to it.  The right side, on the other hand, is a thermodynamic force (or rather, the difference between
+two thermodynamic forces).  And this equation says that, when the system is in equilibrium, the two sides must be
+equal to each other.</p>
+<p>If the internal pressure <span class="math">\(P_A\)</span> and external pressure <span class="math">\(P_B\)</span> are equal, then the equilibrium condition
+simplifies to just <span class="math">\(\frac{\partial E_A}{\partial V_A}=0\)</span>: there must be no net mechanical force.  If there were,
+it would cause the volume to change (that being what mechanical forces do).  Clearly the pressure is at least <em>acting</em>
+like a mechanical force.  For the system to be in equilibrium, the internal pressure, external pressure, and mechanical
+force must exactly cancel each other out.</p>
+<p>So thermodynamic forces <em>act</em> like ordinary forces, but does that mean they <em>are</em> ordinary forces?  Can they produce
+motion and do work?  To answer that, we must examine them more carefully and understand just what is going on when a
+&#8220;thermodynamic force&#8221; is applied to a system.</p>
+</div>
+<div class="section" id="the-mechanics-of-thermodynamic-forces">
+<h2>4.5. The Mechanics of Thermodynamic Forces<a class="headerlink" href="#the-mechanics-of-thermodynamic-forces" title="Permalink to this headline">¶</a></h2>
+<p>Consider a balloon filled with gas.  It is subject to three different forces: the outward pressure of the gas inside
+the balloon, the inward pressure of the surrounding air, and the elastic tension of the balloon itself that resists
+expansion.  As seen from equation <a href="#equation-force-equals-pressure">(4)</a>, at equilibrium these three forces exactly balance each
+other out.  If they do not balance, the balloon will expand or contract until they do.  But what is actually happening
+at a microscopic level?</p>
+<p>Molecules of gas are constantly striking the surface of the balloon.  How do we know that?  Because the density of
+states of the gas increases with increasing volume.  If its volume were greater, there would be more microstates
+available to it.  The balloon is restricting it from visiting those microstates, and if the balloon were not there, it
+would not remain contained in such a restricted volume.</p>
+<p>That is what pressure really is: the mechanical force exerted by the gas molecules as they strike against the balloon
+(or any other object that restricts their motion).  So pressure is not merely &#8220;like&#8221; a force.  It <em>is</em> a force.  It can
+do all the same things other forces can do, including producing accelerations and performing work.</p>
+<p>Chemical potential can be understood in exactly the same way.  Imagine a box with a small hole in it, so that
+air molecules can diffuse in and out.  The chemical potential is essentially a measure of the density of air molecules.
+In equilibrium, we expect the density to be the same inside and outside.  If that is not the case, we expect to find a
+net flow of molecules one way or the other until equilibrium is achieved.  On the other hand, if there is another force
+involved (such as one that repels molecules away from the interior of the box), then we expect to find different
+densities inside and outside.  We can find the equilibrium distribution by looking for the values that minimize the
+thermodynamic potential.</p>
+<p>Here is one more critical observation about thermodynamic forces: as we saw in section <a class="reference internal" href="statisticaldescription.html#thermodynaic-forces">2.6</a>, they
+are always proportional to the temperature.  Given the microscopic description above, this is now easier to understand.
+For example, pressure is the force of particles randomly striking the walls of a container.  The faster they are moving,
+the harder they strike it.  And as we saw in section <a class="reference internal" href="#interpretation-of-temperature">4.1</a>, the average velocity of each
+particle is proportional to the temperature.  If the temperature were exactly zero so the particles were not moving at
+all, there would be no pressure.  All thermodynamic forces would disappear, and all thermodynamic potentials would
+simply become equal to the energy.</p>
+</div>
+<div class="section" id="thermal-equilibrium">
+<span id="id2"></span><h2>4.6. Thermal Equilibrium<a class="headerlink" href="#thermal-equilibrium" title="Permalink to this headline">¶</a></h2>
+<p>In section <a class="reference internal" href="#thermodynamic-potentials-and-thermodynamic-forces">4.4</a> we took the derivative of <span class="math">\(G\)</span> with respect
+to volume, and derived a condition for the system to be in equilibrium.  Let&#8217;s repeat the same calculation, only instead
+taking the derivative with respect to energy:</p>
+<div class="math">
+\[\begin{split}\frac{\partial G_A}{\partial E_A} &amp;= 0 \\
+&amp;= 1 - T_B \frac{\partial S_A}{\partial E_A} \\
+&amp;= 1 - kT_B \frac{\partial \mathrm{log}(\Omega_A)}{\partial E_A} \\
+&amp;= 1 - \frac{T_B}{T_A}\end{split}\]</div>
+<p>From which we conclude:</p>
+<div class="math" id="equation-equilibrium-temperatures-equal">
+<span class="eqno">(5)</span>\[T_A = T_B\]</div>
+<p>Unsurprisingly, the requirement is that both subsystems must have the same temperature.  Two systems whose temperatures
+are equal are said to be in <em>thermal equilibrium</em>.  If you bring them into contact with each other, no energy will flow
+between them.  On the other hand, if the systems have different temperatures, there will be a net flow of energy until
+their temperatures become equal.</p>
+<p>This energy transfer is different from the ones seen in the previous sections, in that it does not involve any
+mechanical work.  There is no change to any independent macroscopic variable <em>other</em> than energy.  It is simply the
+result of random collisions between molecules that transfer kinetic energy from one subsystem to the other.  This type
+of energy transfer is known as <em>heat</em>.</p>
+</div>
+<div class="section" id="intensive-and-extensive-variables">
+<h2>4.7. Intensive and Extensive Variables<a class="headerlink" href="#intensive-and-extensive-variables" title="Permalink to this headline">¶</a></h2>
+<p>Here is a useful bit of terminology.</p>
+<p>Macroscopic variables that are independent of the size of the system are called <em>intensive variables</em>.  Temperature,
+pressure, and chemical potential are all intensive variables.  For example, the temperature of a system has nothing to
+do with how large that system is.</p>
+<p>Macroscopic variables that are proportional to the size of the system are called <em>extensive variables</em>.  Energy,
+volume, number of particles, and entropy are all extensive variables.</p>
+<p>If you take two independent systems and then view them as a single combined system, all intensive variables will have
+values that are averages of those for the independent systems, whereas all extensive variables will have values that are
+the sums of the values for the independent systems.  If you combine two identical systems, the resulting system will
+have twice the volume, twice the energy, and twice the entropy of either of the component systems on its own.  But its
+temperature, pressure, and chemical potential will be identical to those for the component systems.</p>
+<p>If you multiply an intensive variable by an extensive one, the result is an extensive variable.  Thermodynamic
+potentials contain many such products.  <span class="math">\(PV\)</span>, <span class="math">\(TS\)</span>, and <span class="math">\(\mu N\)</span> each multiply an intensive variable
+by an extensive one to produce an extensive variable.  Thermodynamic forces are always intensive.  Thermodynamic
+potentials are always extensive.</p>
+<p>The ratio of two extensive variables is an intensive variable.  For example, dividing the number of particles by the
+volume produces the <em>particle density</em>: <span class="math">\(\rho=N/V\)</span>.</p>
+<p>Nearly all macroscopic variables fall into one of these two categories.  There is nothing especially profound about
+this.  It is just a piece of terminology you will need to know.</p>
+</div>
+<div class="section" id="a-brief-rant-internal-energy">
+<h2>4.8. A Brief Rant: Internal Energy<a class="headerlink" href="#a-brief-rant-internal-energy" title="Permalink to this headline">¶</a></h2>
+<p>If you read most other books on statistical mechanics, you will find that everywhere I have written <span class="math">\(E\)</span> for
+energy, they instead write <span class="math">\(U\)</span> for &#8220;internal energy&#8221;.  I have intentionally avoided doing that.  At best, internal
+energy is a useless distinction, and at worst it can be actively misleading.  I hesitate even to mention it now.  But
+since you are likely to encounter it sooner or later, I should at least introduce the concept.</p>
+<p>The idea is that the total energy of a system can be divided into three parts: the kinetic energy of the system as a
+whole, the potential energy of the system as a whole, and the &#8220;internal energy&#8221;.  Only the last of these affects the
+internal dynamics of the system.  For example, if you put your experimental apparatus on an airplane flying at 1000
+km/hour, that greatly increases its kinetic energy, but has no effect on your results.  Likewise if you take the
+apparatus to the top of Mt. Everest, that greatly increases its potential energy but again does not affect your results.</p>
+<p>The problem with this idea is that it is simply wrong.  Every time the airplane encounters turbulence, the bouncing will
+add heat to the system, thus affecting your results.  The same thing happens to a lesser extent every time it speeds up,
+slows down, turns, or accelerates in any other way.  The only case where the internal energy is fully decoupled from the
+overall motion of the system is when it moves at a constant speed in a straight line with no acceleration at all.  But
+in that case, the only difference between internal energy and total energy is what reference frame you calculate it in.
+Relativity tells us that all your results must be independent of what reference frame you use, so the choice of whether
+to use internal energy or total energy is irrelevant.</p>
+<p>Similarly, the gravity at the top of Mt. Everest is slightly weaker than at sea level, and that does have the potential
+to change your results.  In many (but not all!) cases, the difference is negligible, and in that event the only
+difference between internal energy and total energy is that they are offset by a constant.  But the zero point of energy
+is always arbitrary; adding a constant never affects behavior.  So once again, it is irrelevant which one you use.</p>
+<p>In summary, the choice to use internal energy instead of total energy <em>by definition</em> is only correct if it does not
+affect any of your results.  If it does affect them, that proves you have defined the internal energy incorrectly. But
+it is very easy to define it incorrectly, such as by neglecting a contribution that actually does matter.  And the only
+way to make sure is to repeat your calculation using the total energy and verify that the results do not change!  So why
+make the distinction in the first place?</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4. The Interpretation of Statistical Quantities</a><ul>
+<li><a class="reference internal" href="#temperature">4.1. Temperature</a></li>
+<li><a class="reference internal" href="#thermodynamic-potentials-as-a-measure-of-probability">4.2. Thermodynamic Potentials as a Measure of Probability</a></li>
+<li><a class="reference internal" href="#independent-and-dependent-variables">4.3. Independent and Dependent Variables</a></li>
+<li><a class="reference internal" href="#thermodynamic-potentials-and-thermodynamic-forces">4.4. Thermodynamic Potentials and Thermodynamic Forces</a></li>
+<li><a class="reference internal" href="#the-mechanics-of-thermodynamic-forces">4.5. The Mechanics of Thermodynamic Forces</a></li>
+<li><a class="reference internal" href="#thermal-equilibrium">4.6. Thermal Equilibrium</a></li>
+<li><a class="reference internal" href="#intensive-and-extensive-variables">4.7. Intensive and Extensive Variables</a></li>
+<li><a class="reference internal" href="#a-brief-rant-internal-energy">4.8. A Brief Rant: Internal Energy</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="largenumbers.html"
+                        title="previous chapter">3. Mathematical Interlude: Very Large Numbers</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thermodynamics.html"
+                        title="next chapter">5. Thermodynamics</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="thermodynamics.html" title="5. Thermodynamics"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="largenumbers.html" title="3. Mathematical Interlude: Very Large Numbers"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Introduction to Statistical Mechanics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2015, Peter Eastman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

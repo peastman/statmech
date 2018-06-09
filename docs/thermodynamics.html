@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5. Thermodynamics &mdash; Introduction to Statistical Mechanics</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Introduction to Statistical Mechanics" href="index.html" />
+    <link rel="next" title="6. Phase Transitions" href="phasetransitions.html" />
+    <link rel="prev" title="4. The Interpretation of Statistical Quantities" href="interpretation.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="phasetransitions.html" title="6. Phase Transitions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="interpretation.html" title="4. The Interpretation of Statistical Quantities"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Introduction to Statistical Mechanics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="thermodynamics">
+<span id="id1"></span><h1>5. Thermodynamics<a class="headerlink" href="#thermodynamics" title="Permalink to this headline">¶</a></h1>
+<p>Statistical mechanics grew out of an earlier field called thermodynamics, which was concerned with the thermal
+properties of liquids and gasses.  It grew up around it, and then subsumed it.  What we now call &#8220;classical
+thermodynamics&#8221; was developed over a period of several hundred years, but much of the most important work was done in
+just a few decades from the 1820s through the 1850s.  It is not at all a coincidence, of course, that this burst of
+activity coincided with the industrial revolution and the development of the locomotive.  Classical thermodynamics was
+largely developed by people who wanted to learn how to make better steam engines.</p>
+<p>Statistical mechanics has come a long way from these humble beginnings, but thermodynamics is still an important field
+in its own right.  In this chapter, I will discuss some of the most important results of classical thermodynamics as
+seen from a modern statistical viewpoint.</p>
+<div class="section" id="thermodynamic-processes">
+<h2>5.1. Thermodynamic Processes<a class="headerlink" href="#thermodynamic-processes" title="Permalink to this headline">¶</a></h2>
+<p>In everything that has come so far, we have considered only systems that were in equilibrium.  We will now take a first
+step toward removing this restriction.</p>
+<p>Consider some physical system, and assume it is initially in equilibrium.  We now change the system in some way. There
+are many types of changes we might make.  Here are some examples.</p>
+<ul class="simple">
+<li>We could directly add energy to the system, for example by shaking it or by placing it over a fire.</li>
+<li>We could bring it into contact with a new heat bath.  This might be done by moving it, or by opening a door that
+previously insulated it and prevented heat from flowing between it and the heat bath.</li>
+<li>We could change the volume of the system.  For example, it might be contained in a chamber, one wall of which is
+attached to a piston allowing it to be moved in or out.</li>
+<li>We could change the potential energy function for the system.  For example, we could apply an electric or magnetic
+field.  This will change the energy of each microstate.</li>
+</ul>
+<p>Once we make any of these changes, the system will no longer be in equilibrium.  If we let it sit long enough, however,
+it will eventually come back into equilibrium.  How long that takes will depend entirely on the system.  It could
+easily be anything from microseconds to millions of years.  Assume we do that, so we once again are dealing with a
+system in equilibrium.  This whole process of changing the system and allowing it to equilibrate is known as a
+<em>thermodynamic process</em>.  We can now compare the two different states of the system, one before the process was
+performed and one after.</p>
+<p>Notice that we have fundamentally changed our definition of what can constitute a physical system.  Up to now we have
+dealt with two types of systems:</p>
+<ol class="arabic simple">
+<li>An isolated system whose macroscopic properties, like energy and volume, are fixed and unchanging.</li>
+<li>A system in contact with a heat bath.  The properties of the system are determined by the properties of the heat
+bath.  They are free to change, but they do so at random and mostly only within a narrow range.  Also, if we view
+the system of interest plus the heat bath as a single composite system, that composite system is still isolated.</li>
+</ol>
+<p>We now have a third option: a system whose properties we can directly control.  They change when we choose to change
+them in exactly the way we choose.  We are no longer in any way dealing with an isolated system.  We are explicitly
+making an external change, reaching in from outside to alter the system.  On the other hand, we only do that during a
+restricted time period.  Before we make the change, the system (possibly including a heat bath) is isolated.  After we
+are done making the change it is again isolated.  But while we make the change, it is not isolated.</p>
+</div>
+<div class="section" id="the-laws-of-thermodynamics">
+<h2>5.2. The Laws of Thermodynamics<a class="headerlink" href="#the-laws-of-thermodynamics" title="Permalink to this headline">¶</a></h2>
+<p>Classical thermodynamics is based on four laws that are very sensibly numbered starting at zero.  When viewed from a
+modern perspective, three of them are trivial.  The remaining one is extremely profound, and even today is often
+misunderstood.</p>
+<div class="admonition-the-zeroth-law-of-thermodynamics admonition">
+<p class="first admonition-title">The Zeroth Law of Thermodynamics</p>
+<p class="last">If two bodies are each in thermal equilibrium with a third body, then they are also in thermal equilibrium with
+each other.</p>
+</div>
+<p>This law was needed to justify that one can define temperature in terms of values measured on a thermometer.  Remember
+that when thermodynamics was first being developed, no one was certain exactly what &#8220;temperature&#8221; really was.  It was
+strictly an empirical measurement.  This law asserts that if you let a thermometer come to equilibrium with two
+different bodies, and they each produce the same measurement, then bringing those bodies together will produce no net
+flow of heat.</p>
+<p>Once we associate temperature with the average kinetic energy per degree of freedom, this law becomes trivial.  It is
+merely the statement that if two numbers each equal a third number, then they also equal each other.</p>
+<div class="admonition-the-first-law-of-thermodynamics admonition">
+<p class="first admonition-title">The First Law of Thermodynamics</p>
+<p>The change in a system&#8217;s energy during a thermodynamic process equals the heat added to the system, minus the work
+it performs on its environment.  In differential form, this is written</p>
+<div class="math" id="equation-first-law">
+<span class="eqno">(1)</span>\[dE=dQ-dW\]</div>
+<p class="last">where <span class="math">\(Q\)</span> represents heat and <span class="math">\(W\)</span> represents work.</p>
+</div>
+<p>This is just a statement of conservation of energy.  But once again, remember that the founders of classical
+thermodynamics did not know exactly what &#8220;heat&#8221; was.  The fact that it was a form of energy, and that it participated
+in the conservation of energy, had to be discovered through experiment.</p>
+<p>Also notice how the form in which it is stated reflects the sorts of problems they were trying to study: mechanical
+engines that one adds heat to and that do work.  In many cases, it is hard to cleanly divide all energy conversions
+into &#8220;heat&#8221; and &#8220;work&#8221;, for example in processes that involve chemical reactions or in which matter is transferred
+between the system and a heat bath.  But of course, energy conservation is a completely general law and applies to all
+situations equally well.</p>
+<p>The next law can be stated in several forms which appear different, but are actually equivalent.  Here are two of the
+most common versions.</p>
+<div class="admonition-the-second-law-of-thermodynamics admonition">
+<p class="first admonition-title">The Second Law of Thermodynamics</p>
+<p>In any thermodynamic process, the total entropy either increases or remains constant, but never decreases.</p>
+<p><em>or</em></p>
+<p class="last">Heat will never spontaneously flow from a colder body to a warmer one.</p>
+</div>
+<p>This law reflects a deep truth about the nature of the universe we live in.  It deserves a whole section of its own, so
+before I get to that let me first finish off the list of laws.</p>
+<div class="admonition-the-third-law-of-thermodynamics admonition">
+<p class="first admonition-title">The Third Law of Thermodynamics</p>
+<p class="last">As the temperature of any system approaches zero, its entropy approaches a minimum value.</p>
+</div>
+<p>This is another law that was needed to allow empirical definitions of temperature and entropy.  From a statistical
+viewpoint, it is a statement of the fact that for nearly all physical systems, the density of states increases with
+energy.</p>
+</div>
+<div class="section" id="the-second-law-of-thermodynamics">
+<span id="id2"></span><h2>5.3. The Second Law of Thermodynamics<a class="headerlink" href="#the-second-law-of-thermodynamics" title="Permalink to this headline">¶</a></h2>
+<p>The second law is not a trivial consequence of statistics or mechanics, but at first glance it is easy to <em>think</em> it
+is.  The entropy of a system is simply the logarithm of its density of states.  For an isolated system, that is a
+measure of how probable each macrostate is.  The second law could therefore be summarized as, &#8220;Systems tend to move from
+less probable states to more probable ones.&#8221;  That sounds obvious.  If a system is initially in a less probable state,
+we should hardly be surprised to later find it has moved to a more probable one.  If it went the other way and moved to
+a less probable state, <em>that</em> would be surprising.</p>
+<p>Suppose you have a box filled with gas molecules.  Now you remove the cover, so the molecules are free to leave the
+box.  Clearly it is far more likely for the molecules to spread out through the room than to all remain inside the box.
+There are far more possible arrangements of them when they are spread out through the room.  That is a higher entropy
+state.  Once they have diffused out into the room, it is incredibly unlikely you will ever find that, simply by chance,
+they are all inside the box at the same time again.  That is what the second law tells us.  Simple, right?</p>
+<p>But there is a problem with this logic.  So far as we know, the laws of physics are symmetric with respect to time.  (Or
+more accurately they obey CPT invariance, but that distinction is irrelevant for this discussion.)  If you reverse the
+velocity of every particle, the entire system will exactly retrace its trajectory in reverse.  There is nothing in the
+laws of physics that distinguishes between &#8220;forward&#8221; and &#8220;backward&#8221; in time.  Those are just arbitrary labels we assign
+to two opposite directions.  If we reversed the labels, nothing about the laws of physics would change.  (For CPT
+invariance, you also need to reverse the labels &#8220;left&#8221; and &#8220;right&#8221;, as well as the labels &#8220;positive&#8221; and &#8220;negative&#8221;
+charge.)</p>
+<p>So we can repeat the same argument in reverse.  Consider a room containing gas molecules and an open box.  Now close the
+box.  Assume that after you close it, all the molecules are inside the box.  At any earlier point in time when the box
+was still open, it was incredibly unlikely that all the molecules just happened to be inside the box.  So this &#8220;proves&#8221;
+that entropy tends to decrease.</p>
+<p>Stated this way, the argument sounds like nonsense.  How can we assume that all the gas just happened to be inside the
+box at the moment we closed it?  But in that case, why is it any more reasonable to assume the gas was initially
+inside the box in the original version of the argument?  Just what is going on here?</p>
+<p>Boltzmann himself spent years trying to prove the second law, and several times thought he had succeeded.  The most
+famous of these attempts is known as the &#8220;H-theorem&#8221;, published in 1872.  It appeared to be a completely rigorous proof
+of the second law for a gas of classical particles.  Of course it contained an assumption that broke time symmetry, but
+that assumption came into it in such a subtle way that for a few years neither Boltzmann nor any of his contemporaries
+noticed it.  Then in 1876, Josef Loschmidt published his &#8220;reversibility objection&#8221; to the H-theorem.  He reasoned as
+follows.</p>
+<p>Start with a system in a low entropy (non-equilibrium) state. Given enough time, it will eventually move to a higher
+entropy, equilibrium state. Now reverse the velocity of every particle. Since the equations of motion are time
+symmetric, the system will retrace its trajectory and return to the original, low entropy state (except with velocities
+reversed). Clearly the second law cannot be a universal law that applies in all cases, because we have just presented a
+counter-example: a case where the entropy spontaneously decreases.</p>
+<p>In response to this objection, Boltzmann slightly modified his position, arguing the second law was still true in a
+probabilistic sense.  He acknowledged that one could carefully design states whose entropy would decrease.  But any
+state that was not specifically designed in this way would almost certainly be one whose entropy increased rather than
+decreasing.</p>
+<p>Unfortunately, this claim is simply wrong.  The original low entropy state, the high entropy state it evolves into, and
+the time reversed version of that high entropy state (which will spontaneously return to a lower entropy one) are all
+equally probable.  There is no basis for accepting some while ignoring others.  For every trajectory whose entropy
+increases, there is a reversed trajectory whose entropy decreases.  Both directions are equally probable.</p>
+<p>Later in his career, Boltzmann finally came to a clearer understanding of the situation.  He recognized that the second
+law <em>cannot</em> be proven.  No amount of statistics or probability can turn a symmetric theory into a non-symmetric one.
+The second law of thermodynamics is not really a &#8220;law&#8221; at all.  It is a <em>definition</em>.  When we speak of &#8220;forward in
+time,&#8221; we really mean &#8220;the direction of increasing entropy.&#8221;  All the phenomena that lead us to view time as asymmetric
+follow directly from the change in entropy: that it is easy to break a window but hard to fix it; that friction makes
+things slow down instead of speeding up; even that you can remember the past but not the future.  If the arrow of time
+were reversed so that entropy increased in the opposite direction, you would not notice any difference at all.  You
+would simply perceive the opposite direction as being &#8220;forward in time.&#8221;</p>
+<p>Boltzmann was unable to explain <em>why</em> entropy is changing in the first place.  If the universe were in equilibrium,
+entropy should be constant and unchanging in all directions.  The best answer he could suggest was an anthropic
+argument.  He observed that even in equilibrium, highly improbable states can still happen.  In fact, if you wait long
+enough, <em>every</em> state will eventually be visited.  The entire Earth could be a random fluctuation that occurred just by
+chance.  A fluctuation of that sort is incredibly improbable; most of the time, the atoms making up the Earth should be
+arranged in a generally uniform, featureless way.  But in that situation, life could not exist.  Given that we <em>do</em>
+exist, we should not be surprised to find the universe in one of the rare states that can support life.</p>
+<p>This was a very clever idea, and in many ways a very modern one.  It was, however, wrong.  It leads to some very
+specific predictions, and those predictions do not match the universe we actually see around us.</p>
+<p>Today we have a better explanation: the change in entropy is an effect of the Big Bang.  We know that roughly 13.8
+billion years ago, the universe was in a state of incredibly low entropy with all its matter and energy concentrated
+in a tiny region of space.  Entropy has been steadily increasing ever since, and will continue increasing far into the
+future.  That is why we find ourselves in a region of spacetime where there is an entropy gradient.  For practical
+purposes, the phrase &#8220;forward in time&#8221; really means, &#8220;away from the Big Bang.&#8221;</p>
+<p>We still do not know <em>why</em> the Big Bang happened.  There are various ideas about that, but we do not yet have enough
+evidence to say which one is correct.  There may be other regions of spacetime where entropy is flat and unchanging.
+If so, those regions cannot support life, so it is not surprising we are not in one of them.  We do not know whether
+the Big Bang marks the boundary of the universe, or whether there is more universe on the other side of it.  If the
+latter, then entropy in that region presumably increases in the opposite direction.  Anyone living there would perceive
+time as moving in the opposite direction to how we perceive it.  Perhaps there are many different Big Bangs and many
+different universes surrounding them, each with its own arrow of time.  Based on our current evidence, we just cannot
+say.</p>
+</div>
+<div class="section" id="heat-and-entropy">
+<span id="id3"></span><h2>5.4. Heat and Entropy<a class="headerlink" href="#heat-and-entropy" title="Permalink to this headline">¶</a></h2>
+<p>Consider a thermodynamic process in which an infinitesimal amount of heat <span class="math">\(dQ\)</span> is added to a system, while keeping
+its volume and other macroscopic variables fixed (so that it does not do any mechanical work).  The first law of
+thermodynamics then simplifies to <span class="math">\(dE=dQ\)</span>.  We can use the chain rule to rewrite this as</p>
+<div class="math" id="equation-dQ=TdS">
+<span class="eqno">(2)</span>\[\begin{split}dQ &amp;= dE = \left( \frac{\partial \mathrm{log}(\Omega)}{\partial E} \right)^{-1} d(\mathrm{log}(\Omega)) \\
+&amp;= T dS\end{split}\]</div>
+<p>This shows a direct connection between heat and entropy.  If you add heat to a system, you raise its entropy.  If you
+remove heat, you lower its entropy.  This is just our assumption that <span class="math">\(\Omega\)</span> increases with energy, coming back
+in yet another form.</p>
+<p>Suppose an amount of heat <span class="math">\(dQ\)</span> flows from subsystem A to subsystem B.  The entropy of A decreases and the entropy
+of B increases.  The total change in entropy of the whole system is the sum of the two:</p>
+<div class="math" id="equation-change-in-entropy-from-heat">
+<span class="eqno">(3)</span>\[dS = dS_B+dS_A = \frac{dQ}{T_B} - \frac{dQ}{T_A}\]</div>
+<p>If <span class="math">\(T_A=T_B\)</span>, then <span class="math">\(dS\)</span> is zero and the total entropy of the system remains constant.  But if the
+temperatures were equal, no heat would have flowed in the first place.  We saw this in section
+<a class="reference internal" href="interpretation.html#thermal-equilibrium">4.6</a>: if two systems have the same temperature, they are in thermal equilibrium and no heat flows
+between them.</p>
+<p>If <span class="math">\(T_A &lt; T_B\)</span>, then <span class="math">\(dS\)</span> is negative and the total entropy decreases.  But this case is forbidden by the
+second law of thermodynamics.  Heat will never spontaneously flow from a colder body to a warmer one.  The total change
+in entropy cannot be negative.  (You see now how these two versions of the second law are equivalent to each
+other.)</p>
+<p>So the only possibility is that <span class="math">\(T_A &gt; T_B\)</span>.  Heat is flowing from a warmer body to a colder one, and the overall
+entropy of the system increases.  This leads us to the following very important conclusion: <em>whenever heat flows between
+two bodies, the total entropy of the system increases</em>.  As we will see shortly, this has important consequences for
+anyone trying to build a steam engine.</p>
+</div>
+<div class="section" id="heat-capacity">
+<h2>5.5. Heat Capacity<a class="headerlink" href="#heat-capacity" title="Permalink to this headline">¶</a></h2>
+<p>If you add heat to a system, you increase its energy and therefore its temperature as well.  The proportionality
+constant is called the <em>heat capacity</em>:</p>
+<div class="math" id="equation-heat-capacity">
+<span class="eqno">(4)</span>\[C \equiv \frac{dQ}{dT}\]</div>
+<p>If the heat capacity is large, that means you can add a lot of heat to the system while having only a small effect on
+the temperature.  Heat capacity is an extensive property; if you double the size of the system, you also double its heat
+capacity.</p>
+<p>As in the previous section, assume the volume is held fixed so the system does no mechanical work.  In that case, we
+can use equation <a href="#equation-dQ=TdS">(2)</a> to write the heat capacity at constant volume:</p>
+<div class="math" id="equation-heat-capacity-constant-V">
+<span class="eqno">(5)</span>\[\begin{split}C_V &amp;= \frac{(T dS)}{dT} \\
+&amp;= T \left(\frac{\partial S}{\partial T}\right)_V\end{split}\]</div>
+<p>The subscript V refers to the fact that we are keeping the volume fixed.  The expression
+<span class="math">\(\left(\frac{\partial S}{\partial T}\right)_V\)</span> is an example of a notation that is common in thermodynamics, and
+usually used without any explanation of what it really means.  In this case, <span class="math">\(S=k \mathrm{log}(\Omega(E,V))\)</span>.
+That cannot in any way be considered a function of <span class="math">\(T\)</span>!  In fact, the temperature is defined by a <em>derivative</em> of
+<span class="math">\(S\)</span>.  It describes the distribution of microstates with energy.  It makes no sense to speak of the &#8220;temperature&#8221;
+of a single microstate, or the density of states with a given temperature!  So what do we mean by writing a derivative
+of <span class="math">\(S\)</span> with respect to <span class="math">\(T\)</span>?</p>
+<p>As the system interacts with the heat bath, its energy (and hence entropy) continuously fluctuate.  So <span class="math">\(S\)</span> is not
+even well defined in this situation.  On the other hand, we can still compute the <em>average</em> entropy
+<span class="math">\(\langle S \rangle\)</span>.  That <em>is</em> a well defined function of temperature, so we can reasonably compute its derivative
+with respect to <span class="math">\(T\)</span>.  That is what the partial derivative in equation <a href="#equation-heat-capacity-constant-V">(5)</a> really means:
+the derivative of <span class="math">\(\langle S \rangle\)</span>, not of <span class="math">\(S\)</span> itself.  Of course, the average will vary depending on
+what ensemble we use to calculate it.  We therefore add a subscript to specify the ensemble: in this case, that
+<span class="math">\(V\)</span> is held fixed.</p>
+<p>Of course, entropy was first known as an experimental quantity before it was later explained as a statistical quantity.
+If you think about it in those terms, there is nothing confusing about any of this.  Just measure the entropy of a
+system, and see how it varies with temperature.  You find that the result differs depending on whether you fix the
+volume or the pressure during your experiment, so of course you add a subscript to indicate which one you measured.
+Simple, right?  Just remember that your experiment is actually measuring the <em>average</em> entropy over a range of
+macrostates, not the entropy of any one specific macrostate.</p>
+<p>If you choose to fix pressure instead of volume, equation <a href="#equation-dQ=TdS">(2)</a> changes to</p>
+<div class="math">
+\[dE = T dS = dQ-P dV\]</div>
+<p>and the heat capacity becomes</p>
+<div class="math" id="equation-heat-capacity-constant-P">
+<span class="eqno">(6)</span>\[\begin{split}C_P &amp;= \frac{(T dS+P dV)}{dT} \\
+&amp;= T \left(\frac{\partial S}{\partial T}\right)_P + P \left(\frac{\partial V}{\partial T}\right)_P\end{split}\]</div>
+<p>It can be shown that for nearly all realistic systems, <span class="math">\(C_P &gt; C_V\)</span>.  This is easy to understand.  If you let the
+system expand as you add heat, it performs work on its environment.  That reduces the energy of the system.  Energy used
+to perform work is energy that doesn&#8217;t go into raising the temperature, so <span class="math">\(T\)</span> increases more slowly.</p>
+</div>
+<div class="section" id="the-ideal-gas-law">
+<h2>5.6. The Ideal Gas Law<a class="headerlink" href="#the-ideal-gas-law" title="Permalink to this headline">¶</a></h2>
+<p>An <em>ideal gas</em> is defined as a gas of free particles that do not interact with each other in any way.  It makes a very
+useful model for studying how gasses behave during thermodynamic processes.</p>
+<p>The density of states of an ideal gas takes a particularly simple form.  Each particle is equally likely to be anywhere
+in the allowed volume, so for any single particle considered on its own, <span class="math">\(\Omega \propto V\)</span>.  Because the
+particles do not interact with each other, the density of states for the whole gas is just the product of the ones for
+the individual particles: <span class="math">\(\Omega \propto V^N\)</span>.  The definition of pressure therefore becomes</p>
+<div class="math">
+\[\begin{split}P &amp;\equiv kT \frac{\partial \mathrm{log}(\Omega)}{\partial V} \\
+&amp;= NkT \frac{\partial \mathrm{log}(V)}{\partial V} \\
+&amp;= \frac{NkT}{V}\end{split}\]</div>
+<p>Rearranging this gives the <em>ideal gas law</em>, also known as the <em>ideal gas equation of state</em>:</p>
+<div class="math" id="equation-ideal-gas-law">
+<span class="eqno">(7)</span>\[PV = NkT\]</div>
+<p>A real gas is not an ideal gas, of course.  The particles do interact with each other.  Still, this turns out to be a
+surprisingly good approximation for dilute gasses of non-polar, non-reactive molecules.  Air, for example.  Furthermore,
+even when it is not accurate enough to make quantitative predictions, it still gives a good qualitative description of
+how real gasses behave.  So let us take a minute to examine it and see what it can tell us.</p>
+<p>Suppose you increase the temperature of a gas, such as by lighting a fire under it.  The ideal gas law immediately tells
+us that the pressure, the volume, or both must increase as well.  If you hold the volume fixed, the pressure will
+increase in direct proportion to the temperature.  If instead you hold the pressure fixed while allowing the volume to
+change, then the gas will expand.</p>
+<p>As it expands it does work on its environment: <span class="math">\(W=P \Delta V\)</span>, where <span class="math">\(\Delta V\)</span> is the change in volume.
+That means the energy of the gas must decrease by the same amount to conserve energy, and that in turn means its
+temperature will decrease.  This leads us to another important principle: <em>when a gas expands, its temperature tends to
+decrease</em>.</p>
+<p>Of course, it works the other way as well.  If you compress the gas by performing work on it, you increase its energy
+and thus its temperature.</p>
+<p>So you see, this simple gas of noninteracting particles actually has an amazing ability: it can convert thermal energy
+into mechanical work, and vice versa!  That certainly sounds like it ought to be a useful ability.  Surely <em>someone</em>
+must have come up with something to do with it!</p>
+</div>
+<div class="section" id="heat-engines">
+<h2>5.7. Heat Engines<a class="headerlink" href="#heat-engines" title="Permalink to this headline">¶</a></h2>
+<p>A device that transforms thermal energy into mechanical work is called a <em>heat engine</em>.  From what we saw in the last
+section, it looks like a gas could be very useful in building one.  For example, you might have a chamber filled with
+gas, and one wall of the chamber is a piston that can move in and out.  As the gas expands, the piston moves outward and
+does work.</p>
+<p>But what then?  Once it has gone all the way out, it cannot move any further.  Before you can extract any more work, you
+first need to compress the gas again.  And to do that, you need to perform work <em>on</em> the gas, thus giving back all the
+useful work you just got out of it.  Not so useful after all!</p>
+<p>But with a little cleverness we can get around this problem.  As the gas expands it does work <span class="math">\(P \Delta V\)</span> on its
+environment, and as we compress it we have to do work <span class="math">\(P \Delta V\)</span> on the gas.  But what if the pressures in these
+two expressions were different?  We want the pressure to be high while the gas expands and low while we compress it.  In
+that case, we will get more work out of the gas in the expansion stage than we have to put into it in the compression
+stage.</p>
+<p>The ideal gas law tells us how we can do this: by changing the temperature!  We need the gas to be hot while it expands
+and cold while it contracts.  That is easily achieved.  In addition to the gas (also known as the <em>working body</em>), we
+need two different heat baths: one called the &#8220;hot bath&#8221; or &#8220;source&#8221; at temperature <span class="math">\(T_H\)</span>, and one called the
+&#8220;cold bath&#8221; or &#8220;sink&#8221; at temperature <span class="math">\(T_C\)</span>.  Here is a specific example of a sequence of steps you might use.</p>
+<ol class="arabic simple">
+<li>Put the working body in contact with the hot bath and let it expand.  As it expands it does useful work.  Normally
+this would cause its temperature to drop, but because it is in contact with a heat bath, it steadily absorbs energy
+and its temperature remains at <span class="math">\(T_H\)</span>.</li>
+<li>Now disconnect the working body from the heat bath so it is isolated.  Let it continue to expand.  It continues to do
+useful work, and since it is now isolated, its temperature does drop.  Let this continue until its temperature
+reaches <span class="math">\(T_C\)</span>.</li>
+<li>Put it in contact with the cold bath and start compressing it.  This would normally cause its temperature to rise,
+but since it is in contact with the cold bath, it instead expels energy to the bath and remains at <span class="math">\(T_C\)</span>.</li>
+<li>Disconnect the working body from the bath so it is once again isolated.  Continue doing work to compress it.  This
+will now cause its temperature to rise.  Continue until it reaches <span class="math">\(T_H\)</span>.</li>
+</ol>
+<p>This is an example of a <em>thermodynamic cycle</em>: a sequence of thermodynamic processes that end with the system (other
+than the heat baths) in exactly the same state it began in, so we can repeat the cycle over and over.  In particular,
+this is known as the <em>Carnot cycle</em> after Sadi Carnot, who proposed it in 1824.  A heat engine that uses this cycles is
+called a <em>Carnot heat engine</em>.</p>
+<p>Let us analyze what happens during this cycle.  Let <span class="math">\(Q_H\)</span> be the heat absorbed from the hot bath, <span class="math">\(Q_C\)</span> the
+heat expelled to the cold bath, and <span class="math">\(W\)</span> the net amount of work performed during the whole cycle (that is, the
+work performed <em>by</em> the working body during steps 1 and 2, minus the work performed <em>on</em> the working body in steps 3 and
+4).  Conservation of energy requires that <span class="math">\(W=Q_H-Q_C\)</span>.</p>
+<p>As we saw in section <a class="reference internal" href="#heat-and-entropy">5.4</a>, whenever heat flows into or out of a system, its entropy changes as well.
+Therefore the entropy of the two heat baths must change over the course of the cycle.  The entropy of the hot bath
+decreases and the entropy of the cold bath increases.  From equation <a href="#equation-dQ=TdS">(2)</a>, <span class="math">\(Q_H=T_H \Delta S_H\)</span> and
+<span class="math">\(Q_C=T_C \Delta S_C\)</span>.</p>
+<p>The <em>efficiency</em> of a heat engine, represented by the symbol <span class="math">\(\eta\)</span>, is defined as the ratio of the work done by
+it to the energy absorbed from the hot bath:</p>
+<div class="math" id="equation-define-efficiency">
+<span class="eqno">(8)</span>\[\begin{split}\eta &amp;\equiv \frac{W}{Q_H} \\
+&amp;= \frac{Q_H-Q_C}{Q_H} \\
+&amp;= 1-\frac{Q_C}{Q_H} \\
+&amp;= 1-\frac{T_C \Delta S_C}{T_H \Delta S_H}\end{split}\]</div>
+<p>The second law of thermodynamics requires that the total entropy of the whole system must increase or stay constant over
+the cycle.  The working body ends up in exactly the same state it began in, so its entropy does not change.  The engine
+also does work on its environment, but we cannot assume anything about what happens there.  Perhaps all the energy is
+being stored into a single degree of freedom with no entropy at all.  The two heat baths are all we have to work with,
+so the second law requires that <span class="math">\(\Delta S_C \geq \Delta S_H\)</span>.  We therefore conclude</p>
+<div class="math" id="equation-carnot-theorem">
+<span class="eqno">(9)</span>\[\eta \leq 1-\frac{T_C}{T_H}\]</div>
+<p>Notice how little we assumed in deriving this: merely that the heat engine absorbed heat from one bath, expelled heat to
+another, and did work.  I described the Carnot cycle as an illustration, but no details of the cycle were required for
+the derivation.  Therefore, equation <a href="#equation-carnot-theorem">(9)</a> applies equally well to heat engines that use different
+cycles.  I assumed nothing about the nature of the working body.  It could be a gas, a liquid, a solid, or even
+something exotic like a supercritical fluid.  I assumed nothing about how the working body performed work.  It could
+involve moving a piston, applying an electric field, or shooting ping-pong balls at a target.</p>
+<p>Absolutely any heat engine, no matter what it is made of or how it works, must obey equation <a href="#equation-carnot-theorem">(9)</a>, a
+fact known as <em>Carnot&#8217;s theorem</em>.  The second law of thermodynamics requires that we <em>must</em> have a second heat bath:
+we decrease the entropy of the hot bath, so we need to make up for that somewhere else.  Conservation of energy requires
+that any heat expelled to the cold bath is not available for doing work.  Those two facts place an absolute limit on
+how efficient any heat engine can ever be.</p>
+<p>There is no lower limit, of course.  You can make a heat engine as inefficient as you want. You could connect the two
+heat baths and allow energy to flow directly from one to the other without doing any work at all, thus achieving a
+spectacular efficiency of zero.  The key to making an efficient engine is to minimize all transfers of heat <em>except</em> the
+ones that are absolutely required for the operation of the engine.</p>
+<p>Another interesting fact about heat engines is that you can run them backward, which turns them into <em>heat pumps</em>.  Just
+perform the same steps in reverse order and changing the direction of movement (so that expanding becomes compressing,
+for example).  In this case, heat flows <em>out</em> of the cold bath and <em>into</em> the hot bath.  Heat is flowing opposite to its
+normal direction!  It does not do this spontaneously, of course.  Instead of the engine <em>producing</em> work, we now have to
+do work on it.  You are probably already very familiar with this fact: refrigerators and air conditioners have an
+unfortunate habit of needing to be connected to an external source of energy.</p>
+</div>
+<div class="section" id="free-energy">
+<h2>5.8. Free Energy<a class="headerlink" href="#free-energy" title="Permalink to this headline">¶</a></h2>
+<p>Consider an even simpler case: just a working body and a single heat bath.  Assume the working body has energy <span class="math">\(E\)</span>
+and entropy <span class="math">\(S\)</span>, and that the heat bath has temperature <span class="math">\(T\)</span>.  We now want to answer a simple question: what
+is the maximum amount of work we can extract from the body?</p>
+<p>Ideally, we would like the answer to be <span class="math">\(E\)</span>.  We want to extract <em>all</em> the energy as work.  But the second law
+makes that impossible.  As the body&#8217;s energy decreases, its entropy does too.  We need to make up for that by adding
+heat (and entropy) to the heat bath.</p>
+<p>The third law of thermodynamics says that as the body&#8217;s energy (and hence temperature) goes to zero, its entropy
+approaches some minimum value.  Call that <span class="math">\(S_0\)</span>.  So its entropy decreases by <span class="math">\(S-S_0\)</span>, and we need to add
+heat <span class="math">\(T(S-S_0)\)</span> to the heat bath.  Therefore, the maximum about of work we can hope to extract from the body is</p>
+<div class="math" id="equation-free-energy">
+<span class="eqno">(10)</span>\[W_{max} = E-T(S-S_0)\]</div>
+<p>If we assume <span class="math">\(S_0\)</span> is zero, this simplifies further to <span class="math">\(W_{max}=E-TS\)</span>, which we recognize as the Helmholtz
+free energy.</p>
+<p>In general, of course, <span class="math">\(S_0\)</span> is not zero, but that is a result of the statistical definition of entropy.  Before
+statistical mechanics was developed, the zero point of entropy was considered arbitrary.  In thermodynamics, only
+<em>differences</em> in entropy are usually important, so it was common to fix the zero point by defining <span class="math">\(S_0\)</span> to be
+zero.</p>
+<p>This is the origin of the term &#8220;free energy&#8221;.  It means energy that is &#8220;free&#8221; in the sense of &#8220;available&#8221; or &#8220;not locked
+up in an unusable form&#8221;.  It is the maximum amount of energy you can hope to extract as work.  Notice that its value
+depends on the temperature of the heat bath.  The colder the heat bath you have access to, the more work you can extract
+from the working body.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5. Thermodynamics</a><ul>
+<li><a class="reference internal" href="#thermodynamic-processes">5.1. Thermodynamic Processes</a></li>
+<li><a class="reference internal" href="#the-laws-of-thermodynamics">5.2. The Laws of Thermodynamics</a></li>
+<li><a class="reference internal" href="#the-second-law-of-thermodynamics">5.3. The Second Law of Thermodynamics</a></li>
+<li><a class="reference internal" href="#heat-and-entropy">5.4. Heat and Entropy</a></li>
+<li><a class="reference internal" href="#heat-capacity">5.5. Heat Capacity</a></li>
+<li><a class="reference internal" href="#the-ideal-gas-law">5.6. The Ideal Gas Law</a></li>
+<li><a class="reference internal" href="#heat-engines">5.7. Heat Engines</a></li>
+<li><a class="reference internal" href="#free-energy">5.8. Free Energy</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="interpretation.html"
+                        title="previous chapter">4. The Interpretation of Statistical Quantities</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="phasetransitions.html"
+                        title="next chapter">6. Phase Transitions</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="phasetransitions.html" title="6. Phase Transitions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="interpretation.html" title="4. The Interpretation of Statistical Quantities"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Introduction to Statistical Mechanics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2015, Peter Eastman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>7. Friction and Fluctuations &mdash; Introduction to Statistical Mechanics</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Introduction to Statistical Mechanics" href="index.html" />
+    <link rel="next" title="8. Evolution of Phase Space Probabilities" href="phasespace.html" />
+    <link rel="prev" title="6. Phase Transitions" href="phasetransitions.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="phasespace.html" title="8. Evolution of Phase Space Probabilities"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="phasetransitions.html" title="6. Phase Transitions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Introduction to Statistical Mechanics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="friction-and-fluctuations">
+<span id="id1"></span><h1>7. Friction and Fluctuations<a class="headerlink" href="#friction-and-fluctuations" title="Permalink to this headline">¶</a></h1>
+<p>In 1827, Robert Brown was looking through a microscope at pollen grains in water.  He observed that the smallest
+particles were in constant motion, jiggling around in a seemingly random way.  This came to be known as <em>Brownian
+motion</em>.  For many years, the cause of it remained an unsolved mystery.</p>
+<p>Finally in 1905, Albert Einstein published a paper with the catchy title, &#8220;On the Movement of Small Particles Suspended
+in a Stationary Liquid Demanded by the Molecular-Kinetic Theory of Heat,&#8221; which showed that Brownian motion could be
+explained by the random collisions of water molecules with the grains as they underwent thermal motion.  This paper was
+important for two reasons.  First, it served as the final conclusive proof for the existence of atoms.  It is remarkable
+to realize that as recently as 1905, the very existence of atoms was a controversial subject.  Most chemists had long
+since accepted the reality of atoms, but some physicists continued to deny that matter was in any way discrete.</p>
+<p>Second, it helped to form the foundation for the study of friction and equilibrium fluctuations based on statistical
+mechanics.  The goal of this chapter is to learn how to describe Brownian motion, and to understand the deep connection
+between the seemingly unrelated phenomena of friction and fluctuations.</p>
+<div class="section" id="friction-and-dissipation">
+<h2>7.1. Friction and Dissipation<a class="headerlink" href="#friction-and-dissipation" title="Permalink to this headline">¶</a></h2>
+<p>Friction is a familiar fact of life.  Rub two objects together and you feel a force resisting the motion.  Place an
+object on the floor and give it a push; it will slide a short distance and then stop.  Again, there is a force
+resisting its motion: friction.  And something else happens too: the objects moving against each other become warmer,
+as when you rub your hands to warm them up or when you strike a match.  The same thing happens in other contexts too.
+For example, electrical resistance is really just another type of friction.  If you run a current through a conductor,
+a force resists the motion of the electrons, and the conductor becomes warmer.</p>
+<p>Friction is such a universal part of our experience, it seems like it must reflect something fundamental in the laws of nature.
+Yet if you look at the basic equations of classical or quantum mechanics, there is no sign of friction.  A single
+isolated particle will continue forever moving in a straight line without slowing down.  If two particles collide, they
+bounce away from each other with just as much energy as they started with.  Friction, it appears, only happens to
+macroscopic objects.  And there are even situations where macroscopic systems are free from it, such as
+superconductivity and superfluidity.  What exactly is friction, and where does it come from?</p>
+<p>The answer, of course, is statistical mechanics.  We saw in section <a class="reference internal" href="interpretation.html#interpretation-of-temperature">4.1</a> that when a
+system is in equilibrium, its kinetic energy is uniformly distributed among all its degrees of freedom.  A macroscopic
+object in motion clearly is <em>not</em> in equilibrium.  It has one degree of freedom (the center of mass motion) with far
+more energy than any other.  If that degree of freedom interacts with others, the system will tend to move toward
+equilibrium.  Energy will be transferred out of that one degree of freedom (so the object will slow down) and into all
+the others (so the object will become warmer).</p>
+<p>That is all friction really is: the tendency of systems to move toward equilibrium when different degrees of freedom
+are allowed to interact with each other.</p>
+<p>In the process, its energy becomes less useful.  The kinetic energy of a moving macroscopic object is useful energy.  It
+can easily be used to do mechanical work.  Thermal energy is less useful.  You need a heat engine with a separate cold
+bath to do work with it, and Carnot&#8217;s theorem sets a strict upper limit on how much work it can do.  This conversion of
+useful mechanical energy to less useful thermal energy is called <em>dissipation</em>.  We say that friction &#8220;dissipates
+energy&#8221;.  That is, it converts mechanical energy to thermal energy.</p>
+</div>
+<div class="section" id="linear-response-theory">
+<h2>7.2. Linear Response Theory<a class="headerlink" href="#linear-response-theory" title="Permalink to this headline">¶</a></h2>
+<p>We are now ready to take another step away from equilibrium and examine what happens to a system experiencing friction.
+But where do we begin?  All our results so far have applied only to systems in equilibrium.  Even when we studied
+thermodynamic processes in Chapter <a class="reference internal" href="thermodynamics.html#thermodynamics">5</a>, we only considered transitions between two equilibrium states.
+We assumed that if we waited long enough, the system would eventually return to equilibrium, but we said nothing about
+how that process took place.  Friction <em>is</em> that process.  A system experiencing friction is, by definition, a system
+out of equilibrium.</p>
+<p>We saw in section <a class="reference internal" href="interpretation.html#thermodynamic-potentials-and-thermodynamic-forces">4.4</a> that when a system is in equilibrium, all
+mechanical and thermodynamic forces exactly cancel out.  Its macroscopic variables tend to remain fixed.  The converse
+is also true: if a system is <em>not</em> in equilibrium, the mechanical and thermodynamic forces will in general <em>not</em> cancel
+out, and the system will experience a net force pushing it back toward equilibrium.  Intuitively, we expect that the
+further the system is from equilibrium, the stronger the force will be.  But how exactly does it vary?  We are simply
+going to make an assumption:</p>
+<div class="admonition-assumption-linear-response admonition">
+<p class="first admonition-title">Assumption (Linear Response)</p>
+<p class="last">If a macroscopic variable is displaced away from equilibrium by a distance <span class="math">\(\Delta x\)</span>, the system will
+experience a net restoring force that is linearly proportional to the displacement: <span class="math">\(F = -C\Delta x\)</span>, where
+<span class="math">\(C\)</span> is a constant.</p>
+</div>
+<p>This assumption is the basis of <em>Linear Response Theory</em>.  The macroscopic variable could be the velocity of a pollen
+grain immersed in water, the volume of an inflated balloon, or the electric current traveling through a circuit.  All
+that matters is that it interacts with many microscopic degrees of freedom that can act as a heat bath.</p>
+<p>How do we justify this assumption?  If the system is not in equilibrium, the net force will almost certainly tend to push
+it back toward equilibrium.  For example, the pollen grain will collide with water molecules that slow it down.  Or the
+balloon will be bombarded by air molecules that apply pressure to it.  But there is no fundamental reason the force must
+be linear in the displacement.</p>
+<p>We will justify it in two ways.  First, suppose the force is <em>not</em> linear in the displacement.  In that case, we can
+expand it in a power series about the equilibrium value.  If <span class="math">\(\Delta x\)</span> is sufficiently small, all terms after the
+linear one will be negligible.  So even though the assumption is not strictly correct, it is still a good approximation
+as long as the displacements are small enough.</p>
+<p>The second justification is simply an experimental observation: linear response turns out to be a very good description
+of many important systems.  Our assumption is not always true, but it is true of many situations; and our conclusions
+will only apply to those situations.</p>
+</div>
+<div class="section" id="fluctuations">
+<h2>7.3. Fluctuations<a class="headerlink" href="#fluctuations" title="Permalink to this headline">¶</a></h2>
+<p>Friction is caused by the interaction with a heat bath.  Let us be very clear about that.  A moving object slows down
+because it is colliding with molecules in its environment.  In the process, energy is dissipated: the object&#8217;s kinetic
+energy is redistributed among a huge number of microscopic degrees of freedom.  These two phenomena, friction and
+dissipation, are really exactly the same thing.</p>
+<p>But that is not the <em>only</em> effect of being in contact with a heat bath.  Suppose a pollen grain is initially not moving
+at all.  In that case, collisions with water molecules will cause it to <em>start</em> moving.  In equilibrium, after all,
+every degree of freedom should have <span class="math">\(kT/2\)</span> kinetic energy.  If it starts with less than that, the effect of the
+heat bath will be to increase its kinetic energy.</p>
+<p>So in equilibrium, the pollen grain will be in constant motion.  Its speed and direction of motion will be constantly
+changing, as it is jostled by the surrounding water molecules.  But on average, its kinetic energy will equal the value
+given by the equipartition theorem.</p>
+<p>We refer to this effect as <em>equilibrium fluctuations</em>.  Any variable in equilibrium with a heat bath will be constantly
+changing.  The changes will appear random, but they will obey statistical rules determined by the nature of the heat
+bath.</p>
+<p>These two effects, fluctuations and dissipation, are inseparable from each other.  They are both caused by exactly the
+same mechanism: the interaction of the variable with a heat bath.  That is the central message of this
+chapter.  And because they have the same cause, they are guaranteed to obey certain relationships.  All that remains is
+to derive what those relationships are.</p>
+</div>
+<div class="section" id="the-langevin-equation">
+<span id="brownian-motion"></span><h2>7.4. The Langevin Equation<a class="headerlink" href="#the-langevin-equation" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s write Newton&#8217;s Second Law for a particle undergoing Brownian motion in water: <span class="math">\(F = m \ddot{x}\)</span>.  (For
+simplicity we will work in one dimension, but the generalization to more dimensions is trivial.  Just turn <span class="math">\(x\)</span>
+and <span class="math">\(F\)</span> into vectors.)  In this
+equation, <span class="math">\(F\)</span> is the force exerted on the particle by the surrounding water molecules.  The details of those
+interactions are enormously complicated and constantly changing, so we need to look for an approximate description of
+it.  What would be a reasonable approximation?</p>
+<p>The first thing we might try is using the assumption of linear response, so the force at any moment is proportional to
+the velocity: <span class="math">\(m \ddot{x} = -\gamma \dot{x}\)</span>.  The parameter <span class="math">\(\gamma\)</span> is called the <em>friction coefficient</em>.
+The solution to this differential equation is given by:</p>
+<div class="math" id="equation-decaying-velocity">
+<span class="eqno">(1)</span>\[\dot{x}(t) = \dot{x}(0) \cdot e^{-\frac{\gamma}{m}t}\]</div>
+<p>For a truly macroscopic system, this description might be sufficient.  Whatever velocity the object starts with, it
+exponentially decays toward zero.  But Brownian motion is not precisely a macroscopic phenomenon.  It applies to
+particles that are much larger than a water molecule, but still small enough that you need a microscope to see them.
+And the whole point is that their velocity does <em>not</em> decay to zero.  They remain in motion due to the constant
+collisions with water molecules.  By ignoring the forces applied by those random collisions, we have simplified things
+too far.</p>
+<p>We can still assume linear response, but now we will only take it as a statement about the <em>average</em> force on the
+particle.  At any given instant, the force could be different.  This leads to the following equation, known as the
+<em>Langevin equation</em>:</p>
+<div class="math" id="equation-langevin-equation">
+<span class="eqno">(2)</span>\[m \ddot{x} = -\gamma \dot{x} + R\]</div>
+<p><span class="math">\(R\)</span> is a &#8220;random&#8221; force describing the rapidly fluctuating interactions between the particle and water
+molecules.  We cannot hope to write an exact function for it, but we can still describe it statistically.  We will make
+the following assumptions about it:</p>
+<ol class="arabic">
+<li><p class="first"><span class="math">\(\langle R \rangle = 0\)</span>.  We already separated out the average force into its own term, so <span class="math">\(R\)</span> must have
+a mean of 0.</p>
+</li>
+<li><p class="first">It is independent of <span class="math">\(x\)</span>.  The interaction between the particle and the water is the same no matter where in
+the water bath the particle is located.</p>
+</li>
+<li><p class="first">Because it varies so rapidly and chaotically, we assume it is uncorrelated with itself except over very short time
+spans.  More precisely, we assume there is some maximum time <span class="math">\(\tau\)</span> over which it has any correlations, so that</p>
+<div class="math" id="equation-langevin-noise-uncorrelated">
+<span class="eqno">(3)</span>\[\begin{split}\langle R(t) R(t+\delta t) \rangle = 0 \text{ if } \delta t &gt; \tau\end{split}\]</div>
+</li>
+<li><p class="first">We also assume the <em>rate</em> at which correlations decay is independent of time, so that
+<span class="math">\(\langle R(t) R(t+\delta t) \rangle\)</span> is independent of <span class="math">\(t\)</span>.  It depends only on <span class="math">\(\delta t\)</span>.  The
+overall statistical properties of the random force are the same at all times.</p>
+</li>
+</ol>
+<p>These assumptions have an important consequence.  In most situations, we do not care about the instantaneous value of
+<span class="math">\(R\)</span>, only its integral over some time period that is long compared to <span class="math">\(\tau\)</span>.  We can break up that integral
+into many pieces, each covering a span of length <span class="math">\(\tau\)</span>:</p>
+<div class="math" id="equation-integrated-noise-as-sum">
+<span class="eqno">(4)</span>\[\int_0^t R(t') dt' = \int_0^\tau R(t') dt' + \int_\tau^{2 \tau} R(t') dt' + \int_{2 \tau}^{3 \tau} R(t') dt' + \dots\]</div>
+<p>So the integral is a sum of independent terms, each drawn from the same distribution.  That is exactly the sort of
+case we studied in Chapter <a class="reference internal" href="largenumbers.html#very-large-numbers">3</a>, so we can immediately apply the central limit theorem and conclude
+that the integral obeys a normal distribution with mean 0 (because <span class="math">\(\langle R \rangle = 0\)</span>), and whose standard
+deviation scales with <span class="math">\(\sqrt{t}\)</span>.  All that, without evaluating a single integral or knowing anything about the
+details of <span class="math">\(R(t)\)</span>!</p>
+<p>Before we dive into the math, let&#8217;s take a moment to look at the Langevin equation and try to understand it intuitively.
+There are two terms on the right side.  The first one always points opposite to the velocity, so it tends to
+slow the particle down.  If it were the only term, it would lead to exponentially decaying velocity as in equation
+<a href="#equation-decaying-velocity">(1)</a>.  The second term prevents that from happening by constantly applying random kicks to the
+particle.  Essentially, there is one term that removes energy and one term that adds energy.  When the system is in
+equilibrium, the two terms will exactly balance out so the average energy remains constant.  The magnitude of the random
+force will of course depend on temperature: the hotter the system, the faster the water molecules will be moving, and
+the harder they will hit the particle.  We therefore expect there should be some relationship between the temperature,
+the friction coefficient, and the magnitude of the random force.  As we will see soon, that is indeed the case.</p>
+</div>
+<div class="section" id="diffusion-of-a-brownian-particle">
+<h2>7.5. Diffusion of a Brownian Particle<a class="headerlink" href="#diffusion-of-a-brownian-particle" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have the pieces in place, it is time to see what we can calculate.  To start with, multiply both sides of
+equation <a href="#equation-langevin-equation">(2)</a> by <span class="math">\(x\)</span>, then take the ensemble average:</p>
+<div class="math" id="equation-brownian-diffusion-step-1">
+<span class="eqno">(5)</span>\[m \langle x \ddot{x} \rangle = -\gamma \langle x \dot{x} \rangle + \langle x R \rangle\]</div>
+<p>Because <span class="math">\(R\)</span> is independent of <span class="math">\(x\)</span>, the last term vanishes:
+<span class="math">\(\langle x R \rangle = \langle x \rangle \langle R \rangle = 0\)</span>.  To unify the other two terms, we can use the
+identity</p>
+<div class="math" id="equation-brownian-diffusion-step-2">
+<span class="eqno">(6)</span>\[\frac{d}{dt} \langle x \dot{x} \rangle = \langle x \ddot{x} \rangle + \langle \dot{x}^2 \rangle\]</div>
+<p>(This identity makes use of the fact that the operations of taking a derivative and taking an ensemble average commute
+with each other.  After all, an ensemble average is just a weighted sum of terms that can each be differentiated
+independently.)  Substituting this into equation <a href="#equation-brownian-diffusion-step-1">(5)</a> gives</p>
+<div class="math" id="equation-brownian-diffusion-step-3">
+<span class="eqno">(7)</span>\[m \left( \frac{d}{dt} \langle x \dot{x} \rangle - \langle \dot{x}^2 \rangle \right) = -\gamma \langle x \dot{x} \rangle\]</div>
+<p>Next we can use the equipartition theorem.  A single particle in one dimension has one degree of freedom so, in
+equilibrium, its average kinetic energy is <span class="math">\(m \langle \dot{x}^2 \rangle/2 = kT/2\)</span>.  Therefore</p>
+<div class="math" id="equation-brownian-diffusion-step-4">
+<span class="eqno">(8)</span>\[m \frac{d}{dt} \langle x \dot{x} \rangle = kT -\gamma \langle x \dot{x} \rangle\]</div>
+<p>Now make a change of variables.  Define</p>
+<div class="math" id="equation-brownian-diffusion-step-5">
+<span class="eqno">(9)</span>\[z = \frac{d}{dt} \langle x^2 \rangle = 2 \langle x \dot{x} \rangle\]</div>
+<p>so the equation becomes</p>
+<div class="math" id="equation-brownian-diffusion-step-6">
+<span class="eqno">(10)</span>\[\frac{dz}{dt} = \frac{2kT}{m} -\frac{\gamma}{m} z\]</div>
+<p>This is a standard differential equation whose solution is given by</p>
+<div class="math" id="equation-brownian-diffusion-step-7">
+<span class="eqno">(11)</span>\[z = Ce^{-\frac{\gamma}{m}t} + \frac{2kT}{\gamma}\]</div>
+<p>You can easily verify that by substituting it back into equation <a href="#equation-brownian-diffusion-step-6">(10)</a>.  <span class="math">\(C\)</span> is an
+arbitrary constant.</p>
+<p>We are almost done!  The first term in equation <a href="#equation-brownian-diffusion-step-7">(11)</a> decays rapidly with time.  Taking the
+limit of large <span class="math">\(t\)</span>, we get</p>
+<div class="math" id="equation-brownian-diffusion-step-8">
+<span class="eqno">(12)</span>\[z = \frac{d}{dt} \langle x^2 \rangle = \frac{2kT}{\gamma}\]</div>
+<p>or integrating with respect to time and defining <span class="math">\(x(0)=0\)</span>,</p>
+<div class="math" id="equation-brownian-diffusion-step-9">
+<span class="eqno">(13)</span>\[\langle x^2 \rangle = \frac{2kT}{\gamma}t\]</div>
+<p>So as time passes, the mean squared distance traveled by the particle increases at a constant rate.  This was one of the
+main conclusions of Einstein&#8217;s 1905 paper on Brownian motion, although he derived it by a somewhat different method.
+The approach used here was published a few years later, in 1908, by Paul Langevin.</p>
+<p>This result is not really very surprising.  In fact, it is exactly what we probably would have predicted if we had
+thought about it in advance.  The particle moves irregularly as its velocity is continuously damped away by friction and
+replaced by the random force.  The motion can be thought of as a series of independent displacements taken at random,
+one after another.  By the central limit theorem, they should therefore add up to a normal distribution whose standard
+deviation grows as <span class="math">\(\sqrt{t}\)</span>.  This kind of motion is called <em>diffusion</em>.  It also is sometimes referred to as a
+<em>random walk</em>, because of the way it is built up from many independent random displacements.</p>
+<p>The way it scales with temperature is similarly unsurprising.  If we had been forced to predict in advance, we probably
+would have guessed the average displacement would be proportional to the average velocity, and by the equipartition
+theorem that scales as <span class="math">\(\sqrt{T}\)</span>.  We also would probably have guessed that a larger friction coefficient would
+lead to a smaller average displacement.</p>
+<p>On the other hand, there is one strange thing about equation <a href="#equation-brownian-diffusion-step-9">(13)</a>.  It appears to be
+completely independent of the random force.  In fact, <span class="math">\(R\)</span> dropped out of the derivation after the very first step
+and never appeared again.  But the random force is what causes the particle to diffuse!  Surely the average displacement
+ought to depend on the magnitude of <span class="math">\(R\)</span>?</p>
+<p>In fact, this result does depend on <span class="math">\(R\)</span>, but it does it indirectly.  By using the equipartition theorem, we
+assumed the system was in equilibrium at temperature <span class="math">\(T\)</span>.  That equilibrium is brought about by the interaction
+between the friction force and the random force, and <span class="math">\(R\)</span> depends on <span class="math">\(T\)</span>.  To derive equation
+<a href="#equation-brownian-diffusion-step-9">(13)</a>, it was sufficient to assume equilibrium had been achieved without knowing precisely how
+it came about.  So now we will turn to that question: how do the forces interact to produce equilibrium?</p>
+</div>
+<div class="section" id="the-fluctuation-dissipation-theorem">
+<h2>7.6. The Fluctuation-Dissipation Theorem<a class="headerlink" href="#the-fluctuation-dissipation-theorem" title="Permalink to this headline">¶</a></h2>
+<p>Equation <a href="#equation-langevin-equation">(2)</a> can be viewed as a first order differential equation for the velocity <span class="math">\(\dot{x}\)</span>.
+Its solution is given by</p>
+<div class="math" id="equation-fluctuation-dissipation-step-1">
+<span class="eqno">(14)</span>\[\dot{x}(t) = \dot{x}(0) \cdot e^{-\frac{\gamma}{m}t} + \frac{1}{m} \int_0^t e^{-\frac{\gamma}{m}(t-t')} R(t') dt'\]</div>
+<p>The first term is identical to equation <a href="#equation-decaying-velocity">(1)</a>.  It represents the initial velocity decaying
+exponentially to zero.  But this time, we also have a second term representing the effect of the random force.  It can
+be viewed as a series of infinitesimal kicks, each of which then decays with time.  The integral sums over all those
+kicks, weighting each one by an exponential factor based on the time <span class="math">\(t-t'\)</span> that has passed since it occurred.</p>
+<p>We are interested in the behavior at large values of <span class="math">\(t\)</span>, once the system has had plenty of time to come to
+equilibrium.  In this limit equation <a href="#equation-fluctuation-dissipation-step-1">(14)</a> becomes simpler:</p>
+<div class="math" id="equation-fluctuation-dissipation-step-2">
+<span class="eqno">(15)</span>\[lim_{t \to \infty} \dot{x}(t) = \frac{1}{m} \int_0^{\infty} e^{-\frac{\gamma}{m}(t-t')} R(t') dt'\]</div>
+<p>Notice that <span class="math">\(t\)</span> still appears in the exponential.  You might be tempted to replace it with <span class="math">\(\infty\)</span>, but
+that would be incorrect.  As <span class="math">\(t\)</span> increases, the upper limit of the domain of integration increases as well.  The
+exponent only depends on the difference <span class="math">\(t-t'\)</span>, and no matter how large <span class="math">\(t\)</span> gets, there is always a portion
+of the domain of integration for which the exponent is small.</p>
+<p>We want to compute the average kinetic energy in equilibrium, so square each side and take an ensemble average.</p>
+<div class="math" id="equation-fluctuation-dissipation-step-3">
+<span class="eqno">(16)</span>\[lim_{t \to \infty} \langle \dot{x}^2(t) \rangle = \frac{1}{m^2} \int_0^{\infty} \int_0^{\infty} e^{-\frac{\gamma}{m}(2t-t'-t'')} \langle R(t')R(t'') \rangle dt' dt''\]</div>
+<p>In section <a class="reference internal" href="#brownian-motion">7.4</a> we assumed that <span class="math">\(\langle R(t')R(t'') \rangle\)</span> was independent of <span class="math">\(t'\)</span> and
+depended only on the difference <span class="math">\(t''-t'\)</span>.  We can therefore replace it by <span class="math">\(\langle R(0)R(t''-t') \rangle\)</span>.
+Also make a change of variables by defining <span class="math">\(r=t-t''\)</span> and <span class="math">\(s=t''-t'\)</span>.  With these substitutions, the
+equation becomes</p>
+<div class="math" id="equation-fluctuation-dissipation-step-4">
+<span class="eqno">(17)</span>\[\begin{split}\begin{array}{rcl}
+lim_{t \to \infty} \langle \dot{x}^2(t) \rangle &amp;=&amp; \frac{1}{m^2} \int_{r=0}^{\infty} \int_{s=-\infty}^{\infty} e^{-\frac{\gamma}{m}(2r+s)} \langle R(0)R(s) \rangle dr ds \\
+&amp;=&amp; \frac{1}{m^2} \left( \int_0^{\infty} e^{-\frac{\gamma}{m}2r} dr \right) \left( \int_{-\infty}^{\infty} e^{-\frac{\gamma}{m}s} \langle R(0)R(s) \rangle ds \right) \\
+&amp;=&amp; \frac{1}{2 \gamma m} \int_{-\infty}^{\infty} e^{-\frac{\gamma}{m}s} \langle R(0)R(s) \rangle ds
+\end{array}\end{split}\]</div>
+<p>Now we can invoke the equipartition theorem once again to set <span class="math">\(\langle \dot{x}^2(t) \rangle = kT/m\)</span>.  Therefore,</p>
+<div class="math" id="equation-fluctuation-dissipation-step-5">
+<span class="eqno">(18)</span>\[2 \gamma kT = \int_{-\infty}^{\infty} e^{-\frac{\gamma}{m}s} \langle R(0)R(s) \rangle ds\]</div>
+<p>In section <a class="reference internal" href="#brownian-motion">7.4</a> we assumed the random force was uncorrelated with itself except over some &#8220;very short&#8221;
+time <span class="math">\(\tau\)</span>.  Let&#8217;s make that assumption more precise.  From equation <a href="#equation-fluctuation-dissipation-step-1">(14)</a>, we
+see that <span class="math">\(m/\gamma\)</span> sets the timescale on which friction operates.  After a time <span class="math">\(m/\gamma\)</span> has passed, the
+initial velocity has decayed by a factor of <span class="math">\(e\)</span>.  We will assume that <span class="math">\(\tau \ll m/\gamma\)</span>.  The timescale
+over which the random force is correlated with itself is very small compared to the timescale over which friction
+operates.</p>
+<p>This assumption means that whenever the integrand is non-zero, the exponent is negligible in magnitude.  This leads to a
+further simplification:</p>
+<div class="math" id="equation-fluctuation-dissipation-theorem">
+<span class="eqno">(19)</span>\[2 \gamma kT = \int_{-\infty}^{\infty} \langle R(0)R(s) \rangle ds\]</div>
+<p>This very important result is called the <em>fluctuation-dissipation theorem</em>.  It gives the relationship between
+<span class="math">\(T\)</span>, <span class="math">\(\gamma\)</span>, and <span class="math">\(R\)</span>.  Any system in contact with a heat bath will experience both friction and
+fluctuations, and the magnitudes of the two effects are directly linked to each other.  You cannot get one without the
+other.</p>
+<p>The right side of equation <a href="#equation-fluctuation-dissipation-theorem">(19)</a> is the integral of the autocorrelation function of the
+random force.  It depends both on the magnitude of <span class="math">\(R\)</span> and on the time <span class="math">\(\tau\)</span> over which it remains
+correlated.  The stronger the force is, the larger its effect on the particle.  And the longer the time interval over
+which the particle accelerates in a single direction before the force changes, the faster it will get moving.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">7. Friction and Fluctuations</a><ul>
+<li><a class="reference internal" href="#friction-and-dissipation">7.1. Friction and Dissipation</a></li>
+<li><a class="reference internal" href="#linear-response-theory">7.2. Linear Response Theory</a></li>
+<li><a class="reference internal" href="#fluctuations">7.3. Fluctuations</a></li>
+<li><a class="reference internal" href="#the-langevin-equation">7.4. The Langevin Equation</a></li>
+<li><a class="reference internal" href="#diffusion-of-a-brownian-particle">7.5. Diffusion of a Brownian Particle</a></li>
+<li><a class="reference internal" href="#the-fluctuation-dissipation-theorem">7.6. The Fluctuation-Dissipation Theorem</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="phasetransitions.html"
+                        title="previous chapter">6. Phase Transitions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="phasespace.html"
+                        title="next chapter">8. Evolution of Phase Space Probabilities</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="phasespace.html" title="8. Evolution of Phase Space Probabilities"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="phasetransitions.html" title="6. Phase Transitions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Introduction to Statistical Mechanics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2015, Peter Eastman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

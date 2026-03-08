@@ -5,6 +5,7 @@ instead of the title of the section.
 
 from docutils import nodes
 import sphinx.domains.std
+from sphinx.domains.std import StandardDomain
 
 class CustomStandardDomain(sphinx.domains.std.StandardDomain):
 
@@ -47,6 +48,6 @@ def doctree_resolved(app, doctree, docname):
                 node.replace(emphnode, nodes.Text(linktext))
 
 def setup(app):
-    app.override_domain(CustomStandardDomain)
+    app.add_domain(CustomStandardDomain, override=True)
     app.connect('doctree-resolved', doctree_resolved)
 

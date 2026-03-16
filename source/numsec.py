@@ -5,7 +5,6 @@ instead of the title of the section.
 
 from docutils import nodes
 import sphinx.domains.std
-from sphinx.domains.std import StandardDomain
 
 class CustomStandardDomain(sphinx.domains.std.StandardDomain):
 
